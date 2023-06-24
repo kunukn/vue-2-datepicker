@@ -3,7 +3,7 @@
     <h1>Datepicker Examples</h1>
     <div class="example">
       <h3>Default datepicker...</h3>
-      <datepicker placeholder="Select Date" />
+      <VueDatepicker placeholder="Select Date" />
       <code>
         &lt;datepicker placeholder="Select Date"&gt;&lt;/datepicker&gt;
       </code>
@@ -11,7 +11,7 @@
 
     <div class="example">
       <h3>Typeable datepicker</h3>
-      <datepicker placeholder="Type or select date" :typeable="true" />
+      <VueDatepicker placeholder="Type or select date" :typeable="true" />
       <code>
         &lt;datepicker placeholder="Type or select date"
         :typeable="true"&gt;&lt;/datepicker&gt;
@@ -20,12 +20,12 @@
 
     <div class="example">
       <h3>Bootstrap styled datepicker</h3>
-      <datepicker
+      <VueDatepicker
         :bootstrapStyling="true"
         :calendarButton="true"
         :clearButton="true"
       >
-      </datepicker>
+      </VueDatepicker>
       <code>
         &lt;datepicker placeholder="Select Date"&gt;&lt;/datepicker&gt;
       </code>
@@ -33,10 +33,10 @@
 
     <div class="example">
       <h3>v-model datepicker</h3>
-      <datepicker
+      <VueDatepicker
         placeholder="Select Date"
         v-model="vModelExample"
-      ></datepicker>
+      ></VueDatepicker>
       <code>
         &lt;datepicker placeholder="Select Date"
         v-model="vmodelexample"&gt;&lt;/datepicker&gt;
@@ -47,7 +47,7 @@
 
     <div class="example">
       <h3>Format datepicker</h3>
-      <datepicker :format="format"></datepicker>
+      <VueDatepicker :format="format"></VueDatepicker>
       <code> &lt;datepicker :format="format"&gt;&lt;/datepicker&gt; </code>
       <div class="settings">
         <h5>Settings</h5>
@@ -74,7 +74,7 @@
 
     <div class="example">
       <h3>With minimum and maximum date range</h3>
-      <datepicker :disabledDates="disabledDates"></datepicker>
+      <VueDatepicker :disabledDates="disabledDates"></VueDatepicker>
       <code>
         &lt;datepicker :disabledDates="disabledDates"&gt;&lt;/datepicker&gt;
       </code>
@@ -82,11 +82,11 @@
         <h5>Settings</h5>
         <div class="form-group">
           <label>Disabled to:</label>
-          <datepicker v-on:selected="disableTo"></datepicker>
+          <VueDatepicker v-on:selected="disableTo"></VueDatepicker>
         </div>
         <div class="form-group">
           <label>Disabled from:</label>
-          <datepicker v-on:selected="disableFrom"></datepicker>
+          <VueDatepicker v-on:selected="disableFrom"></VueDatepicker>
         </div>
         <div class="form-group">
           <label>Disabled Days of Month:</label>
@@ -100,7 +100,7 @@
         <pre>disabled: {{ disabledDates }}</pre>
 
         <h5>Resulting Date picker</h5>
-        <datepicker :disabledDates="disabledDates"></datepicker>
+        <VueDatepicker :disabledDates="disabledDates"></VueDatepicker>
       </div>
     </div>
 
@@ -121,13 +121,13 @@
           }
         </pre>
         <h5>Resulting Date picker</h5>
-        <datepicker :disabledDates="disabledFn"></datepicker>
+        <VueDatepicker :disabledDates="disabledFn"></VueDatepicker>
       </div>
     </div>
 
     <div class="example">
       <h3>Highlighting Dates Matching Given Function</h3>
-      <datepicker :highlighted="highlighted"></datepicker>
+      <VueDatepicker :highlighted="highlighted"></VueDatepicker>
       <code>
         &lt;datepicker :highlighted="highlighted"&gt;&lt;/datepicker&gt;
       </code>
@@ -145,7 +145,7 @@
         </pre>
 
         <h5>Resulting Date picker</h5>
-        <datepicker :highlighted="highlightedFn"></datepicker>
+        <VueDatepicker :highlighted="highlightedFn"></VueDatepicker>
       </div>
     </div>
 
@@ -158,11 +158,11 @@
         <h5>Settings</h5>
         <div class="form-group">
           <label>Highlight from:</label>
-          <datepicker v-on:selected="highlightFrom"></datepicker>
+          <VueDatepicker v-on:selected="highlightFrom"></VueDatepicker>
         </div>
         <div class="form-group">
           <label>Highlight to:</label>
-          <datepicker v-on:selected="highlightTo"></datepicker>
+          <VueDatepicker v-on:selected="highlightTo"></VueDatepicker>
         </div>
         <div class="form-group">
           <label>Highlight Days of Month:</label>
@@ -171,19 +171,19 @@
         <pre>highlighted: {{ highlighted }}</pre>
 
         <h5>Resulting Date picker</h5>
-        <datepicker :highlighted="highlighted"></datepicker>
+        <VueDatepicker :highlighted="highlighted"></VueDatepicker>
       </div>
     </div>
 
     <div class="example">
       <h3>With default open date</h3>
-      <datepicker :open-date="openDate"></datepicker>
+      <VueDatepicker :open-date="openDate"></VueDatepicker>
       <code> &lt;datepicker :disabled="disabled"&gt;&lt;/datepicker&gt; </code>
       <div class="settings">
         <h5>Settings</h5>
         <div class="form-group">
           <label>Open date:</label>
-          <datepicker v-model="openDate"></datepicker>
+          <VueDatepicker v-model="openDate"></VueDatepicker>
         </div>
         <pre>openDate: {{ openDate }}</pre>
       </div>
@@ -193,10 +193,10 @@
       <h3>Translations</h3>
       <h5>{{ languages[language].language }} datepicker</h5>
 
-      <datepicker
+      <VueDatepicker
         :language="languages[language]"
         format="d MMMM yyyy"
-      ></datepicker>
+      ></VueDatepicker>
       <code>
         &lt;datepicker :language="languages.{{
           language
@@ -214,12 +214,12 @@
 
     <div class="example">
       <h3>Inline datepicker</h3>
-      <datepicker :inline="true"></datepicker>
+      <VueDatepicker :inline="true"></VueDatepicker>
       <code> &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt; </code>
     </div>
     <div class="example">
       <h3>RTL datepicker</h3>
-      <datepicker :language="languages.he"></datepicker>
+      <VueDatepicker :language="languages.he"></VueDatepicker>
       <code>
         &lt;datepicker :language="languages.he"&gt;&lt;/datepicker&gt;
       </code>
@@ -227,7 +227,7 @@
 
     <div class="example">
       <h3>Day view only</h3>
-      <datepicker :minimumView="'day'" :maximumView="'day'"></datepicker>
+      <VueDatepicker :minimumView="'day'" :maximumView="'day'"></VueDatepicker>
       <code>
         &lt;datepicker :minimumView="'day'"
         :maximumView="'day'"&gt;&lt;/datepicker&gt;
@@ -236,11 +236,11 @@
 
     <div class="example">
       <h3>Day view only RTL</h3>
-      <datepicker
+      <VueDatepicker
         :minimumView="'day'"
         :maximumView="'day'"
         :language="languages.he"
-      ></datepicker>
+      ></VueDatepicker>
       <code>
         &lt;datepicker :minimumView="'day'" :maximumView="'day'"
         language="languages.he"&gt;&lt;/datepicker&gt;
@@ -249,7 +249,7 @@
 
     <div class="example">
       <h3>Month view only</h3>
-      <datepicker :minimumView="'month'" :maximumView="'month'"></datepicker>
+      <VueDatepicker :minimumView="'month'" :maximumView="'month'"></VueDatepicker>
       <code>
         &lt;datepicker :minimumView="'month'"
         :maximumView="'month'"&gt;&lt;/datepicker&gt;
@@ -258,11 +258,11 @@
 
     <div class="example">
       <h3>Day and month view only</h3>
-      <datepicker
+      <VueDatepicker
         :minimumView="'day'"
         :maximumView="'month'"
         :initialView="'month'"
-      ></datepicker>
+      ></VueDatepicker>
       <code>
         &lt;datepicker :minimumView="'day'" :maximumView="'month'"
         :initialView="'month'"&gt;&lt;/datepicker&gt;
@@ -271,11 +271,11 @@
 
     <div class="example">
       <h3>Year and month view only</h3>
-      <datepicker
+      <VueDatepicker
         :minimumView="'month'"
         :maximumView="'year'"
         :initialView="'year'"
-      ></datepicker>
+      ></VueDatepicker>
       <code>
         &lt;datepicker :minimumView="'month'" :maximumView="'year'"
         :initialView="'year'"&gt;&lt;/datepicker&gt;
@@ -285,7 +285,7 @@
 </template>
 
 <script>
-import Datepicker from '../src/components/Datepicker.vue'
+import VueDatepicker from '../src/components/Datepicker.vue'
 import * as lang from '../src/locale/index.js'
 
 const state = {
@@ -295,7 +295,7 @@ const state = {
 export default {
   name: 'demo',
   components: {
-    Datepicker,
+    VueDatepicker,
   },
   data() {
     return {
