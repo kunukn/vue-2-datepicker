@@ -13,14 +13,15 @@ module.exports = {
       'jest-transform-stub',
   },
   transform: {
-    // '^.+\\.ts$': 'ts-jest',
+    '^.+\\.ts$': 'ts-jest',
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
   },
-  setupFiles: ['<rootDir>/test/unit/setup'],
   coverageDirectory: '<rootDir>/test/unit/coverage',
   collectCoverageFrom: [
-    'src/**/*.{js,vue}',
+    'src/**/*.{js,ts,vue}',
     '!src/locale/translations/**/*.js',
   ],
+  // setupFiles: ['<rootDir>/test/unit/setup'],
+  setupFilesAfterEnv: ['<rootDir>/test/unit/setup'],
 }
