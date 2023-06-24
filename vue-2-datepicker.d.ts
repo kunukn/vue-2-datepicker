@@ -1,6 +1,6 @@
 import Vue, { PluginFunction, VueConstructor } from 'vue'
 
-declare const DatePicker: VueConstructor<Vue> & {
+declare const Datepicker: VueConstructor<Vue> & {
   install: PluginFunction<any>
 }
-export default DatePicker
+export default Datepicker

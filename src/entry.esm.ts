@@ -15,7 +15,7 @@ export default /*#__PURE__*/ ((): InstallableComponent => {
 
   // Attach install function executed by Vue.use()
   installable.install = (Vue: typeof _Vue) => {
-    Vue.component('DatePicker', installable)
+    Vue.component('VueDatepicker', installable)
   }
   return installable
 })()
