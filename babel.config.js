@@ -1,7 +1,24 @@
 const devPresets = ['@vue/babel-preset-app']
 const buildPresets = ['@babel/preset-env', '@babel/preset-typescript']
+
+let presets = buildPresets
+
+console.log('***** process.env.NODE_ENV', process.env.NODE_ENV)
+
+if (process.env.NODE_ENV === 'development') {
+  presets = devPresets
+}
+
+if (process.env.NODE_ENV === 'production') {
+  presets = buildPresets
+}
+
+if (process.env.NODE_ENV === 'test') {
+  presets = devPresets
+}
+
 module.exports = {
-  presets: process.env.NODE_ENV === 'development' ? devPresets : buildPresets,
+  presets,
   plugins: [
     [
       'module-resolver',
