@@ -6,7 +6,7 @@ module.exports = {
     [
       'module-resolver',
       {
-        extensions: ['.js', 'ts', '.vue', '.css', '.scss'],
+        extensions: ['.js', 'ts', '.vue', '.jsx', '.tsx', '.css', '.scss'],
         root: ['./src'],
         alias: {
           /* this is for tools like Jest */
@@ -16,4 +16,9 @@ module.exports = {
       },
     ],
   ],
+  env: {
+    test: {
+      plugins: ['@babel/plugin-transform-modules-commonjs'],
+    },
+  },
 }
