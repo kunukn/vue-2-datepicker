@@ -9,7 +9,9 @@ describe('PickerDay: disabled', () => {
     wrapper = shallowMount(PickerDay, {
       propsData: {
         allowedToShowView: () => true,
-        showMonthCalendar: () => {},
+        showMonthCalendar: () => {
+          /**/
+        },
         translation: en,
         disabledDates: {
           to: new Date(2016, 9, 4),

@@ -2,12 +2,7 @@ export default {
   verbose: true,
   injectGlobals: true,
   testEnvironment: 'jsdom',
-  moduleFileExtensions: [
-    'ts',
-    'js',
-    'json',
-    'vue'
-  ],
+  moduleFileExtensions: ['ts', 'js', 'json', 'vue'],
   moduleNameMapper: {
     '^@/(.*)$': '<rootDir>/src/$1',
     '^~/(.*)$': '<rootDir>/$1',
@@ -25,6 +20,6 @@ export default {
   coverageDirectory: '<rootDir>/tests/coverage',
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
-    '!src/locale/translations/**/*.js'
+    '!src/locale/translations/**/*.js',
   ],
 }

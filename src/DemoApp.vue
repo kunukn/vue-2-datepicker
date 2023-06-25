@@ -45,8 +45,8 @@
     <div class="example">
       <h3>v-model datepicker</h3>
       <vue-datepicker
-        placeholder="Select Date"
         v-model="vModelExample"
+        placeholder="Select Date"
       ></vue-datepicker>
       <code>
         &lt;datepicker placeholder="Select Date"
@@ -93,19 +93,19 @@
         <h5>Settings</h5>
         <div class="form-group">
           <label>Disabled to:</label>
-          <vue-datepicker v-on:selected="disableTo"></vue-datepicker>
+          <vue-datepicker @selected="disableTo"></vue-datepicker>
         </div>
         <div class="form-group">
           <label>Disabled from:</label>
-          <vue-datepicker v-on:selected="disableFrom"></vue-datepicker>
+          <vue-datepicker @selected="disableFrom"></vue-datepicker>
         </div>
         <div class="form-group">
           <label>Disabled Days of Month:</label>
           <input
             type="text"
             value=""
-            v-on:change="setDisabledDays"
             placeholder="5,6,12,13"
+            @change="setDisabledDays"
           />
         </div>
         <pre>disabled: {{ disabledDates }}</pre>
@@ -169,15 +169,15 @@
         <h5>Settings</h5>
         <div class="form-group">
           <label>Highlight from:</label>
-          <vue-datepicker v-on:selected="highlightFrom"></vue-datepicker>
+          <vue-datepicker @selected="highlightFrom"></vue-datepicker>
         </div>
         <div class="form-group">
           <label>Highlight to:</label>
-          <vue-datepicker v-on:selected="highlightTo"></vue-datepicker>
+          <vue-datepicker @selected="highlightTo"></vue-datepicker>
         </div>
         <div class="form-group">
           <label>Highlight Days of Month:</label>
-          <input type="text" value="" v-on:change="setHighlightedDays" />
+          <input type="text" value="" @change="setHighlightedDays" />
         </div>
         <pre>highlighted: {{ highlighted }}</pre>
 
@@ -216,7 +216,7 @@
       <div class="settings">
         <h5>Settings</h5>
         <select v-model="language">
-          <option :value="key" v-for="(language, key) in languages" :key="key">
+          <option v-for="(language, key) in languages" :key="key" :value="key">
             {{ language.language }}
           </option>
         </select>
@@ -305,7 +305,7 @@ const state = {
 }
 
 export default {
-  name: 'demo',
+  name: 'Demo',
   components: {
     VueDatepicker,
   },

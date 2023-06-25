@@ -1,7 +1,7 @@
 <template>
   <div
-    :class="[calendarClass, 'vdp-datepicker__calendar']"
     v-show="showMonthView"
+    :class="[calendarClass, 'vdp-datepicker__calendar']"
     :style="calendarStyle"
     @mousedown.prevent
   >
@@ -33,10 +33,10 @@
       </button>
     </header>
     <button
-      class="cell month"
       v-for="month in months"
-      type="button"
       :key="month.timestamp"
+      class="cell month"
+      type="button"
       :class="{ selected: month.isSelected, disabled: month.isDisabled }"
       @click.stop="selectMonth(month)"
     >

@@ -1,25 +1,25 @@
 <template>
   <div
-    :class="[calendarClass, 'vdp-datepicker__calendar']"
     v-show="showDayView"
+    :class="[calendarClass, 'vdp-datepicker__calendar']"
     :style="calendarStyle"
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
     <header class="vdp-datepicker__header">
       <button
-        @click="isRtl ? nextMonth() : previousMonth()"
         type="button"
         class="prev"
         :class="{ disabled: isLeftNavDisabled }"
+        @click="isRtl ? nextMonth() : previousMonth()"
       >
         <slot name="prevButton">&lt;</slot>
       </button>
       <button
         type="button"
         class="day__month_btn"
-        @click="showMonthCalendar"
         :class="allowedToShowView('month') ? 'up' : ''"
+        @click="showMonthCalendar"
       >
         {{ isYmd ? currYearName : currMonthName }}
         {{ isYmd ? currMonthName : currYearName }}
@@ -35,25 +35,25 @@
     </header>
     <div :class="isRtl ? 'flex-rtl' : ''">
       <span
-        class="cell day-header"
         v-for="d in daysOfWeek"
         :key="d.timestamp"
+        class="cell day-header"
         >{{ d }}</span
       >
       <template v-if="blankDays > 0">
         <span
-          class="cell day blank"
           v-for="d in blankDays"
           :key="d.timestamp"
+          class="cell day blank"
         ></span>
       </template>
       <span
-        class="cell day"
         v-for="day in days"
         :key="day.timestamp"
+        class="cell day"
         :class="dayClasses(day)"
-        v-html="dayCellContent(day)"
         @click="selectDate(day)"
+        v-html="dayCellContent(day)"
       ></span>
     </div>
   </div>

@@ -64,9 +64,5 @@ module.exports = {
       },
     },
   ],
-  ignorePatterns: [
-    'node_modules/*',
-    'public/*',
-    'dist/*',
-  ],
+  ignorePatterns: ['node_modules/*', 'public/*', 'dist/*'],
 }

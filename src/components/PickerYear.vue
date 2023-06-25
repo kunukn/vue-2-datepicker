@@ -1,35 +1,34 @@
 <template>
   <div
-    :class="[calendarClass, 'vdp-datepicker__calendar']"
     v-show="showYearView"
+    :class="[calendarClass, 'vdp-datepicker__calendar']"
     :style="calendarStyle"
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
     <header class="vdp-datepicker__header">
       <button
-        @click="isRtl ? nextDecade() : previousDecade()"
         type="button"
         class="prev"
         :class="{ disabled: isLeftNavDisabled }"
+        @click="isRtl ? nextDecade() : previousDecade()"
       >
         <slot name="prevButton">&lt;</slot>
       </button>
       <span>{{ getPageDecade }}</span>
       <button
         type="button"
-        @click="isRtl ? previousDecade() : nextDecade()"
         class="next"
         :class="{ disabled: isRightNavDisabled }"
+        @click="isRtl ? previousDecade() : nextDecade()"
       >
-        
         <slot name="nextButton">&gt;</slot>
       </button>
     </header>
     <button
       v-for="year in years"
-      type="button"
       :key="year.timestamp"
+      type="button"
       class="cell year"
       :class="{ selected: year.isSelected, disabled: year.isDisabled }"
       @click.stop="selectYear(year)"
@@ -54,6 +53,12 @@ export default {
     isRtl: Boolean,
     allowedToShowView: Function,
     useUtc: Boolean,
+  },
+  data() {
+    const constructedDateUtils = makeDateUtils(this.useUtc)
+    return {
+      utils: constructedDateUtils,
+    }
   },
   computed: {
     years() {
@@ -114,12 +119,6 @@ export default {
         ? this.isPreviousDecadeDisabled(this.pageTimestamp)
         : this.isNextDecadeDisabled(this.pageTimestamp)
     },
-  },
-  data() {
-    const constructedDateUtils = makeDateUtils(this.useUtc)
-    return {
-      utils: constructedDateUtils,
-    }
   },
   methods: {
     selectYear(year) {

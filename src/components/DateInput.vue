@@ -20,11 +20,11 @@
     </button>
     <!-- Input -->
     <input
+      :id="id"
+      :ref="refName"
       :type="inline ? 'hidden' : 'text'"
       :class="computedInputClass"
       :name="name"
-      :ref="refName"
-      :id="id"
       :value="formattedValue"
       :open-date="openDate"
       :placeholder="placeholder"
@@ -32,10 +32,10 @@
       :disabled="disabled"
       :required="required"
       :readonly="!typeable"
+      autocomplete="off"
       @click="showCalendar"
       @keyup="parseTypedDate"
       @blur="inputBlurred"
-      autocomplete="off"
     />
     <!-- Clear Button -->
     <button
@@ -122,6 +122,9 @@ export default {
       this.typedDate = false
     },
   },
+  mounted() {
+    this.input = this.$el.querySelector('input')
+  },
   methods: {
     showCalendar() {
       this.$emit('showCalendar')
@@ -168,9 +171,6 @@ export default {
     clearDate() {
       this.$emit('clearDate')
     },
-  },
-  mounted() {
-    this.input = this.$el.querySelector('input')
   },
 }
 </script>

@@ -1,12 +1,12 @@
 <template>
   <div class="vdp-datepicker" :class="[wrapperClass, isRtl ? 'rtl' : '']">
     <DateInput
+      :id="id"
       :selectedDate="selectedDate"
       :resetTypedDate="resetTypedDate"
       :format="format"
       :translation="translation"
       :inline="inline"
-      :id="id"
       :name="name"
       :refName="refName"
       :openDate="openDate"
@@ -27,7 +27,7 @@
       @typedDate="setTypedDate"
       @clearDate="clearDate"
     >
-      <slot name="afterDateInput" slot="afterDateInput"></slot>
+      <slot slot="afterDateInput" name="afterDateInput"></slot>
     </DateInput>
 
     <!-- Day View -->
@@ -54,7 +54,7 @@
         @showMonthCalendar="showMonthCalendar"
         @selectedDisabled="selectDisabledDate"
       >
-        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+        <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
       </PickerDay>
 
       <!-- Month View -->
@@ -74,7 +74,7 @@
         @showYearCalendar="showYearCalendar"
         @changedYear="setPageDate"
       >
-        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+        <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
       </PickerMonth>
 
       <!-- Year View -->
@@ -93,7 +93,7 @@
         @selectYear="selectYear"
         @changedDecade="setPageDate"
       >
-        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+        <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
       </PickerYear>
     </div>
   </div>
@@ -192,17 +192,6 @@ export default {
       utils: constructedDateUtils,
     }
   },
-  watch: {
-    value(value) {
-      this.setValue(value)
-    },
-    openDate() {
-      this.setPageDate()
-    },
-    initialView() {
-      this.setInitialView()
-    },
-  },
   computed: {
     computedInitialView() {
       if (!this.initialView) {
@@ -233,6 +222,20 @@ export default {
     isRtl() {
       return this.translation.rtl === true
     },
+  },
+  watch: {
+    value(value) {
+      this.setValue(value)
+    },
+    openDate() {
+      this.setPageDate()
+    },
+    initialView() {
+      this.setInitialView()
+    },
+  },
+  mounted() {
+    this.init()
   },
   methods: {
     /**
@@ -460,9 +463,6 @@ export default {
         this.setInitialView()
       }
     },
-  },
-  mounted() {
-    this.init()
   },
 }
 </script>
