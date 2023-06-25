@@ -556,14 +556,10 @@ export default {
   }
 
   .cell {
-    --height: 48px;
-
     display: inline-block;
-    // padding: 0 5px;
     width: 14.285714285714286%;
-    // width: 40px;
-    height: var(--height);
-    line-height: var(--height);
+    height: var(--vdp-cell-size);
+    line-height: var(--vdp-cell-size);
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;
