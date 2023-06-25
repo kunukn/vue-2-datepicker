@@ -483,6 +483,7 @@ export default {
 }
 
 .vdp-datepicker {
+  --vdp-cell-size: 48px;
   --vdp-color-cal-bg: #fff;
   --vdp-color-theme: #0092bc;
 
@@ -502,7 +503,7 @@ export default {
   position: absolute;
   z-index: 100;
   background: var(--vdp-color-cal-bg);
-  width: 300px;
+  width: calc(7 * var(--vdp-cell-size) + 2px); // plus the border
   border: 1px solid #ccc;
 
   header {
@@ -555,12 +556,14 @@ export default {
   }
 
   .cell {
+    --height: 48px;
+
     display: inline-block;
-    padding: 0 5px;
+    // padding: 0 5px;
     width: 14.285714285714286%;
     // width: 40px;
-    height: 40px;
-    line-height: 40px;
+    height: var(--height);
+    line-height: var(--height);
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;

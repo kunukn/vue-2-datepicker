@@ -1,6 +1,13 @@
 <template>
   <div id="app">
     <h1>Datepicker Examples</h1>
+
+    <div class="example">
+      <h3>Inline datepicker</h3>
+      <vue-datepicker :inline="true"></vue-datepicker>
+      <code> &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt; </code>
+    </div>
+
     <div class="example">
       <h3>Default datepicker...</h3>
       <vue-datepicker placeholder="Select Date" />
@@ -212,11 +219,6 @@
       </div>
     </div>
 
-    <div class="example">
-      <h3>Inline datepicker</h3>
-      <vue-datepicker :inline="true"></vue-datepicker>
-      <code> &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt; </code>
-    </div>
     <div class="example">
       <h3>RTL datepicker</h3>
       <vue-datepicker :language="languages.he"></vue-datepicker>
