@@ -487,13 +487,6 @@ export default {
   }
 }
 
-.vdp-datepicker__calendar header .prev,
-.vdp-datepicker__calendar header .next {
-  width: 14.2857%;
-  float: left;
-  position: relative;
-}
-
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 100;
@@ -576,28 +569,28 @@ export default {
 }
 
 .vdp-datepicker__header {
-  display: block;
-  line-height: 40px;
-  height: 40px;
+  height: var(--vdp-cell-size);
   background: white;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: stretch;
 
-  > span,
-  > button {
+  > :nth-child(2) {
+    flex: 1;
+  }
+
+  > * {
     border: 0;
-    display: inline-block;
     text-align: center;
-    width: 71.42857%;
     background: inherit;
-    float: left;
+    height: 100%;
   }
 
-  > .prev {
-    &.disabled {
-      color: #ddd;
-    }
-  }
-
+  > .prev,
   > .next {
+    min-width: var(--vdp-cell-size);
+
     &.disabled {
       color: #ddd;
     }
