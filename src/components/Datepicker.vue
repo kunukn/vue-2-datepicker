@@ -464,13 +464,16 @@ export default {
   },
 }
 </script>
-<style lang="scss">
+<style lang="scss" scoped>
 .rtl {
   direction: rtl;
 }
 .vdp-datepicker {
+  // --vdp-color-cal-bg:
+  
   position: relative;
   text-align: left;
+
   * {
     box-sizing: border-box;
   }
@@ -478,7 +481,7 @@ export default {
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 100;
-  background: #fff;
+  background: var(--vdp-color-cal-bg, #fff);
   width: 300px;
   border: 1px solid #ccc;
   header {

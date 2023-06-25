@@ -47,12 +47,32 @@ To view demo examples locally clone the repo and run `yarn install && yarn dev`
 
 ## Install
 
+### CSS required
+
+:warning: ️You need to add the CSS file.
+
+```vue
+import "@kunukn/vue-2-datepicker/dist/date-picker.css"
+```
+
+or CDN
+
+```html
+<link
+  rel="stylesheet"
+  href="https://unpkg.com/@kunukn/vue-2-datepicker/dist/date-picker.css"
+/>
+```
+
+## Add package
+
 ```bash
 yarn add -D @kunukn/vue-2-datepicker
 ```
 
 ```js
 import Datepicker from '@kunukn/vue-2-datepicker'
+import "@kunukn/vue-2-datepicker/dist/date-picker.css"
 
 export default {
   // ...
