@@ -414,12 +414,14 @@ export default {
 </script>
 
 <style>
-@import url('https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css');
+@import 'https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css';
+
 *,
 ::before,
 ::after {
   box-sizing: border-box;
 }
+
 html {
   font-size: 100%;
   height: 100%;
@@ -431,6 +433,7 @@ body {
   min-height: 100%;
   position: relative;
 }
+
 input,
 select {
   padding: 0.75rem 0.5rem;
@@ -439,13 +442,10 @@ select {
   width: 100%;
 }
 
-select {
-}
-
 .example {
   background: #f2f2f2;
   border: 1px solid #ddd;
-  padding: 0rem 1rem 1rem;
+  padding: 0 1rem 1rem;
   margin-bottom: 2rem;
 }
 
