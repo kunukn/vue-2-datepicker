@@ -1,6 +1,6 @@
 <template>
   <div class="vdp-datepicker" :class="[wrapperClass, isRtl ? 'rtl' : '']">
-    <date-input
+    <DateInput
       :selectedDate="selectedDate"
       :resetTypedDate="resetTypedDate"
       :format="format"
@@ -28,10 +28,10 @@
       @clearDate="clearDate"
     >
       <slot name="afterDateInput" slot="afterDateInput"></slot>
-    </date-input>
+    </DateInput>
 
     <!-- Day View -->
-    <picker-day
+    <PickerDay
       v-if="allowedToShowView('day')"
       :pageDate="pageDate"
       :selectedDate="selectedDate"
@@ -54,10 +54,10 @@
       @selectedDisabled="selectDisabledDate"
     >
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-    </picker-day>
+    </PickerDay>
 
     <!-- Month View -->
-    <picker-month
+    <PickerMonth
       v-if="allowedToShowView('month')"
       :pageDate="pageDate"
       :selectedDate="selectedDate"
@@ -74,10 +74,10 @@
       @changedYear="setPageDate"
     >
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-    </picker-month>
+    </PickerMonth>
 
     <!-- Year View -->
-    <picker-year
+    <PickerYear
       v-if="allowedToShowView('year')"
       :pageDate="pageDate"
       :selectedDate="selectedDate"
@@ -93,11 +93,11 @@
       @changedDecade="setPageDate"
     >
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-    </picker-year>
+    </PickerYear>
   </div>
 </template>
 <script>
-import enlishLanguage from '../locale/translations/en.js'
+import englishLanguage from '../locale/translations/en.js'
 import DateInput from './DateInput.vue'
 import PickerDay from './PickerDay.vue'
 import PickerMonth from './PickerMonth.vue'
@@ -124,7 +124,7 @@ export default {
     },
     language: {
       type: Object,
-      default: () => enlishLanguage,
+      default: () => englishLanguage,
     },
     openDate: {
       validator: (val) => utils.validateDateInput(val),
@@ -464,35 +464,59 @@ export default {
   },
 }
 </script>
-<style lang="scss" scoped>
-.rtl {
-  direction: rtl;
+<style lang="scss">
+.vdp-datepicker__calendar header .prev,
+.vdp-datepicker__calendar header .next {
+  width: 14.285714285714286%;
+  float: left;
+  text-indent: -10000px;
+  position: relative;
 }
+.vdp-datepicker__calendar header .prev:after,
+.vdp-datepicker__calendar header .next:after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translateX(-50%) translateY(-50%);
+  border: 6px solid transparent;
+}
+
 .vdp-datepicker {
   // --vdp-color-cal-bg:
-  
+
   position: relative;
   text-align: left;
 
   * {
     box-sizing: border-box;
   }
+
+  &.rtl {
+    direction: rtl;
+  }
 }
+
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 100;
   background: var(--vdp-color-cal-bg, #fff);
-  width: 300px;
+  max-width: 320px;
   border: 1px solid #ccc;
+
   header {
     display: block;
     line-height: 40px;
-    span {
-      display: block;
+
+    span,
+    button {
+      border: 0;
+      display: inline-block;
       text-align: center;
       width: 71.42857142857143%;
       float: left;
     }
+
     .prev {
       &:after {
         border-right: 10px solid #000;
@@ -504,6 +528,7 @@ export default {
         }
       }
     }
+
     .next {
       &:after {
         border-left: 10px solid #000;
@@ -516,15 +541,18 @@ export default {
       }
     }
   }
+
   .disabled {
     color: #ddd;
     cursor: default;
   }
+
   .flex-rtl {
     display: flex;
     width: inherit;
     flex-wrap: wrap;
   }
+
   .cell {
     display: inline-block;
     padding: 0 5px;
@@ -534,6 +562,7 @@ export default {
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;
+
     &.selected {
       background: #4bd;
       &:hover {
@@ -565,22 +594,7 @@ export default {
     }
   }
 }
-.vdp-datepicker__calendar header .prev,
-.vdp-datepicker__calendar header .next {
-  width: 14.285714285714286%;
-  float: left;
-  text-indent: -10000px;
-  position: relative;
-}
-.vdp-datepicker__calendar header .prev:after,
-.vdp-datepicker__calendar header .next:after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  border: 6px solid transparent;
-}
+
 .vdp-datepicker__calendar header .prev:not(.disabled),
 .vdp-datepicker__calendar header .next:not(.disabled),
 .vdp-datepicker__calendar header .up:not(.disabled) {
@@ -589,7 +603,7 @@ export default {
 .vdp-datepicker__calendar header .prev:not(.disabled):hover,
 .vdp-datepicker__calendar header .next:not(.disabled):hover,
 .vdp-datepicker__calendar header .up:not(.disabled):hover {
-  background: #eee;
+  background: #ccc;
 }
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month,
