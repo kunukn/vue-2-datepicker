@@ -8,6 +8,7 @@
 A datepicker Vue component. Compatible with Vue 2.x
 
 # About
+
 A datepicker Vue component. Compatible with Vue 2.x
 The source code is based on https://github.com/charliekassel/vuejs-datepicker#readme
 
@@ -44,30 +45,28 @@ To view a demo online:
 
 To view demo examples locally clone the repo and run `yarn install && yarn dev`
 
-
-
 ## Install
 
-``` bash
+```bash
 yarn add -D vue-2-datepicker
 ```
 
-``` js
-import VueDatepicker from 'vue-2-datepicker';
+```js
+import VueDatepicker from 'vue-2-datepicker'
 
 export default {
   // ...
   components: {
-    VueDatepicker
-  }
+    VueDatepicker,
+  },
   // ...
 }
 ```
 
 # Size
 
-| name                     | size        | gzip    |
-| ------------------------ | ----------- | ------- |
-| vue-2-datepicker.css     | 3.06 kB     | 0.74 kB |
-| vue-2-datepicker.js      | 44.74 kB    | 8.83 kB |
-| vue-2-datepicker.umd.cjs | 28.48 kB kB | 6.60 kB |
+| name                     | size   | gzip    |
+| ------------------------ | ------ | ------- |
+| vue-2-datepicker.css     | ~3 kB  | ~0.7 kB |
+| vue-2-datepicker.js      | ~45 kB | ~8.8 kB |
+| vue-2-datepicker.umd.cjs | ~29 kB | ~6.6 kB |
