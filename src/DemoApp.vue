@@ -3,8 +3,12 @@
     <h1>Datepicker Examples</h1>
 
     <div class="example">
-      <h3>Inline datepicker</h3>
-      <vue-datepicker :inline="true"></vue-datepicker>
+      <h3>Inline datepicker, UTC and Monday first</h3>
+      <vue-datepicker
+        :inline="true"
+        :use-utc="true"
+        :monday-first="true"
+      ></vue-datepicker>
       <code> &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt; </code>
     </div>
 

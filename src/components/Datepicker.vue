@@ -566,10 +566,6 @@ export default {
     vertical-align: middle;
     border: 1px solid transparent;
 
-    // display: inline-grid;
-    // place-items: center;
-    // line-height: 1;
-
     &.day {
       border-radius: 50%;
     }
