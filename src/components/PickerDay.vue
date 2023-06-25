@@ -39,7 +39,10 @@
         </slot>
       </button>
     </header>
-    <div :class="isRtl ? 'flex-rtl' : ''">
+    <div
+      class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--day"
+      :class="isRtl ? 'flex-rtl' : ''"
+    >
       <span
         v-for="d in daysOfWeek"
         :key="d.timestamp"
@@ -54,14 +57,15 @@
         ></span>
       </template>
       <!-- eslint-disable vue/no-v-html - It has been sanitized -->
-      <span
+      <button
         v-for="day in days"
         :key="day.timestamp"
+        type="button"
         class="cell day"
         :class="dayClasses(day)"
         @click="selectDate(day)"
         v-html="dayCellContent(day)"
-      ></span>
+      ></button>
     </div>
   </div>
 </template>

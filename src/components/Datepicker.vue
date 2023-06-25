@@ -520,6 +520,7 @@ export default {
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;
+    background: inherit;
 
     &.day {
       border-radius: 50%;
@@ -580,8 +581,8 @@ export default {
   height: 40px;
   background: white;
 
-  span,
-  button {
+  > span,
+  > button {
     border: 0;
     display: inline-block;
     text-align: center;
@@ -590,13 +591,13 @@ export default {
     float: left;
   }
 
-  .prev {
+  > .prev {
     &.disabled {
       color: #ddd;
     }
   }
 
-  .next {
+  > .next {
     &.disabled {
       color: #ddd;
     }
@@ -606,7 +607,7 @@ export default {
 .vdp-datepicker__pick-buttons {
   background: var(--vdp-color-theme-bg);
 
-  button {
+  > button {
     background: inherit;
   }
 }
@@ -620,7 +621,7 @@ export default {
 .vdp-datepicker__calendar header .prev:not(.disabled):hover,
 .vdp-datepicker__calendar header .next:not(.disabled):hover,
 .vdp-datepicker__calendar header .up:not(.disabled):hover {
-  background: #ccc;
+  background: #eee;
 }
 
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,

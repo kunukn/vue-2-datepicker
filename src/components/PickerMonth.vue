@@ -37,7 +37,7 @@
     <div
       class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--month"
     >
-      <button
+      <span
         v-for="month in months"
         :key="month.timestamp"
         class="cell month"
@@ -46,7 +46,7 @@
         @click.stop="selectMonth(month)"
       >
         {{ month.month }}
-      </button>
+      </span>
     </div>
   </div>
 </template>
