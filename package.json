@@ -35,6 +35,7 @@
   ],
   "dependencies": {},
   "devDependencies": {
+    "cross-env": "^7.0.3",
     "@rushstack/eslint-patch": "^1.3.2",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^18.16.18",
