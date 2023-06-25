@@ -471,7 +471,7 @@ export default {
 <style lang="scss">
 .vdp-datepicker {
   --vdp-cell-size: 48px;
-  --vdp-color-cal-bg: #fff;
+  --vdp-color-theme-bg: #fff;
   --vdp-color-theme: #0092bc;
 
   box-sizing: border-box;
@@ -497,36 +497,9 @@ export default {
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 100;
-  background: var(--vdp-color-cal-bg);
+  background: var(--vdp-color-theme-bg);
   width: calc(7 * var(--vdp-cell-size) + 2px); // plus the border
   border: 1px solid #ccc;
-
-  header {
-    display: block;
-    line-height: 40px;
-    height: 40px;
-
-    span,
-    button {
-      border: 0;
-      display: inline-block;
-      text-align: center;
-      width: 71.42857%;
-      float: left;
-    }
-
-    .prev {
-      &.disabled {
-        color: #ddd;
-      }
-    }
-
-    .next {
-      &.disabled {
-        color: #ddd;
-      }
-    }
-  }
 
   .disabled {
     color: #ddd;
@@ -553,11 +526,11 @@ export default {
     }
 
     &.month {
-      border-radius: none;
+      border-radius: 0;
     }
 
     &.year {
-      border-radius: none;
+      border-radius: 0;
     }
 
     &.selected {
@@ -598,6 +571,43 @@ export default {
         background: inherit;
       }
     }
+  }
+}
+
+.vdp-datepicker__header {
+  display: block;
+  line-height: 40px;
+  height: 40px;
+  background: white;
+
+  span,
+  button {
+    border: 0;
+    display: inline-block;
+    text-align: center;
+    width: 71.42857%;
+    background: inherit;
+    float: left;
+  }
+
+  .prev {
+    &.disabled {
+      color: #ddd;
+    }
+  }
+
+  .next {
+    &.disabled {
+      color: #ddd;
+    }
+  }
+}
+
+.vdp-datepicker__pick-buttons {
+  background: var(--vdp-color-theme-bg);
+
+  button {
+    background: inherit;
   }
 }
 

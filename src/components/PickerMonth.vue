@@ -10,10 +10,11 @@
       <button
         type="button"
         class="prev"
+        aria-label="<"
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextYear() : previousYear()"
       >
-        <slot name="prevButton">&lt;</slot>
+        <slot name="prevButton"><IconLeft /></slot>
       </button>
       <button
         type="button"
@@ -25,28 +26,39 @@
       </button>
       <button
         type="button"
+        aria-label=">"
         class="next"
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousYear() : nextYear()"
       >
-        <slot name="nextButton">&gt;</slot>
+        <slot name="nextButton"><IconRight /></slot>
       </button>
     </header>
-    <button
-      v-for="month in months"
-      :key="month.timestamp"
-      class="cell month"
-      type="button"
-      :class="{ selected: month.isSelected, disabled: month.isDisabled }"
-      @click.stop="selectMonth(month)"
+    <div
+      class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--month"
     >
-      {{ month.month }}
-    </button>
+      <button
+        v-for="month in months"
+        :key="month.timestamp"
+        class="cell month"
+        type="button"
+        :class="{ selected: month.isSelected, disabled: month.isDisabled }"
+        @click.stop="selectMonth(month)"
+      >
+        {{ month.month }}
+      </button>
+    </div>
   </div>
 </template>
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
+import IconLeft from './IconChevronLeft.vue'
+import IconRight from './IconChevronRight.vue'
 export default {
+  components: {
+    IconLeft,
+    IconRight,
+  },
   props: {
     showMonthView: Boolean,
     selectedDate: Date,
@@ -252,5 +264,6 @@ export default {
     },
   },
 }
-// eslint-disable-next-line
 </script>
+
+<style lang="scss"></style>

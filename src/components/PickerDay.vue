@@ -9,8 +9,8 @@
     <header class="vdp-datepicker__header">
       <button
         type="button"
-        class="prev"
         aria-label="<"
+        class="prev"
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextMonth() : previousMonth()"
       >
@@ -53,6 +53,7 @@
           class="cell day blank"
         ></span>
       </template>
+      <!-- eslint-disable vue/no-v-html - It has been sanitized -->
       <span
         v-for="day in days"
         :key="day.timestamp"

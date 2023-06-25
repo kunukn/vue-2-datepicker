@@ -10,7 +10,10 @@
         :mondayFirst="true"
         :useDay2char="true"
       ></vue-datepicker>
-      <code> &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt; </code>
+      <code>
+        &lt;datepicker :inline="true" :useUtc="true" :mondayFirst="true"
+        :useDay2char="true"&gt;&lt;/datepicker&gt;
+      </code>
     </div>
 
     <div class="example">
@@ -444,7 +447,7 @@ select {
 }
 
 .example {
-  background: #f2f2f2;
+  background: #fcfcfc;
   border: 1px solid #ddd;
   padding: 0 1rem 1rem;
   margin-bottom: 2rem;

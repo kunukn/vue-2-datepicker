@@ -9,37 +9,49 @@
     <header class="vdp-datepicker__header">
       <button
         type="button"
+        aria-label="<"
         class="prev"
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextDecade() : previousDecade()"
       >
-        <slot name="prevButton">&lt;</slot>
+        <slot name="prevButton"><IconLeft /></slot>
       </button>
       <span>{{ getPageDecade }}</span>
       <button
         type="button"
+        aria-label=">"
         class="next"
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousDecade() : nextDecade()"
       >
-        <slot name="nextButton">&gt;</slot>
+        <slot name="nextButton"><IconRight /></slot>
       </button>
     </header>
-    <button
-      v-for="year in years"
-      :key="year.timestamp"
-      type="button"
-      class="cell year"
-      :class="{ selected: year.isSelected, disabled: year.isDisabled }"
-      @click.stop="selectYear(year)"
+    <div
+      class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--year"
     >
-      {{ year.year }}
-    </button>
+      <button
+        v-for="year in years"
+        :key="year.timestamp"
+        type="button"
+        class="cell year"
+        :class="{ selected: year.isSelected, disabled: year.isDisabled }"
+        @click.stop="selectYear(year)"
+      >
+        {{ year.year }}
+      </button>
+    </div>
   </div>
 </template>
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
+import IconLeft from './IconChevronLeft.vue'
+import IconRight from './IconChevronRight.vue'
 export default {
+  components: {
+    IconLeft,
+    IconRight,
+  },
   props: {
     showYearView: Boolean,
     selectedDate: Date,
@@ -220,5 +232,6 @@ export default {
     },
   },
 }
-// eslint-disable-next-line
 </script>
+
+<style lang="scss"></style>
