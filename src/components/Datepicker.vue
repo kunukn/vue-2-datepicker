@@ -563,6 +563,10 @@ export default {
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;
+    border-radius: 50%;
+    // display: inline-grid;
+    // place-items: center;
+    // line-height: 1;
 
     &.selected {
       background: var(--vdp-color-theme);
