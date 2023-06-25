@@ -6,14 +6,14 @@
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
-    <header>
+    <header class="header">
       <button
         @click="isRtl ? nextDecade() : previousDecade()"
         type="button"
         class="prev"
         :class="{ disabled: isLeftNavDisabled }"
       >
-        &lt;
+        <slot name="prevButton">&lt;</slot>
       </button>
       <span>{{ getPageDecade }}</span>
       <button
@@ -22,7 +22,8 @@
         class="next"
         :class="{ disabled: isRightNavDisabled }"
       >
-        &gt;
+        
+        <slot name="nextButton">&gt;</slot>
       </button>
     </header>
     <button

@@ -13,7 +13,7 @@
         class="prev"
         :class="{ disabled: isLeftNavDisabled }"
       >
-        &lt;
+        <slot name="prevButton">&lt;</slot>
       </button>
       <button
         type="button"
@@ -30,7 +30,7 @@
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousMonth() : nextMonth()"
       >
-        &gt;
+        <slot name="nextButton">&gt;</slot>
       </button>
     </header>
     <div :class="isRtl ? 'flex-rtl' : ''">

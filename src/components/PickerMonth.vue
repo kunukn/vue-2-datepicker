@@ -13,7 +13,7 @@
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextYear() : previousYear()"
       >
-        &lt;
+        <slot name="prevButton">&lt;</slot>
       </button>
       <button
         type="button"
@@ -29,7 +29,7 @@
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousYear() : nextYear()"
       >
-        &gt;
+        <slot name="nextButton">&gt;</slot>
       </button>
     </header>
     <button

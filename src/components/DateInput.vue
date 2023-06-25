@@ -9,12 +9,14 @@
       :style="{ 'cursor:not-allowed;': disabled }"
       @click="showCalendar"
     >
-      <span :class="{ 'input-group-text': bootstrapStyling }">
-        <i :class="calendarButtonIcon">
-          {{ calendarButtonIconContent }}
-          <span v-if="!calendarButtonIcon">&hellip;</span>
-        </i>
-      </span>
+      <slot name="calendarButton">
+        <span :class="{ 'input-group-text': bootstrapStyling }">
+          <i :class="calendarButtonIcon">
+            {{ calendarButtonIconContent }}
+            <span v-if="!calendarButtonIcon">&hellip;</span>
+          </i>
+        </span>
+      </slot>
     </button>
     <!-- Input -->
     <input
@@ -43,11 +45,13 @@
       :class="{ 'input-group-append': bootstrapStyling }"
       @click="clearDate()"
     >
-      <span :class="{ 'input-group-text': bootstrapStyling }">
-        <i :class="clearButtonIcon">
-          <span v-if="!clearButtonIcon">&times;</span>
-        </i>
-      </span>
+      <slot name="clearButton">
+        <span :class="{ 'input-group-text': bootstrapStyling }">
+          <i :class="clearButtonIcon">
+            <span v-if="!clearButtonIcon">&times;</span>
+          </i>
+        </span>
+      </slot>
     </button>
     <slot name="afterDateInput"></slot>
   </div>
