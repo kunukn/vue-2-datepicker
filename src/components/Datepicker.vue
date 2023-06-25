@@ -49,6 +49,7 @@
         :mondayFirst="mondayFirst"
         :dayCellContent="dayCellContent"
         :useUtc="useUtc"
+        :useDay2char="useDay2char"
         @changedMonth="handleChangedMonthFromDayPicker"
         @selectDate="selectDate"
         @showMonthCalendar="showMonthCalendar"
@@ -69,7 +70,7 @@
         :calendarStyle="calendarStyle"
         :translation="translation"
         :isRtl="isRtl"
-        :use-utc="useUtc"
+        :useUtc="useUtc"
         @selectMonth="selectMonth"
         @showYearCalendar="showYearCalendar"
         @changedYear="setPageDate"
@@ -89,7 +90,7 @@
         :calendarStyle="calendarStyle"
         :translation="translation"
         :isRtl="isRtl"
-        :use-utc="useUtc"
+        :useUtc="useUtc"
         @selectYear="selectYear"
         @changedDecade="setPageDate"
       >
@@ -152,6 +153,7 @@ export default {
     required: Boolean,
     typeable: Boolean,
     useUtc: Boolean,
+    useDay2char: Boolean,
     minimumView: {
       type: String,
       default: 'day',

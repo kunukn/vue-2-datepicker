@@ -38,7 +38,7 @@
         v-for="d in daysOfWeek"
         :key="d.timestamp"
         class="cell day-header"
-        >{{ d }}</span
+        >{{ formatDay(d) }}</span
       >
       <template v-if="blankDays > 0">
         <span
@@ -80,6 +80,7 @@ export default {
     isRtl: Boolean,
     mondayFirst: Boolean,
     useUtc: Boolean,
+    useDay2char: Boolean,
   },
   data() {
     const constructedDateUtils = makeDateUtils(this.useUtc)
@@ -208,6 +209,13 @@ export default {
     },
   },
   methods: {
+    formatDay(d) {
+      if (this.useDay2char) {
+        return (d || '').slice(0, 2)
+      }
+
+      return d
+    },
     selectDate(date) {
       if (date.isDisabled) {
         this.$emit('selectedDisabled', date)

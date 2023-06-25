@@ -6,8 +6,9 @@
       <h3>Inline datepicker, UTC and Monday first</h3>
       <vue-datepicker
         :inline="true"
-        :use-utc="true"
-        :monday-first="true"
+        :useUtc="true"
+        :mondayFirst="true"
+        :useDay2char="true"
       ></vue-datepicker>
       <code> &lt;datepicker :inline="true"&gt;&lt;/datepicker&gt; </code>
     </div>
