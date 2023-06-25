@@ -10,10 +10,13 @@
       <button
         type="button"
         class="prev"
+        aria-label="<"
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextMonth() : previousMonth()"
       >
-        <slot name="prevButton">&lt;</slot>
+        <slot name="prevButton">
+          <IconLeft />
+        </slot>
       </button>
       <button
         type="button"
@@ -26,11 +29,14 @@
       </button>
       <button
         type="button"
+        aria-label=">"
         class="next"
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousMonth() : nextMonth()"
       >
-        <slot name="nextButton">&gt;</slot>
+        <slot name="nextButton">
+          <IconRight />
+        </slot>
       </button>
     </header>
     <div :class="isRtl ? 'flex-rtl' : ''">
@@ -60,7 +66,13 @@
 </template>
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
+import IconLeft from './IconChevronLeft.vue'
+import IconRight from './IconChevronRight.vue'
 export default {
+  components: {
+    IconLeft,
+    IconRight,
+  },
   props: {
     showDayView: Boolean,
     selectedDate: Date,

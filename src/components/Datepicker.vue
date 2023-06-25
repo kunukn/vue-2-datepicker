@@ -469,29 +469,12 @@ export default {
 }
 </script>
 <style lang="scss">
-.vdp-datepicker__calendar header .prev,
-.vdp-datepicker__calendar header .next {
-  width: 14.2857%;
-  float: left;
-  text-indent: -10000px;
-  position: relative;
-}
-
-.vdp-datepicker__calendar header .prev::after,
-.vdp-datepicker__calendar header .next::after {
-  content: '';
-  position: absolute;
-  left: 50%;
-  top: 50%;
-  transform: translateX(-50%) translateY(-50%);
-  border: 6px solid transparent;
-}
-
 .vdp-datepicker {
   --vdp-cell-size: 48px;
   --vdp-color-cal-bg: #fff;
   --vdp-color-theme: #0092bc;
 
+  box-sizing: border-box;
   position: relative;
   text-align: left;
 
@@ -504,6 +487,13 @@ export default {
   }
 }
 
+.vdp-datepicker__calendar header .prev,
+.vdp-datepicker__calendar header .next {
+  width: 14.2857%;
+  float: left;
+  position: relative;
+}
+
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 100;
@@ -514,6 +504,7 @@ export default {
   header {
     display: block;
     line-height: 40px;
+    height: 40px;
 
     span,
     button {
@@ -525,28 +516,14 @@ export default {
     }
 
     .prev {
-      &:after {
-        border-right: 10px solid #000;
-        margin-left: -5px;
-      }
-
       &.disabled {
-        &:after {
-          border-right: 10px solid #ddd;
-        }
+        color: #ddd;
       }
     }
 
     .next {
-      &:after {
-        border-left: 10px solid #000;
-        margin-left: 5px;
-      }
-
       &.disabled {
-        &:after {
-          border-left: 10px solid #ddd;
-        }
+        color: #ddd;
       }
     }
   }

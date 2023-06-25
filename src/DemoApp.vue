@@ -3,7 +3,7 @@
     <h1>Datepicker Examples</h1>
 
     <div class="example">
-      <h3>Inline datepicker, UTC and Monday first</h3>
+      <h3>Inline datepicker, UTC and Monday first, 2 char day</h3>
       <vue-datepicker
         :inline="true"
         :useUtc="true"
