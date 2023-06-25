@@ -48,7 +48,7 @@
         :isRtl="isRtl"
         :mondayFirst="mondayFirst"
         :dayCellContent="dayCellContent"
-        :use-utc="useUtc"
+        :useUtc="useUtc"
         @changedMonth="handleChangedMonthFromDayPicker"
         @selectDate="selectDate"
         @showMonthCalendar="showMonthCalendar"
