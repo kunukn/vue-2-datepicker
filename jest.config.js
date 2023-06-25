@@ -21,8 +21,8 @@ export default {
     '^.+\\.js$': 'babel-jest',
     '.*\\.(vue)$': 'vue-jest',
   },
-  setupFiles: ['<rootDir>/test/setup'],
-  coverageDirectory: '<rootDir>/test/unit/coverage',
+  setupFiles: ['<rootDir>/tests/setup'],
+  coverageDirectory: '<rootDir>/tests/coverage',
   collectCoverageFrom: [
     'src/**/*.{js,vue}',
     '!src/locale/translations/**/*.js'
