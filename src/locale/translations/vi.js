@@ -1,4 +1,4 @@
-import Language from '../Language'
+import { Language } from '../Language'
 
 export default new Language(
   'Vietnamese',

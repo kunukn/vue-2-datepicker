@@ -25,10 +25,10 @@
       @showCalendar="showCalendar"
       @closeCalendar="close"
       @typedDate="setTypedDate"
-      @clearDate="clearDate">
+      @clearDate="clearDate"
+    >
       <slot name="afterDateInput" slot="afterDateInput"></slot>
     </date-input>
-
 
     <!-- Day View -->
     <picker-day
@@ -51,7 +51,8 @@
       @changedMonth="handleChangedMonthFromDayPicker"
       @selectDate="selectDate"
       @showMonthCalendar="showMonthCalendar"
-      @selectedDisabled="selectDisabledDate">
+      @selectedDisabled="selectDisabledDate"
+    >
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
     </picker-day>
 
@@ -70,7 +71,8 @@
       :use-utc="useUtc"
       @selectMonth="selectMonth"
       @showYearCalendar="showYearCalendar"
-      @changedYear="setPageDate">
+      @changedYear="setPageDate"
+    >
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
     </picker-month>
 
@@ -88,42 +90,44 @@
       :isRtl="isRtl"
       :use-utc="useUtc"
       @selectYear="selectYear"
-      @changedDecade="setPageDate">
+      @changedDecade="setPageDate"
+    >
       <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
     </picker-year>
   </div>
 </template>
 <script>
-import en from '../locale/translations/en'
+import enlishLanguage from '../locale/translations/en.js'
 import DateInput from './DateInput.vue'
 import PickerDay from './PickerDay.vue'
 import PickerMonth from './PickerMonth.vue'
 import PickerYear from './PickerYear.vue'
 import utils, { makeDateUtils } from '../utils/DateUtils'
+
 export default {
   components: {
     DateInput,
     PickerDay,
     PickerMonth,
-    PickerYear
+    PickerYear,
   },
   props: {
     value: {
-      validator: val => utils.validateDateInput(val)
+      validator: (val) => utils.validateDateInput(val),
     },
     name: String,
     refName: String,
     id: String,
     format: {
       type: [String, Function],
-      default: 'dd MMM yyyy'
+      default: 'dd MMM yyyy',
     },
     language: {
       type: Object,
-      default: () => en
+      default: () => enlishLanguage,
     },
     openDate: {
-      validator: val => utils.validateDateInput(val)
+      validator: (val) => utils.validateDateInput(val),
     },
     dayCellContent: Function,
     fullMonthName: Boolean,
@@ -148,14 +152,14 @@ export default {
     useUtc: Boolean,
     minimumView: {
       type: String,
-      default: 'day'
+      default: 'day',
     },
     maximumView: {
       type: String,
-      default: 'year'
-    }
+      default: 'year',
+    },
   },
-  data () {
+  data() {
     const startDate = this.openDate ? new Date(this.openDate) : new Date()
     const constructedDateUtils = makeDateUtils(this.useUtc)
     const pageTimestamp = constructedDateUtils.setDate(startDate, 1)
@@ -183,57 +187,57 @@ export default {
        */
       calendarHeight: 0,
       resetTypedDate: new Date(),
-      utils: constructedDateUtils
+      utils: constructedDateUtils,
     }
   },
   watch: {
-    value (value) {
+    value(value) {
       this.setValue(value)
     },
-    openDate () {
+    openDate() {
       this.setPageDate()
     },
-    initialView () {
+    initialView() {
       this.setInitialView()
-    }
+    },
   },
   computed: {
-    computedInitialView () {
+    computedInitialView() {
       if (!this.initialView) {
         return this.minimumView
       }
 
       return this.initialView
     },
-    pageDate () {
+    pageDate() {
       return new Date(this.pageTimestamp)
     },
 
-    translation () {
+    translation() {
       return this.language
     },
 
-    calendarStyle () {
+    calendarStyle() {
       return {
-        position: this.isInline ? 'static' : undefined
+        position: this.isInline ? 'static' : undefined,
       }
     },
-    isOpen () {
+    isOpen() {
       return this.showDayView || this.showMonthView || this.showYearView
     },
-    isInline () {
+    isInline() {
       return !!this.inline
     },
-    isRtl () {
+    isRtl() {
       return this.translation.rtl === true
-    }
+    },
   },
   methods: {
     /**
      * Called in the event that the user navigates to date pages and
      * closes the picker without selecting a date.
      */
-    resetDefaultPageDate () {
+    resetDefaultPageDate() {
       if (this.selectedDate === null) {
         this.setPageDate()
         return
@@ -244,7 +248,7 @@ export default {
      * Effectively a toggle to show/hide the calendar
      * @return {mixed}
      */
-    showCalendar () {
+    showCalendar() {
       if (this.disabled || this.isInline) {
         return false
       }
@@ -256,10 +260,12 @@ export default {
     /**
      * Sets the initial picker page view: day, month or year
      */
-    setInitialView () {
+    setInitialView() {
       const initialView = this.computedInitialView
       if (!this.allowedToShowView(initialView)) {
-        throw new Error(`initialView '${this.initialView}' cannot be rendered based on minimum '${this.minimumView}' and maximum '${this.maximumView}'`)
+        throw new Error(
+          `initialView '${this.initialView}' cannot be rendered based on minimum '${this.minimumView}' and maximum '${this.maximumView}'`
+        )
       }
       switch (initialView) {
         case 'year':
@@ -278,7 +284,7 @@ export default {
      * @param {String} view
      * @return {Boolean}
      */
-    allowedToShowView (view) {
+    allowedToShowView(view) {
       const views = ['day', 'month', 'year']
       const minimumViewIndex = views.indexOf(this.minimumView)
       const maximumViewIndex = views.indexOf(this.maximumView)
@@ -290,7 +296,7 @@ export default {
      * Show the day picker
      * @return {Boolean}
      */
-    showDayCalendar () {
+    showDayCalendar() {
       if (!this.allowedToShowView('day')) {
         return false
       }
@@ -302,7 +308,7 @@ export default {
      * Show the month picker
      * @return {Boolean}
      */
-    showMonthCalendar () {
+    showMonthCalendar() {
       if (!this.allowedToShowView('month')) {
         return false
       }
@@ -314,7 +320,7 @@ export default {
      * Show the year picker
      * @return {Boolean}
      */
-    showYearCalendar () {
+    showYearCalendar() {
       if (!this.allowedToShowView('year')) {
         return false
       }
@@ -326,7 +332,7 @@ export default {
      * Set the selected date
      * @param {Number} timestamp
      */
-    setDate (timestamp) {
+    setDate(timestamp) {
       const date = new Date(timestamp)
       this.selectedDate = date
       this.setPageDate(date)
@@ -336,7 +342,7 @@ export default {
     /**
      * Clear the selected date
      */
-    clearDate () {
+    clearDate() {
       this.selectedDate = null
       this.setPageDate()
       this.$emit('selected', null)
@@ -346,7 +352,7 @@ export default {
     /**
      * @param {Object} date
      */
-    selectDate (date) {
+    selectDate(date) {
       this.setDate(date.timestamp)
       if (!this.isInline) {
         this.close(true)
@@ -356,13 +362,13 @@ export default {
     /**
      * @param {Object} date
      */
-    selectDisabledDate (date) {
+    selectDisabledDate(date) {
       this.$emit('selectedDisabled', date)
     },
     /**
      * @param {Object} month
      */
-    selectMonth (month) {
+    selectMonth(month) {
       const date = new Date(month.timestamp)
       if (this.allowedToShowView('day')) {
         this.setPageDate(date)
@@ -375,7 +381,7 @@ export default {
     /**
      * @param {Object} year
      */
-    selectYear (year) {
+    selectYear(year) {
       const date = new Date(year.timestamp)
       if (this.allowedToShowView('month')) {
         this.setPageDate(date)
@@ -389,7 +395,7 @@ export default {
      * Set the datepicker value
      * @param {Date|String|Number|null} date
      */
-    setValue (date) {
+    setValue(date) {
       if (typeof date === 'string' || typeof date === 'number') {
         let parsed = new Date(date)
         date = isNaN(parsed.valueOf()) ? null : parsed
@@ -405,7 +411,7 @@ export default {
     /**
      * Sets the date that the calendar should open on
      */
-    setPageDate (date) {
+    setPageDate(date) {
       if (!date) {
         if (this.openDate) {
           date = new Date(this.openDate)
@@ -418,21 +424,21 @@ export default {
     /**
      * Handles a month change from the day picker
      */
-    handleChangedMonthFromDayPicker (date) {
+    handleChangedMonthFromDayPicker(date) {
       this.setPageDate(date)
       this.$emit('changedMonth', date)
     },
     /**
      * Set the date from a typedDate event
      */
-    setTypedDate (date) {
+    setTypedDate(date) {
       this.setDate(date.getTime())
     },
     /**
      * Close all calendar layers
      * @param {Boolean} emitEvent - emit close event
      */
-    close (emitEvent) {
+    close(emitEvent) {
       this.showDayView = this.showMonthView = this.showYearView = false
       if (!this.isInline) {
         if (emitEvent) {
@@ -444,22 +450,21 @@ export default {
     /**
      * Initiate the component
      */
-    init () {
+    init() {
       if (this.value) {
         this.setValue(this.value)
       }
       if (this.isInline) {
         this.setInitialView()
       }
-    }
+    },
   },
-  mounted () {
+  mounted() {
     this.init()
-  }
+  },
 }
 // eslint-disable-next-line
-;
 </script>
 <style lang="scss">
-@import '../assets/date-picker.scss'
+@import '../assets/date-picker.scss';
 </style>

@@ -3,11 +3,14 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2' // Vue 2.6.x
 
+console.debug('process.env', process.env)
+
 // https://vitejs.dev/config/
 export default defineConfig({
   plugins: [createVuePlugin(/* options */)],
   resolve: {
     alias: {
+      '~': fileURLToPath(new URL('./', import.meta.url)),
       '@': fileURLToPath(new URL('./src', import.meta.url)),
     },
   },

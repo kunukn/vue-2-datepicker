@@ -1,4 +1,4 @@
-import Language from '../Language'
+import { Language } from '../Language'
 
 export default new Language(
   'Greek',
@@ -6,5 +6,3 @@ export default new Language(
   ['Ιαν', 'Φεβ', 'Μαρ', 'Απρ', 'Μαι', 'Ιουν', 'Ιουλ', 'Αυγ', 'Σεπ', 'Οκτ', 'Νοε', 'Δεκ'],
   ['Κυρ', 'Δευ', 'Τρι', 'Τετ', 'Πεμ', 'Παρ', 'Σαβ']
 )
-// eslint-disable-next-line
-;
