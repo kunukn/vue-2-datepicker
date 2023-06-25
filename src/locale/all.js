@@ -99,7 +99,5 @@ export {
   ur,
   vi,
   zh,
-  zhHK
+  zhHK,
 }
-// eslint-disable-next-line
-;

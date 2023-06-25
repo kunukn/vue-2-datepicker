@@ -251,7 +251,7 @@
 
 <script>
 import VueDatepicker from './components/Datepicker.vue'
-import * as lang from './locale/index.js'
+import * as lang from './locale/all.js'
 
 const state = {
   date1: new Date()

@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import DateUtils, { makeDateUtils } from '@/utils/DateUtils'
-import { en } from '@/locale'
+import { en } from '@/locale/all.js'
 
 describe('DateUtils', () => {
   it('should detect invalid date object', () => {

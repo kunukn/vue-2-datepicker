@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import PickerYear from '@/components/PickerYear.vue'
 import { shallow } from '@vue/test-utils'
-import { en } from '@/locale'
+import { en } from '@/locale/all.js'
 
 describe('PickerYear', () => {
   let wrapper
