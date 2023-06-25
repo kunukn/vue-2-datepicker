@@ -1,8 +1,8 @@
 # Vue 2 Datepicker
 
-[![npm version](https://img.shields.io/npm/v/vue-2-datepicker.svg?style=flat-square)](https://www.npmjs.com/package/vue-2-datepicker)
-[![npm downloads](https://img.shields.io/npm/dm/vue-2-datepicker.svg?style=flat-square)](https://www.npmjs.com/package/vue-2-datepicker)
-[![gzip](https://img.shields.io/bundlephobia/minzip/vue-2-datepicker.svg)](https://bundlephobia.com/result?p=vue-2-datepicker)
+[![npm version](https://img.shields.io/npm/v/@kunukn/vue-2-datepicker.svg?style=flat-square)](https://www.npmjs.com/package/@kunukn/vue-2-datepicker)
+[![npm downloads](https://img.shields.io/npm/dm/@kunukn/vue-2-datepicker.svg?style=flat-square)](https://www.npmjs.com/package/@kunukn/vue-2-datepicker)
+[![gzip](https://img.shields.io/bundlephobia/minzip/@kunukn/vue-2-datepicker.svg)](https://bundlephobia.com/result?p=@kunukn/vue-2-datepicker)
 [![license](https://img.shields.io/github/license/kunukn/vue-2-datepicker.svg)](https://github.com/kunukn/vue-2-datepicker/blob/master/LICENSE)
 
 A datepicker Vue component. Compatible with Vue 2.x
@@ -48,11 +48,11 @@ To view demo examples locally clone the repo and run `yarn install && yarn dev`
 ## Install
 
 ```bash
-yarn add -D vue-2-datepicker
+yarn add -D @kunukn/vue-2-datepicker
 ```
 
 ```js
-import VueDatepicker from 'vue-2-datepicker'
+import VueDatepicker from '@kunukn/vue-2-datepicker'
 
 export default {
   // ...
