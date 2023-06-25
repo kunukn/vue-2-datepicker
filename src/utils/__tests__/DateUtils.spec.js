@@ -1,6 +1,6 @@
 import { describe, it, expect } from 'vitest'
 import DateUtils, { makeDateUtils } from '@/utils/DateUtils'
-import {en} from '@/locale'
+import { en } from '@/locale'
 
 describe('DateUtils', () => {
   it('should detect invalid date object', () => {
@@ -28,18 +28,42 @@ describe('DateUtils', () => {
   })
 
   it('should format date strings correctly in English', () => {
-    expect(DateUtils.formatDate(new Date(2016, 0, 1), 'd MMMM yyyy')).toEqual('1 January 2016')
-    expect(DateUtils.formatDate(new Date(2016, 0, 9), 'dd MMM yyyy')).toEqual('09 Jan 2016')
-    expect(DateUtils.formatDate(new Date(2016, 0, 9), 'dd MMM yy')).toEqual('09 Jan 16')
-    expect(DateUtils.formatDate(new Date(2016, 2, 9), 'yyyy-MM-dd')).toEqual('2016-03-09')
-    expect(DateUtils.formatDate(new Date(2016, 2, 9), 'dsu MMMM yyyy')).toEqual('9th March 2016')
-    expect(DateUtils.formatDate(new Date(2016, 2, 1), 'dsu MMMM yyyy')).toEqual('1st March 2016')
-    expect(DateUtils.formatDate(new Date(2016, 2, 2), 'dsu MMMM yyyy')).toEqual('2nd March 2016')
-    expect(DateUtils.formatDate(new Date(2016, 2, 3), 'dsu MMMM yyyy')).toEqual('3rd March 2016')
-    expect(DateUtils.formatDate(new Date(2016, 7, 1), 'D dsu MMMM yyyy')).toEqual('Mon 1st August 2016')
-    expect(DateUtils.formatDate(new Date(2016, 8, 1), 'D dsu MMMM yyyy')).toEqual('Thu 1st September 2016')
-    expect(DateUtils.formatDate(new Date(2016, 7, 7), 'D dsu MMMM yyyy')).toEqual('Sun 7th August 2016')
-    expect(DateUtils.formatDate(new Date(2016, 11, 2), 'dd MMM yyyy')).toEqual('02 Dec 2016')
+    expect(DateUtils.formatDate(new Date(2016, 0, 1), 'd MMMM yyyy')).toEqual(
+      '1 January 2016'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 0, 9), 'dd MMM yyyy')).toEqual(
+      '09 Jan 2016'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 0, 9), 'dd MMM yy')).toEqual(
+      '09 Jan 16'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 2, 9), 'yyyy-MM-dd')).toEqual(
+      '2016-03-09'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 2, 9), 'dsu MMMM yyyy')).toEqual(
+      '9th March 2016'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 2, 1), 'dsu MMMM yyyy')).toEqual(
+      '1st March 2016'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 2, 2), 'dsu MMMM yyyy')).toEqual(
+      '2nd March 2016'
+    )
+    expect(DateUtils.formatDate(new Date(2016, 2, 3), 'dsu MMMM yyyy')).toEqual(
+      '3rd March 2016'
+    )
+    expect(
+      DateUtils.formatDate(new Date(2016, 7, 1), 'D dsu MMMM yyyy')
+    ).toEqual('Mon 1st August 2016')
+    expect(
+      DateUtils.formatDate(new Date(2016, 8, 1), 'D dsu MMMM yyyy')
+    ).toEqual('Thu 1st September 2016')
+    expect(
+      DateUtils.formatDate(new Date(2016, 7, 7), 'D dsu MMMM yyyy')
+    ).toEqual('Sun 7th August 2016')
+    expect(DateUtils.formatDate(new Date(2016, 11, 2), 'dd MMM yyyy')).toEqual(
+      '02 Dec 2016'
+    )
   })
 
   it('should give the correct day', () => {
@@ -81,11 +105,15 @@ describe('DateUtils', () => {
   })
 
   it('getMonthName accepts a Date object', () => {
-    expect(DateUtils.getMonthName(new Date(2016, 9, 10), en.months)).toEqual('October')
+    expect(DateUtils.getMonthName(new Date(2016, 9, 10), en.months)).toEqual(
+      'October'
+    )
   })
 
   it('getMonthNameAbbr moans if date is not a Date object', () => {
-    expect(() => DateUtils.getMonthNameAbbr('abc', en.months)).toThrow(TypeError)
+    expect(() => DateUtils.getMonthNameAbbr('abc', en.months)).toThrow(
+      TypeError
+    )
   })
 
   it('getMonthNameAbbr complains if missing months array', () => {
@@ -93,7 +121,9 @@ describe('DateUtils', () => {
   })
 
   it('getMonthNameAbbr accepts a Date object', () => {
-    expect(DateUtils.getMonthNameAbbr(new Date(2016, 9, 10), en.monthsAbbr)).toEqual('Oct')
+    expect(
+      DateUtils.getMonthNameAbbr(new Date(2016, 9, 10), en.monthsAbbr)
+    ).toEqual('Oct')
   })
 
   it('getMonthName accepts a number', () => {
@@ -118,8 +148,8 @@ describe('daysInMonth', () => {
   })
 })
 
-const getAmbiguousDate = _ => {
-  const timezoneOffset = ((new Date()).getTimezoneOffset() / 60)
+const getAmbiguousDate = (_) => {
+  const timezoneOffset = new Date().getTimezoneOffset() / 60
   const ambiguousHour = 25 - timezoneOffset
   const ambiguousDate = new Date(2018, 11, 31, ambiguousHour)
   return ambiguousDate

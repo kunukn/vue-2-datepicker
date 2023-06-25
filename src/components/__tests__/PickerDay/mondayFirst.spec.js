@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import PickerDay from '@/components/PickerDay.vue'
-import {shallow} from '@vue/test-utils'
-import {en} from '@/locale'
+import { shallow } from '@vue/test-utils'
+import { en } from '@/locale'
 
 describe('PickerDay: Datepicker with monday as first day of week', () => {
   let wrapper
@@ -10,8 +11,8 @@ describe('PickerDay: Datepicker with monday as first day of week', () => {
         mondayFirst: true,
         translation: en,
         allowedToShowView: () => true,
-        pageDate: new Date(2018, 1, 1)
-      }
+        pageDate: new Date(2018, 1, 1),
+      },
     })
   })
 
@@ -25,14 +26,14 @@ describe('PickerDay: Datepicker with monday as first day of week', () => {
 
   it('should have 6 blankDays when month starts from Sunday', () => {
     wrapper.setProps({
-      pageDate: new Date(2018, 3, 1)
+      pageDate: new Date(2018, 3, 1),
     })
     expect(wrapper.vm.blankDays).toEqual(6)
   })
 
   it('should have no blankDays when month starts from Monday', () => {
     wrapper.setProps({
-      pageDate: new Date(2018, 9, 1)
+      pageDate: new Date(2018, 9, 1),
     })
     expect(wrapper.vm.blankDays).toEqual(0)
   })

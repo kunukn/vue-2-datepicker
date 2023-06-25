@@ -1,3 +1,4 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import Language from '@/locale/Language'
 
 describe('Language class', () => {

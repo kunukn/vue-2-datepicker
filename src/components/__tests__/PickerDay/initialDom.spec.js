@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import PickerDay from '@/components/PickerDay.vue'
-import {shallow} from '@vue/test-utils'
-import {en} from '@/locale'
+import { shallow } from '@vue/test-utils'
+import { en } from '@/locale'
 
 describe('PickerDay: DOM', () => {
   let wrapper
@@ -10,8 +11,8 @@ describe('PickerDay: DOM', () => {
         allowedToShowView: () => true,
         translation: en,
         pageDate: new Date(2018, 1, 1),
-        selectedDate: new Date(2018, 2, 24)
-      }
+        selectedDate: new Date(2018, 2, 24),
+      },
     })
   })
 

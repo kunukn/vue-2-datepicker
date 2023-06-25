@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import PickerYear from '@/components/PickerYear.vue'
-import {shallow} from '@vue/test-utils'
-import {en} from '@/locale'
+import { shallow } from '@vue/test-utils'
+import { en } from '@/locale'
 
 describe('PickerYear', () => {
   let wrapper
@@ -10,15 +11,15 @@ describe('PickerYear', () => {
         allowedToShowView: () => true,
         translation: en,
         pageDate: new Date(2018, 1, 1),
-        selectedDate: new Date(2018, 2, 24)
-      }
+        selectedDate: new Date(2018, 2, 24),
+      },
     })
   })
 
   it('knows the selected year', () => {
     const newDate = new Date(2016, 9, 15)
     wrapper.setProps({
-      selectedDate: newDate
+      selectedDate: newDate,
     })
     expect(wrapper.vm.isSelectedYear(newDate)).toEqual(true)
     expect(wrapper.vm.isSelectedYear(new Date(2017, 1, 1))).toEqual(false)
@@ -36,17 +37,17 @@ describe('PickerYear', () => {
 
   it('formats the decade range', () => {
     wrapper.setProps({
-      pageDate: new Date(2021, 1, 1)
+      pageDate: new Date(2021, 1, 1),
     })
     expect(wrapper.vm.getPageDecade).toEqual('2020 - 2029')
     wrapper.setProps({
-      pageDate: new Date(2001, 1, 1)
+      pageDate: new Date(2001, 1, 1),
     })
     expect(wrapper.vm.getPageDecade).toEqual('2000 - 2009')
   })
 
   it('emits an event when selected', () => {
-    wrapper.vm.selectYear({isDisabled: false})
+    wrapper.vm.selectYear({ isDisabled: false })
     expect(wrapper.emitted().selectYear).toBeTruthy()
   })
 })

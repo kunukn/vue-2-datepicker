@@ -1,5 +1,6 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import Datepicker from '@/components/Datepicker.vue'
-import {shallow} from '@vue/test-utils'
+import { shallow } from '@vue/test-utils'
 
 describe('Datepicker with open date', () => {
   const openDate = new Date(2016, 9, 12)
@@ -7,8 +8,8 @@ describe('Datepicker with open date', () => {
   beforeEach(() => {
     wrapper = shallow(Datepicker, {
       propsData: {
-        openDate: openDate
-      }
+        openDate: openDate,
+      },
     })
   })
 
@@ -17,7 +18,7 @@ describe('Datepicker with open date', () => {
     expect(wrapper.vm.pageDate.getFullYear()).toEqual(2016)
   })
 
-  it('should set pageTimestamp to be first day of open date\'s month', () => {
+  it("should set pageTimestamp to be first day of open date's month", () => {
     const date = new Date(wrapper.vm.pageTimestamp)
     expect(wrapper.vm.openDate.getTime()).toEqual(openDate.getTime())
     wrapper.vm.setPageDate()
@@ -28,12 +29,12 @@ describe('Datepicker with open date', () => {
 
   it('should open with selected date if one is set', () => {
     const newDate = new Date(2018, 10, 9)
-    wrapper.vm.selectDate({timestamp: newDate.getTime()})
+    wrapper.vm.selectDate({ timestamp: newDate.getTime() })
     expect(wrapper.vm.pageDate.getMonth()).toEqual(10)
     expect(wrapper.vm.pageDate.getFullYear()).toEqual(2018)
   })
 
-  it('should show today\'s date if no open date is set', () => {
+  it("should show today's date if no open date is set", () => {
     wrapper = shallow(Datepicker)
     const today = new Date()
     expect(wrapper.vm.pageDate.getMonth()).toEqual(today.getMonth())

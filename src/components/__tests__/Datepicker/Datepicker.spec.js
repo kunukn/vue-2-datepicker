@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import Datepicker from '@/components/Datepicker.vue'
 import DateInput from '@/components/DateInput.vue'
-import {shallow, mount} from '@vue/test-utils'
+import { shallow, mount } from '@vue/test-utils'
 
 describe('Datepicker unmounted', () => {
   it('has a mounted hook', () => {
@@ -26,8 +27,8 @@ describe('Datepicker mounted', () => {
     wrapper = shallow(Datepicker, {
       propsData: {
         format: 'yyyy-MM-dd',
-        value: date
-      }
+        value: date,
+      },
     })
   })
 
@@ -53,8 +54,8 @@ describe('Datepicker mounted', () => {
     const date = new Date(2016, 9, 9)
     const wrapper = shallow(Datepicker, {
       propsData: {
-        format: 'yyyy-MM-dd'
-      }
+        format: 'yyyy-MM-dd',
+      },
     })
     wrapper.vm.setDate(date.getTime())
     expect(wrapper.vm.selectedDate.getTime()).toEqual(date.getTime())
@@ -101,13 +102,13 @@ describe('Datepicker mounted', () => {
 
   it('should emit selectedDisabled on a disabled timestamp', () => {
     const date = new Date(2016, 9, 1)
-    wrapper.vm.selectDisabledDate({timestamp: date.getTime()})
+    wrapper.vm.selectDisabledDate({ timestamp: date.getTime() })
     expect(wrapper.emitted().selectedDisabled).toBeTruthy()
   })
 
   it('can select a day', () => {
     const date = new Date(2016, 9, 1)
-    wrapper.vm.selectDate({timestamp: date.getTime()})
+    wrapper.vm.selectDate({ timestamp: date.getTime() })
     expect(wrapper.vm.pageTimestamp).toEqual(date.getTime())
     expect(wrapper.vm.selectedDate.getMonth()).toEqual(9)
     expect(wrapper.vm.showDayView).toEqual(false)
@@ -116,19 +117,27 @@ describe('Datepicker mounted', () => {
 
   it('can select a month', () => {
     const date = new Date(2016, 9, 9)
-    wrapper.vm.selectMonth({timestamp: date.getTime()})
+    wrapper.vm.selectMonth({ timestamp: date.getTime() })
     expect(wrapper.emitted().changedMonth).toBeTruthy()
-    expect(wrapper.emitted().changedMonth[0][0].timestamp).toEqual(date.getTime())
-    expect(new Date(wrapper.vm.pageTimestamp).getMonth()).toEqual(date.getMonth())
+    expect(wrapper.emitted().changedMonth[0][0].timestamp).toEqual(
+      date.getTime()
+    )
+    expect(new Date(wrapper.vm.pageTimestamp).getMonth()).toEqual(
+      date.getMonth()
+    )
     expect(wrapper.vm.showDayView).toEqual(true)
   })
 
   it('can select a year', () => {
     const date = new Date(2018, 9, 9)
-    wrapper.vm.selectYear({timestamp: date.getTime()})
+    wrapper.vm.selectYear({ timestamp: date.getTime() })
     expect(wrapper.emitted().changedYear).toBeTruthy()
-    expect(wrapper.emitted().changedYear[0][0].timestamp).toEqual(date.getTime())
-    expect(new Date(wrapper.vm.pageTimestamp).getFullYear()).toEqual(date.getFullYear())
+    expect(wrapper.emitted().changedYear[0][0].timestamp).toEqual(
+      date.getTime()
+    )
+    expect(new Date(wrapper.vm.pageTimestamp).getFullYear()).toEqual(
+      date.getFullYear()
+    )
     expect(wrapper.vm.showMonthView).toEqual(true)
   })
 
@@ -165,11 +174,11 @@ describe('Datepicker mounted', () => {
     expect(wrapper.vm.selectedDate).toEqual(today)
   })
 
-  it('watches value', done => {
+  it('watches value', (done) => {
     const wrapper = shallow(Datepicker, {
       propsData: {
-        value: '2018-01-01'
-      }
+        value: '2018-01-01',
+      },
     })
     const spy = jest.spyOn(wrapper.vm, 'setValue')
     wrapper.vm.value = '2018-04-26'
@@ -179,11 +188,11 @@ describe('Datepicker mounted', () => {
     })
   })
 
-  it('watches openDate', done => {
+  it('watches openDate', (done) => {
     const wrapper = shallow(Datepicker, {
       propsData: {
-        openDate: new Date(2018, 0, 1)
-      }
+        openDate: new Date(2018, 0, 1),
+      },
     })
     const spy = jest.spyOn(wrapper.vm, 'setPageDate')
     wrapper.vm.openDate = new Date(2018, 3, 26)
@@ -193,11 +202,11 @@ describe('Datepicker mounted', () => {
     })
   })
 
-  it('watches initialView', done => {
+  it('watches initialView', (done) => {
     const wrapper = shallow(Datepicker, {
       propsData: {
-        initialView: 'day'
-      }
+        initialView: 'day',
+      },
     })
     const spy = jest.spyOn(wrapper.vm, 'setInitialView')
     wrapper.vm.initialView = 'month'
@@ -209,7 +218,7 @@ describe('Datepicker mounted', () => {
 
   it('should emit changedMonth on a month change received from PickerDay', () => {
     const date = new Date(2016, 9, 1)
-    wrapper.vm.handleChangedMonthFromDayPicker({timestamp: date.getTime()})
+    wrapper.vm.handleChangedMonthFromDayPicker({ timestamp: date.getTime() })
     expect(wrapper.emitted().changedMonth).toBeTruthy()
   })
 })
@@ -220,8 +229,8 @@ describe('Datepicker.vue set by string', () => {
     wrapper = shallow(Datepicker, {
       propsData: {
         format: 'yyyy MM dd',
-        value: '2016-02-20'
-      }
+        value: '2016-02-20',
+      },
     })
     const date = new Date('2016-02-20')
     expect(wrapper.vm.selectedDate.getFullYear()).toEqual(date.getFullYear())
@@ -232,8 +241,8 @@ describe('Datepicker.vue set by string', () => {
   it('should nullify malformed value', () => {
     wrapper = shallow(Datepicker, {
       propsData: {
-        value: 'today'
-      }
+        value: 'today',
+      },
     })
     expect(wrapper.vm.selectedDate).toBeNull()
   })
@@ -245,8 +254,8 @@ describe('Datepicker.vue set by timestamp', () => {
     wrapper = shallow(Datepicker, {
       propsData: {
         format: 'yyyy MM dd',
-        value: new Date(Date.UTC(2018, 0, 29)).getTime()
-      }
+        value: new Date(Date.UTC(2018, 0, 29)).getTime(),
+      },
     })
     expect(wrapper.vm.selectedDate.getFullYear()).toEqual(2018)
     expect(wrapper.vm.selectedDate.getMonth()).toEqual(0)
@@ -256,15 +265,15 @@ describe('Datepicker.vue set by timestamp', () => {
 
 describe('Datepicker.vue using UTC', () => {
   let wrapper
-  it('correctly sets the value using UTC', done => {
-    const timezoneOffset = ((new Date()).getTimezoneOffset() / 60)
+  it('correctly sets the value using UTC', (done) => {
+    const timezoneOffset = new Date().getTimezoneOffset() / 60
 
     // this is ambiguous because localzone differs by one day than UTC
     const ambiguousHour = 25 - timezoneOffset
     const ambiguousDate = new Date(2018, 3, 15, ambiguousHour)
     const ambiguousYear = ambiguousDate.getUTCFullYear()
-    const ambiguousMonth = (`0${ambiguousDate.getUTCMonth() + 1}`).slice(-2)
-    const ambiguousDay = (`0${ambiguousDate.getUTCDate()}`).slice(-2)
+    const ambiguousMonth = `0${ambiguousDate.getUTCMonth() + 1}`.slice(-2)
+    const ambiguousDay = `0${ambiguousDate.getUTCDate()}`.slice(-2)
     const UTCString = `${ambiguousYear} ${ambiguousMonth} ${ambiguousDay}`
 
     // It's important to use the `mount` helper here
@@ -272,8 +281,8 @@ describe('Datepicker.vue using UTC', () => {
       propsData: {
         format: 'yyyy MM dd',
         value: ambiguousDate,
-        useUtc: true // This should fail if `useUtc=false`
-      }
+        useUtc: true, // This should fail if `useUtc=false`
+      },
     })
     // It's important to assert the input rendered output
     wrapper.vm.$nextTick(() => {
@@ -297,8 +306,8 @@ describe('Datepicker with initial-view', () => {
   it('should open in Month view', () => {
     wrapper = shallow(Datepicker, {
       propsData: {
-        initialView: 'month'
-      }
+        initialView: 'month',
+      },
     })
     wrapper.vm.showCalendar()
     expect(wrapper.vm.computedInitialView).toEqual('month')
@@ -310,8 +319,8 @@ describe('Datepicker with initial-view', () => {
   it('should open in Year view', () => {
     wrapper = shallow(Datepicker, {
       propsData: {
-        initialView: 'year'
-      }
+        initialView: 'year',
+      },
     })
     wrapper.vm.showCalendar()
     expect(wrapper.vm.computedInitialView).toEqual('year')

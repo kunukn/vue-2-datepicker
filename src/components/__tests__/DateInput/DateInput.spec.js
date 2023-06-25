@@ -1,17 +1,18 @@
+import { describe, it, expect, beforeEach  } from 'vitest'
 import DateInput from '@/components/DateInput.vue'
-import {shallow} from '@vue/test-utils'
-import {en} from '@/locale'
+import { shallowMount, mount } from '@vue/test-utils'
+import { en } from '@/locale'
 
 describe('DateInput', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = shallow(DateInput, {
+    wrapper = mount(DateInput, {
       propsData: {
         selectedDate: new Date(2018, 2, 24),
         format: 'dd MMM yyyy',
-        translation: en
-      }
+        translation: en,
+      },
     })
   })
 
@@ -21,7 +22,7 @@ describe('DateInput', () => {
 
   it('nulls date', () => {
     wrapper.setProps({
-      selectedDate: null
+      selectedDate: null,
     })
     expect(wrapper.vm.formattedValue).toBeNull()
     expect(wrapper.find('input').element.value).toEqual('')
@@ -35,7 +36,7 @@ describe('DateInput', () => {
   it('delegates date formatting', () => {
     wrapper.setProps({
       selectedDate: new Date(2016, 1, 15),
-      format: () => '2016/1/15'
+      format: () => '2016/1/15',
     })
     expect(wrapper.vm.formattedValue).toEqual('2016/1/15')
     expect(wrapper.find('input').element.value).toEqual('2016/1/15')
@@ -48,7 +49,7 @@ describe('DateInput', () => {
 
   it('adds bootstrap classes', () => {
     wrapper.setProps({
-      bootstrapStyling: true
+      bootstrapStyling: true,
     })
     expect(wrapper.find('input').element.classList).toContain('form-control')
   })
@@ -56,7 +57,7 @@ describe('DateInput', () => {
   it('appends bootstrap classes', () => {
     wrapper.setProps({
       inputClass: 'someClass',
-      bootstrapStyling: true
+      bootstrapStyling: true,
     })
     expect(wrapper.find('input').element.classList).toContain('form-control')
     expect(wrapper.find('input').element.classList).toContain('someClass')
@@ -64,14 +65,14 @@ describe('DateInput', () => {
 
   it('can be disabled', () => {
     wrapper.setProps({
-      disabled: true
+      disabled: true,
     })
     expect(wrapper.find('input').attributes().disabled).toBeDefined()
   })
 
   it('accepts a function as a formatter', () => {
     wrapper.setMethods({
-      format: () => '!'
+      format: () => '!',
     })
     expect(wrapper.find('input').element.value).toEqual('!')
   })

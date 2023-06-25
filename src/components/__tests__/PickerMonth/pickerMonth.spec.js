@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import PickerMonth from '@/components/PickerMonth.vue'
-import {shallow} from '@vue/test-utils'
-import {en} from '@/locale'
+import { shallow } from '@vue/test-utils'
+import { en } from '@/locale'
 
 describe('PickerMonth', () => {
   let wrapper
@@ -10,15 +11,15 @@ describe('PickerMonth', () => {
         allowedToShowView: () => true,
         translation: en,
         pageDate: new Date(2018, 1, 1),
-        selectedDate: new Date(2018, 2, 24)
-      }
+        selectedDate: new Date(2018, 2, 24),
+      },
     })
   })
 
   it('knows the selected month', () => {
     const newDate = new Date(2016, 9, 15)
     wrapper.setProps({
-      selectedDate: newDate
+      selectedDate: newDate,
     })
     expect(wrapper.vm.isSelectedMonth(newDate)).toEqual(true)
     expect(wrapper.vm.isSelectedMonth(new Date(2017, 1, 1))).toEqual(false)
@@ -36,7 +37,7 @@ describe('PickerMonth', () => {
 
   it('emits date on selection', () => {
     const time = new Date().getTime()
-    wrapper.vm.selectMonth({timestamp: time})
+    wrapper.vm.selectMonth({ timestamp: time })
     expect(wrapper.emitted().selectMonth).toBeTruthy()
     expect(wrapper.emitted().selectMonth[0][0].timestamp).toEqual(time)
   })

@@ -1,6 +1,7 @@
+import { describe, it, expect, beforeEach } from 'vitest'
 import PickerDay from '@/components/PickerDay.vue'
-import {shallow} from '@vue/test-utils'
-import {en} from '@/locale'
+import { shallow } from '@vue/test-utils'
+import { en } from '@/locale'
 
 describe('PickerDay: DOM', () => {
   let wrapper
@@ -10,22 +11,22 @@ describe('PickerDay: DOM', () => {
         allowedToShowView: () => true,
         translation: en,
         pageDate: new Date(2018, 1, 1),
-        selectedDate: new Date(2018, 2, 24)
-      }
+        selectedDate: new Date(2018, 2, 24),
+      },
     })
   })
 
   it('knows the selected date', () => {
     const newDate = new Date(2016, 9, 15)
     wrapper.setProps({
-      selectedDate: newDate
+      selectedDate: newDate,
     })
     expect(wrapper.vm.isSelectedDate(newDate)).toEqual(true)
     expect(wrapper.vm.isSelectedDate(new Date(2017, 1, 1))).toEqual(false)
   })
 
   it('emits an event when selected', () => {
-    wrapper.vm.selectDate({isDisabled: false})
+    wrapper.vm.selectDate({ isDisabled: false })
     expect(wrapper.emitted().selectDate).toBeTruthy()
   })
 
