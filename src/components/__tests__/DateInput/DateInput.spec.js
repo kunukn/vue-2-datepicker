@@ -1,13 +1,13 @@
-import { describe, it, expect, beforeEach  } from 'vitest'
+import { describe, it, expect, beforeEach } from 'vitest'
 import DateInput from '@/components/DateInput.vue'
 import { shallowMount, mount } from '@vue/test-utils'
-import { en } from '@/locale/all.js'
+import en from '@/locale/translations/en.js'
 
 describe('DateInput', () => {
   let wrapper
 
   beforeEach(() => {
-    wrapper = mount(DateInput, {
+    wrapper = shallowMount(DateInput, {
       propsData: {
         selectedDate: new Date(2018, 2, 24),
         format: 'dd MMM yyyy',
@@ -25,12 +25,12 @@ describe('DateInput', () => {
       selectedDate: null,
     })
     expect(wrapper.vm.formattedValue).toBeNull()
-    expect(wrapper.find('input').element.value).toEqual('')
+    expect(wrapper.findComponent('input').element.value).toEqual('')
   })
 
   it('formats date', () => {
     expect(wrapper.vm.formattedValue).toEqual('24 Mar 2018')
-    expect(wrapper.find('input').element.value).toEqual('24 Mar 2018')
+    expect(wrapper.findComponent('input').element.value).toEqual('24 Mar 2018')
   })
 
   it('delegates date formatting', () => {
@@ -39,7 +39,7 @@ describe('DateInput', () => {
       format: () => '2016/1/15',
     })
     expect(wrapper.vm.formattedValue).toEqual('2016/1/15')
-    expect(wrapper.find('input').element.value).toEqual('2016/1/15')
+    expect(wrapper.findComponent('input').element.value).toEqual('2016/1/15')
   })
 
   it('emits showCalendar', () => {
@@ -51,7 +51,9 @@ describe('DateInput', () => {
     wrapper.setProps({
       bootstrapStyling: true,
     })
-    expect(wrapper.find('input').element.classList).toContain('form-control')
+    expect(wrapper.findComponent('input').element.classList).toContain(
+      'form-control'
+    )
   })
 
   it('appends bootstrap classes', () => {
@@ -59,26 +61,30 @@ describe('DateInput', () => {
       inputClass: 'someClass',
       bootstrapStyling: true,
     })
-    expect(wrapper.find('input').element.classList).toContain('form-control')
-    expect(wrapper.find('input').element.classList).toContain('someClass')
+    expect(wrapper.findComponent('input').element.classList).toContain(
+      'form-control'
+    )
+    expect(wrapper.findComponent('input').element.classList).toContain(
+      'someClass'
+    )
   })
 
   it('can be disabled', () => {
     wrapper.setProps({
       disabled: true,
     })
-    expect(wrapper.find('input').attributes().disabled).toBeDefined()
+    expect(wrapper.findComponent('input').attributes().disabled).toBeDefined()
   })
 
   it('accepts a function as a formatter', () => {
     wrapper.setMethods({
       format: () => '!',
     })
-    expect(wrapper.find('input').element.value).toEqual('!')
+    expect(wrapper.findComponent('input').element.value).toEqual('!')
   })
 
   it('triggers closeCalendar on blur', () => {
-    wrapper.find('input').trigger('blur')
+    wrapper.findComponent('input').trigger('blur')
     expect(wrapper.emitted('closeCalendar')).toBeTruthy()
   })
 })

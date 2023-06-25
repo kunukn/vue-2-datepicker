@@ -3,7 +3,7 @@ import { resolve } from 'path'
 import { defineConfig } from 'vite'
 import { createVuePlugin } from 'vite-plugin-vue2' // Vue 2.6.x
 
-console.debug('process.env', process.env)
+console.debug('process.env.NODE_ENV', process.env.NODE_ENV)
 
 // https://vitejs.dev/config/
 export default defineConfig({
