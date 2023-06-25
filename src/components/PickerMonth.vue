@@ -6,7 +6,7 @@
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
-    <header>
+    <header class="vdp-datepicker__header">
       <button
         type="button"
         class="prev"

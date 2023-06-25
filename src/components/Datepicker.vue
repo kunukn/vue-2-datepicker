@@ -31,69 +31,71 @@
     </DateInput>
 
     <!-- Day View -->
-    <PickerDay
-      v-if="allowedToShowView('day')"
-      :pageDate="pageDate"
-      :selectedDate="selectedDate"
-      :showDayView="showDayView"
-      :fullMonthName="fullMonthName"
-      :allowedToShowView="allowedToShowView"
-      :disabledDates="disabledDates"
-      :highlighted="highlighted"
-      :calendarClass="calendarClass"
-      :calendarStyle="calendarStyle"
-      :translation="translation"
-      :pageTimestamp="pageTimestamp"
-      :isRtl="isRtl"
-      :mondayFirst="mondayFirst"
-      :dayCellContent="dayCellContent"
-      :use-utc="useUtc"
-      @changedMonth="handleChangedMonthFromDayPicker"
-      @selectDate="selectDate"
-      @showMonthCalendar="showMonthCalendar"
-      @selectedDisabled="selectDisabledDate"
-    >
-      <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-    </PickerDay>
+    <div class="vdp-datepicker__body">
+      <PickerDay
+        v-if="allowedToShowView('day')"
+        :pageDate="pageDate"
+        :selectedDate="selectedDate"
+        :showDayView="showDayView"
+        :fullMonthName="fullMonthName"
+        :allowedToShowView="allowedToShowView"
+        :disabledDates="disabledDates"
+        :highlighted="highlighted"
+        :calendarClass="calendarClass"
+        :calendarStyle="calendarStyle"
+        :translation="translation"
+        :pageTimestamp="pageTimestamp"
+        :isRtl="isRtl"
+        :mondayFirst="mondayFirst"
+        :dayCellContent="dayCellContent"
+        :use-utc="useUtc"
+        @changedMonth="handleChangedMonthFromDayPicker"
+        @selectDate="selectDate"
+        @showMonthCalendar="showMonthCalendar"
+        @selectedDisabled="selectDisabledDate"
+      >
+        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+      </PickerDay>
 
-    <!-- Month View -->
-    <PickerMonth
-      v-if="allowedToShowView('month')"
-      :pageDate="pageDate"
-      :selectedDate="selectedDate"
-      :showMonthView="showMonthView"
-      :allowedToShowView="allowedToShowView"
-      :disabledDates="disabledDates"
-      :calendarClass="calendarClass"
-      :calendarStyle="calendarStyle"
-      :translation="translation"
-      :isRtl="isRtl"
-      :use-utc="useUtc"
-      @selectMonth="selectMonth"
-      @showYearCalendar="showYearCalendar"
-      @changedYear="setPageDate"
-    >
-      <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-    </PickerMonth>
+      <!-- Month View -->
+      <PickerMonth
+        v-if="allowedToShowView('month')"
+        :pageDate="pageDate"
+        :selectedDate="selectedDate"
+        :showMonthView="showMonthView"
+        :allowedToShowView="allowedToShowView"
+        :disabledDates="disabledDates"
+        :calendarClass="calendarClass"
+        :calendarStyle="calendarStyle"
+        :translation="translation"
+        :isRtl="isRtl"
+        :use-utc="useUtc"
+        @selectMonth="selectMonth"
+        @showYearCalendar="showYearCalendar"
+        @changedYear="setPageDate"
+      >
+        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+      </PickerMonth>
 
-    <!-- Year View -->
-    <PickerYear
-      v-if="allowedToShowView('year')"
-      :pageDate="pageDate"
-      :selectedDate="selectedDate"
-      :showYearView="showYearView"
-      :allowedToShowView="allowedToShowView"
-      :disabledDates="disabledDates"
-      :calendarClass="calendarClass"
-      :calendarStyle="calendarStyle"
-      :translation="translation"
-      :isRtl="isRtl"
-      :use-utc="useUtc"
-      @selectYear="selectYear"
-      @changedDecade="setPageDate"
-    >
-      <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
-    </PickerYear>
+      <!-- Year View -->
+      <PickerYear
+        v-if="allowedToShowView('year')"
+        :pageDate="pageDate"
+        :selectedDate="selectedDate"
+        :showYearView="showYearView"
+        :allowedToShowView="allowedToShowView"
+        :disabledDates="disabledDates"
+        :calendarClass="calendarClass"
+        :calendarStyle="calendarStyle"
+        :translation="translation"
+        :isRtl="isRtl"
+        :use-utc="useUtc"
+        @selectYear="selectYear"
+        @changedDecade="setPageDate"
+      >
+        <slot name="beforeCalendarHeader" slot="beforeCalendarHeader"></slot>
+      </PickerYear>
+    </div>
   </div>
 </template>
 <script>
@@ -563,10 +565,18 @@ export default {
     text-align: center;
     vertical-align: middle;
     border: 1px solid transparent;
-    border-radius: 50%;
+
     // display: inline-grid;
     // place-items: center;
     // line-height: 1;
+
+    &.day {
+      border-radius: 50%;
+    }
+    &.month {
+    }
+    &.year {
+    }
 
     &.selected {
       background: var(--vdp-color-theme);

@@ -6,7 +6,7 @@
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
-    <header class="header">
+    <header class="vdp-datepicker__header">
       <button
         @click="isRtl ? nextDecade() : previousDecade()"
         type="button"
