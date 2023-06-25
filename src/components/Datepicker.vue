@@ -483,7 +483,8 @@ export default {
 }
 
 .vdp-datepicker {
-  // --vdp-color-cal-bg:
+  --vdp-color-cal-bg: #fff;
+  --vdp-color-theme: #0092bc;
 
   position: relative;
   text-align: left;
@@ -500,8 +501,8 @@ export default {
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 100;
-  background: var(--vdp-color-cal-bg, #fff);
-  max-width: 320px;
+  background: var(--vdp-color-cal-bg);
+  width: 300px;
   border: 1px solid #ccc;
 
   header {
@@ -557,6 +558,7 @@ export default {
     display: inline-block;
     padding: 0 5px;
     width: 14.285714285714286%;
+    // width: 40px;
     height: 40px;
     line-height: 40px;
     text-align: center;
@@ -564,12 +566,14 @@ export default {
     border: 1px solid transparent;
 
     &.selected {
-      background: #4bd;
+      background: var(--vdp-color-theme);
+      color: white;
+
       &:hover {
-        background: #4bd;
+        background: var(--vdp-color-theme);
       }
       &.highlighted {
-        background: #4bd;
+        background: var(--vdp-color-theme);
       }
     }
     &.highlighted {
@@ -613,7 +617,7 @@ export default {
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
-  border: 1px solid #4bd;
+  border: 1px solid var(--vdp-color-theme);
 }
 .vdp-datepicker__calendar .month,
 .vdp-datepicker__calendar .year {
