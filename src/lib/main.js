@@ -1,2 +1,2 @@
-import Datepicker from '../components/Datepicker.vue'
-export { Datepicker }
+import VueDatepicker from '../components/Datepicker.vue'
+export { VueDatepicker }
