@@ -72,7 +72,7 @@ yarn add -D @kunukn/vue-2-datepicker
 
 ```js
 import Datepicker from '@kunukn/vue-2-datepicker'
-import "@kunukn/vue-2-datepicker/dist/date-picker.css"
+import '@kunukn/vue-2-datepicker/dist/date-picker.css'
 
 export default {
   // ...
@@ -85,8 +85,8 @@ export default {
 
 # Size
 
-| name                     | size   | gzip    |
-| ------------------------ | ------ | ------- |
-| vue-2-datepicker.css     | ~3 kB  | ~0.7 kB |
-| vue-2-datepicker.js      | ~45 kB | ~8.8 kB |
-| vue-2-datepicker.umd.cjs | ~29 kB | ~6.6 kB |
+| name                     | size    | gzip    |
+| ------------------------ | ------- | ------- |
+| vue-2-datepicker.css     | ~3.2 kB | ~0.8 kB |
+| vue-2-datepicker.js      | ~49 kB  | ~9.6 kB |
+| vue-2-datepicker.umd.cjs | ~31 kB  | ~7.2 kB |
