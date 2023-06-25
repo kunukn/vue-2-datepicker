@@ -52,12 +52,12 @@ yarn add -D @kunukn/vue-2-datepicker
 ```
 
 ```js
-import VueDatepicker from '@kunukn/vue-2-datepicker'
+import Datepicker from '@kunukn/vue-2-datepicker'
 
 export default {
   // ...
   components: {
-    VueDatepicker,
+    Datepicker,
   },
   // ...
 }
