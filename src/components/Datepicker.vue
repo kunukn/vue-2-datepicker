@@ -212,7 +212,7 @@ export default {
 
     calendarStyle() {
       return {
-        position: this.isInline ? 'static' : undefined,
+        position: this.isInline ? 'relative' : undefined,
       }
     },
     isOpen() {
