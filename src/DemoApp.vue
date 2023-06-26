@@ -215,8 +215,8 @@
       <div class="settings">
         <h5>Settings</h5>
         <select v-model="language">
-          <option v-for="(language, key) in languages" :key="key" :value="key">
-            {{ language.language }}
+          <option v-for="(l, index) in languages" :key="index" :value="index">
+            {{ l.language }}
           </option>
         </select>
       </div>

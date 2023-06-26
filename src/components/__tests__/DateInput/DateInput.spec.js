@@ -1,6 +1,6 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import DateInput from '@/components/DateInput.vue'
-import { shallowMount, mount } from '@vue/test-utils'
+import { shallowMount } from '@vue/test-utils'
 import en from '@/locale/translations/en.js'
 
 describe('DateInput', () => {
