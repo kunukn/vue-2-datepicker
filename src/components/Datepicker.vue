@@ -527,10 +527,6 @@ export default {
       width: var(--vdp-cell-size);
     }
 
-    &.day-header {
-      width: var(--vdp-cell-size);
-    }
-
     &.month {
       border-radius: 0;
     }
@@ -569,6 +565,7 @@ export default {
     }
 
     &.day-header {
+      width: var(--vdp-cell-size);
       font-size: var(--vdp-day-header-font-size);
       white-space: nowrap;
       cursor: inherit;
