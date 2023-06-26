@@ -475,6 +475,9 @@ export default {
   --vdp-color-theme: #0092bc;
   --vdp-color-border: #ccc;
   --vdp-color-disabled: #ddd;
+  --vdp-color-button-disabled: #999;
+  --vdp-color-header-button-hover: #eee;
+  --vdp-color-header-bg: #fff;
 
   box-sizing: border-box;
   position: relative;
@@ -516,6 +519,7 @@ export default {
     vertical-align: middle;
     border: 1px solid transparent;
     background: inherit;
+    padding: 0;
 
     &.day {
       border-radius: 50%;
@@ -577,7 +581,7 @@ export default {
 
 .vdp-datepicker__header {
   height: var(--vdp-cell-size);
-  background: white;
+  background: var(--vdp-color-header-bg);
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -585,6 +589,8 @@ export default {
 
   > :nth-child(2) {
     flex: 1;
+    display: grid;
+    place-items: center;
   }
 
   > * {
@@ -592,6 +598,7 @@ export default {
     text-align: center;
     background: inherit;
     height: 100%;
+    margin: 0;
   }
 
   > .prev,
@@ -621,7 +628,7 @@ export default {
 .vdp-datepicker__calendar header .prev:not(.disabled):hover,
 .vdp-datepicker__calendar header .next:not(.disabled):hover,
 .vdp-datepicker__calendar header .up:not(.disabled):hover {
-  background: #eee;
+  background: var(--vdp-color-header-button-hover);
 }
 
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,
@@ -633,7 +640,7 @@ export default {
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
-  border: 1px solid var(--vdp-color-theme);
+  border-color: var(--vdp-color-theme);
 }
 
 .vdp-datepicker__calendar .month,
@@ -649,7 +656,7 @@ export default {
 
 .vdp-datepicker__clear-button.disabled,
 .vdp-datepicker__calendar-button.disabled {
-  color: #999;
+  color: var(--vdp-color-button-disabled);
   cursor: default;
 }
 </style>

@@ -16,7 +16,7 @@
       >
         <slot name="prevButton"><IconLeft /></slot>
       </button>
-      <span>{{ getPageDecade }}</span>
+      <p>{{ getPageDecade }}</p>
       <button
         type="button"
         aria-label=">"
