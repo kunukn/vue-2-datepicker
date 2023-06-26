@@ -422,7 +422,7 @@ html {
 
 body {
   font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
-  padding: 1rem 2rem 2rem;
+  padding: 1rem;
   min-height: 100%;
   position: relative;
 }
