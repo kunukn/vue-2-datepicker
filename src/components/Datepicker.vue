@@ -473,17 +473,19 @@ export default {
   --vdp-cell-size: 48px;
   --vdp-color-theme-bg: #fff;
   --vdp-color-theme: #0092bc;
+  --vdp-color-border: #ccc;
+  --vdp-color-disabled: #ddd;
 
   box-sizing: border-box;
   position: relative;
   text-align: left;
 
-  * {
-    box-sizing: border-box;
-  }
-
   &.rtl {
     direction: rtl;
+  }
+
+  * {
+    box-sizing: border-box;
   }
 }
 
@@ -492,10 +494,10 @@ export default {
   z-index: 1;
   background: var(--vdp-color-theme-bg);
   width: calc(7 * var(--vdp-cell-size) + 2px); // plus the border
-  border: 1px solid #ccc;
+  border: 1px solid var(--vdp-color-border);
 
   .disabled {
-    color: #ddd;
+    color: var(--vdp-color-disabled);
     cursor: default;
   }
 
@@ -507,7 +509,7 @@ export default {
 
   .cell {
     display: inline-block;
-    width: 14.285714285714286%;
+    width: calc(14.285714285714286%);
     height: var(--vdp-cell-size);
     line-height: var(--vdp-cell-size);
     text-align: center;
@@ -517,6 +519,11 @@ export default {
 
     &.day {
       border-radius: 50%;
+      width: var(--vdp-cell-size);
+    }
+
+    &.day-header {
+      width: var(--vdp-cell-size);
     }
 
     &.month {
@@ -592,7 +599,7 @@ export default {
     min-width: var(--vdp-cell-size);
 
     &.disabled {
-      color: #ddd;
+      color: var(--vdp-color-disabled);
     }
   }
 }
