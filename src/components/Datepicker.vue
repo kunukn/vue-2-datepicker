@@ -489,7 +489,7 @@ export default {
 
 .vdp-datepicker__calendar {
   position: absolute;
-  z-index: 100;
+  z-index: 1;
   background: var(--vdp-color-theme-bg);
   width: calc(7 * var(--vdp-cell-size) + 2px); // plus the border
   border: 1px solid #ccc;

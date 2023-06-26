@@ -367,7 +367,7 @@ export default {
       }
       let highlightedDays = elem.target.value
         .split(',')
-        .map((day) => parseInt(day))
+        .map((day) => parseInt(day, 10))
       this.highlighted = {
         from: this.highlighted.from,
         to: this.highlighted.to,
@@ -380,7 +380,7 @@ export default {
       }
       let disabledDays = elem.target.value
         .split(',')
-        .map((day) => parseInt(day))
+        .map((day) => parseInt(day, 10))
       this.disabledDates = {
         from: this.disabledDates.from,
         to: this.disabledDates.to,
