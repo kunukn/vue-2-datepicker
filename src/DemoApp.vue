@@ -4,15 +4,10 @@
 
     <div class="example">
       <h3>Inline datepicker, UTC and Monday first, 2 char day</h3>
-      <datepicker
-        :inline="true"
-        :useUtc="true"
-        :mondayFirst="true"
-        :useDay2char="true"
-      ></datepicker>
+      <datepicker inline useUtc mondayFirst useDay2char></datepicker>
       <code>
-        &lt;datepicker :inline="true" :useUtc="true" :mondayFirst="true"
-        :useDay2char="true"&gt;&lt;/datepicker&gt;
+        &lt;datepicker inline useUtc mondayFirst
+        useDay2char&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
