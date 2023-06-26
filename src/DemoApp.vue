@@ -422,9 +422,13 @@ html {
 
 body {
   font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
-  padding: 1rem;
   min-height: 100%;
   position: relative;
+  padding: 0.5rem;
+
+  @media (min-width: 400px) {
+    padding: 1rem;
+  }
 }
 
 input,
@@ -438,8 +442,12 @@ select {
 .example {
   background: #fcfcfc;
   border: 1px solid #ddd;
-  padding: 0 1rem 1rem;
+  padding: 0 0 1rem;
   margin-bottom: 2rem;
+
+  @media (min-width: 400px) {
+    padding: 0 1rem 1rem;
+  }
 }
 
 code,
