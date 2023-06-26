@@ -36,7 +36,7 @@ To view a demo online:
 
 <tr>
 <td>Codesandbox</td>
-<td><img width="24" height="24" src="ui-library-logo/Vue-logo.svg"/></td>
+<td><img width="24" height="24" src="./ui-library-logo/Vue-logo.svg"/></td>
 <td><a href="https://d9xtk7.csb.app/" target="_blank">View</a></td>
 <td><a href="https://codesandbox.io/s/vue-2-datepicker-demo-d9xtk7" target="_blank" >Edit</a></td>
 </tr>
