@@ -23,5 +23,6 @@ module.exports = {
     'declaration-property-value-no-unknown': null,
     'custom-property-pattern': null,
     'custom-property-empty-line-before': null, // Allow usage in template
+    'selector-not-notation': 'simple',
   },
 }
