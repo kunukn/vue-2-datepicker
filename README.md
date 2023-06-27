@@ -37,6 +37,7 @@ Vue 3 is out of scope in this repo.
   - [Slots](#slots)
       - [beforeCalendarHeader](#beforecalendarheader)
       - [afterDateInput](#afterdateinput)
+      - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
 
@@ -368,7 +369,7 @@ dates to highlight.
 
 ## Slots
 
-Slots will help you customize content. .
+Slots will help you customize content.
 
 #### beforeCalendarHeader
 
@@ -393,6 +394,17 @@ To implement some custom styling (for instance to add an animated placeholder) o
   <span slot="afterDateInput" class="animated-placeholder">
     Choose a Date
   </span>
+</datepicker>
+```
+
+#### prevButton and nextButton
+
+Enables to apply custom prev and next button design.
+
+```html
+<datepicker>
+  <span slot="prevButton">👈</span>
+  <span slot="nextButton">👉</span>
 </datepicker>
 ```
 
