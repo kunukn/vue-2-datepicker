@@ -71,7 +71,19 @@
       ></datepicker>
       <code>
         &lt;datepicker :weekdayDisplay="{ mo: '1', tu: '2', we: '3', th: '4',
-        fr: '5', sa: '6', su: '7', }"&gt;&lt;/datepicker&gt;
+        fr: '5', sa: '6', su: '7' }"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
+      <h3>Slots</h3>
+      <datepicker>
+        <template #prevButton> 👈 </template>
+        <template #nextButton> 👉 </template>
+      </datepicker>
+      <code>
+        &lt;datepicker&gt; &lt;template #prevButton&gt; 👈 &lt;/template&gt;
+        &lt;template #nextButton&gt; 👉 &lt;/template&gt; &lt;/datepicker&gt;
       </code>
     </div>
 
