@@ -34,7 +34,7 @@
       <!-- Day View -->
       <PickerDay
         v-if="allowedToShowView('day')"
-        :dayFormatter="dayFormatter"
+        :formatter="dayFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showDayView="showDayView"
@@ -64,7 +64,7 @@
       <!-- Month View -->
       <PickerMonth
         v-if="allowedToShowView('month')"
-        :monthFormatter="monthFormatter"
+        :formatter="monthFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showMonthView="showMonthView"
@@ -87,7 +87,7 @@
       <!-- Year View -->
       <PickerYear
         v-if="allowedToShowView('year')"
-        :yearFormatter="yearFormatter"
+        :formatter="yearFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showYearView="showYearView"

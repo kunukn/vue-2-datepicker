@@ -56,7 +56,7 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   props: {
-    monthFormatter: Function,
+    formatter: Function,
     showMonthView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -128,6 +128,13 @@ export default {
     },
   },
   methods: {
+    format(value) {
+      if (this.formatter) {
+        return this.formatter(value)
+      }
+
+      return value
+    },
     /**
      * Emits a selectMonth event
      * @param {Object} month

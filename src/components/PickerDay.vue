@@ -55,7 +55,7 @@
       </template>
       <template v-else>
         <span v-for="d in daysOfWeek" :key="d.timestamp" class="cell day-header"
-          >{{ formatDay(d) }}
+          >{{ format(d) }}
         </span>
       </template>
 
@@ -84,7 +84,7 @@ import { makeDateUtils } from '../utils/DateUtils'
 export default {
   components: {},
   props: {
-    dayFormatter: Function,
+    formatter: Function,
     showDayView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -232,12 +232,12 @@ export default {
     },
   },
   methods: {
-    formatDay(d) {
-      if (this.dayFormatter) {
-        return this.dayFormatter(d)
+    format(value) {
+      if (this.formatter) {
+        return this.formatter(value)
       }
 
-      return d
+      return value
     },
     selectDate(date) {
       if (date.isDisabled) {
