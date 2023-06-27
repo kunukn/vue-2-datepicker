@@ -1,5 +1,5 @@
 import { describe, it, expect } from 'vitest'
-import Language from '@/locale/Language'
+import Language from '@/locale/translations/_Language'
 
 describe('Language class', () => {
   const days = ['m', 't', 'w', 't', 'f', 's', 's']
