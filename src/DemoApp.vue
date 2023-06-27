@@ -232,6 +232,14 @@
     </div>
 
     <div class="example">
+      <h3>RTL datepicker English</h3>
+      <datepicker useRtl :language="languages.en"></datepicker>
+      <code>
+        &lt;datepicker useRtl :language="languages.en"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
       <h3>Day view only</h3>
       <datepicker minimumView="day" maximumView="day"></datepicker>
       <code>

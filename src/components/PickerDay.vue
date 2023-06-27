@@ -20,15 +20,19 @@
         </slot>
       </button>
       <button
+        v-if="allowedToShowView('month')"
         type="button"
         class="day__month_btn"
         :class="allowedToShowView('month') ? 'up' : ''"
-        :disabled="!allowedToShowView('month')"
         @click="showMonthCalendar"
       >
         {{ isYmd ? currYearName : currMonthName }}
         {{ isYmd ? currMonthName : currYearName }}
       </button>
+      <span v-else>
+        {{ isYmd ? currYearName : currMonthName }}
+        {{ isYmd ? currMonthName : currYearName }}
+      </span>
       <button
         type="button"
         aria-label=">"

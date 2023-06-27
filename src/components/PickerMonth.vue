@@ -17,14 +17,15 @@
         <slot name="prevButton"><IconLeft /></slot>
       </button>
       <button
+        v-if="allowedToShowView('year')"
         type="button"
         class="month__year_btn"
         :class="allowedToShowView('year') ? 'up' : ''"
-        :disabled="!allowedToShowView('year')"
         @click="showYearCalendar"
       >
         {{ pageYearName }}
       </button>
+      <span v-else class="month__year_btn">{{ pageYearName }}</span>
       <button
         type="button"
         aria-label=">"

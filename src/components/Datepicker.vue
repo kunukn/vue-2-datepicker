@@ -154,6 +154,10 @@ export default {
     typeable: Boolean,
     useUtc: Boolean,
     useDay2char: Boolean,
+    useRtl: {
+      type: Boolean,
+      default: null,
+    },
     minimumView: {
       type: String,
       default: 'day',
@@ -222,6 +226,10 @@ export default {
       return !!this.inline
     },
     isRtl() {
+      if (this.useRtl != null) {
+        return this.useRtl
+      }
+
       return this.translation.rtl === true
     },
   },
