@@ -1,7 +1,8 @@
 <template>
   <div
     v-show="showDayView"
-    :class="[calendarClass, 'vdp-datepicker__calendar']"
+    class="vdp-datepicker__calendar"
+    :class="[calendarClass]"
     :style="calendarStyle"
     @mousedown.prevent
   >

@@ -607,6 +607,18 @@ export default {
       color: var(--vdp-color-disabled);
     }
   }
+
+  :is(.prev:not(.disabled), .next:not(.disabled), .up:not(.disabled)) {
+    cursor: pointer;
+  }
+
+  :is(
+      .prev:not(.disabled):hover,
+      .next:not(.disabled):hover,
+      .up:not(.disabled):hover
+    ) {
+    background: var(--vdp-color-header-button-hover);
+  }
 }
 
 .vdp-datepicker__pick-buttons {
@@ -615,22 +627,6 @@ export default {
   > button {
     background: inherit;
   }
-}
-
-.vdp-datepicker__calendar
-  header
-  :is(.prev:not(.disabled), .next:not(.disabled), .up:not(.disabled)) {
-  cursor: pointer;
-}
-
-.vdp-datepicker__calendar
-  header
-  :is(
-    .prev:not(.disabled):hover,
-    .next:not(.disabled):hover,
-    .up:not(.disabled):hover
-  ) {
-  background: var(--vdp-color-header-button-hover);
 }
 
 .vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,

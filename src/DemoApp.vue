@@ -1,6 +1,7 @@
 <template>
   <div id="app">
     <h1>Datepicker Examples</h1>
+    <h2 class="mb-4">Keyboard navigation supported by using tabs and enter.</h2>
 
     <div class="example">
       <h3>Inline datepicker, UTC and Monday first, 2 char day</h3>
@@ -232,10 +233,10 @@
 
     <div class="example">
       <h3>Day view only</h3>
-      <datepicker :minimumView="'day'" :maximumView="'day'"></datepicker>
+      <datepicker minimumView="day" maximumView="day"></datepicker>
       <code>
-        &lt;datepicker :minimumView="'day'"
-        :maximumView="'day'"&gt;&lt;/datepicker&gt;
+        &lt;datepicker minimumView="day"
+        maximumView="day"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
@@ -406,7 +407,7 @@ export default {
 }
 </script>
 
-<style>
+<style lang="scss">
 @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css';
 
 *,
@@ -441,7 +442,7 @@ select {
 
 .example {
   background: #fcfcfc;
-  border: 1px solid #ddd;
+  border: 1px solid #eee;
   padding: 0 0 1rem;
   margin-bottom: 2rem;
 
@@ -456,7 +457,7 @@ pre {
   padding: 1rem;
   border: 1px solid #bbb;
   display: block;
-  background: #ddd;
+  background: #eee;
   border-radius: 3px;
 }
 
@@ -478,5 +479,9 @@ h5 {
 .form-group label {
   font-size: 16px;
   display: block;
+}
+
+.mb-4 {
+  margin-block-end: 4rem;
 }
 </style>
