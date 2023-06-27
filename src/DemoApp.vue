@@ -21,7 +21,7 @@
     </div>
 
     <div class="example">
-      <h3>Custom day formatter</h3>
+      <h3>Custom day label formatter</h3>
       <datepicker
         placeholder="Select Date"
         :dayFormatter="(value, index) => `${(value || '').slice(0, 2)}${index}`"
