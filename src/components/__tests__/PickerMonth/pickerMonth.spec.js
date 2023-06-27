@@ -43,7 +43,7 @@ describe('PickerMonth', () => {
   })
 
   it('emits show year calendar event when clicked on the year', () => {
-    const yearBtn = wrapper.find('.month__year_btn')
+    const yearBtn = wrapper.findComponent('.month__year_btn')
     yearBtn.trigger('click')
     expect(wrapper.emitted().showYearCalendar).toBeTruthy()
   })

@@ -31,7 +31,7 @@ describe('DateInput', () => {
   })
 
   it('emits the date when typed', () => {
-    const input = wrapper.find('input')
+    const input = wrapper.findComponent('input')
     wrapper.vm.input.value = '2018-04-24'
     input.trigger('keyup')
     expect(wrapper.emitted().typedDate).toBeDefined()
@@ -39,14 +39,14 @@ describe('DateInput', () => {
   })
 
   it.skip('emits closeCalendar when return is pressed', () => {
-    const input = wrapper.find('input')
+    const input = wrapper.findComponent('input')
     const blurSpy = jest.spyOn(input.element, 'blur')
     input.trigger('keyup', { keyCode: 13 })
     expect(blurSpy).toBeCalled()
   })
 
   it('clears a typed date if it does not parse', () => {
-    const input = wrapper.find('input')
+    const input = wrapper.findComponent('input')
     wrapper.setData({ typedDate: 'not a date' })
     input.trigger('blur')
     expect(wrapper.emitted().clearDate).toBeDefined()
@@ -60,7 +60,7 @@ describe('DateInput', () => {
         typeable: false,
       },
     })
-    const input = wrapper.find('input')
+    const input = wrapper.findComponent('input')
     wrapper.vm.input.value = '2018-04-24'
     input.trigger('keydown')
     input.trigger('keyup')

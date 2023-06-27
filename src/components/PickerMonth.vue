@@ -17,6 +17,7 @@
       >
         <slot :name="isRtl ? 'nextButton' : 'prevButton'" />
       </button>
+
       <button
         v-if="allowedToShowView('year')"
         type="button"
@@ -24,9 +25,12 @@
         :class="allowedToShowView('year') ? 'up' : ''"
         @click="showYearCalendar"
       >
-        {{ pageYearName }}
+        <span>{{ pageYearName }}</span>
       </button>
-      <span v-else class="month__year_text">{{ pageYearName }}</span>
+      <span v-else class="month__year_text"
+        ><span>{{ pageYearName }}</span>
+      </span>
+
       <button
         type="button"
         :aria-label="isRtl ? '>' : '<'"
