@@ -28,6 +28,7 @@
       @clearDate="clearDate"
     >
       <slot slot="afterDateInput" name="afterDateInput"></slot>
+      <slot slot="clearButton" name="clearButton"></slot>
     </DateInput>
 
     <div class="vdp-datepicker__body">
@@ -691,6 +692,6 @@ export default {
 .vdp-datepicker__clear-button.disabled,
 .vdp-datepicker__calendar-button.disabled {
   color: var(--vdp-color-button-disabled);
-  cursor: default;
+  cursor: not-allowed;
 }
 </style>

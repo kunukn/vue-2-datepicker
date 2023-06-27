@@ -5,8 +5,7 @@
       v-if="calendarButton"
       type="button"
       class="vdp-datepicker__calendar-button"
-      :class="{ 'input-group-prepend': bootstrapStyling }"
-      :style="{ 'cursor:not-allowed;': disabled }"
+      :class="({ 'input-group-prepend': bootstrapStyling }, { disabled })"
       @click="showCalendar"
     >
       <slot name="calendarButton">

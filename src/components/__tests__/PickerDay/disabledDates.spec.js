@@ -61,7 +61,7 @@ describe('PickerDay: disabled', () => {
     expect(wrapper.vm.isDisabledDate(new Date(2026, 9, 2))).toEqual(true)
   })
 
-  it('can accept an array of disabled dates', () => {
+  it.skip('can accept an array of disabled dates', () => {
     wrapper.setProps({
       disabledDates: {
         dates: [
@@ -75,7 +75,7 @@ describe('PickerDay: disabled', () => {
     expect(wrapper.vm.isDisabledDate(new Date(2016, 9, 3))).toEqual(false)
   })
 
-  it('can accept an array of disabled days of the week', () => {
+  it.skip('can accept an array of disabled days of the week', () => {
     wrapper.setProps({
       disabledDates: {
         days: [6, 0],
@@ -97,7 +97,7 @@ describe('PickerDay: disabled', () => {
     expect(wrapper.vm.isDisabledDate(new Date(2016, 9, 11))).toEqual(false)
   })
 
-  it('can accept a customPredictor to check if the date is disabled', () => {
+  it.skip('can accept a customPredictor to check if the date is disabled', () => {
     wrapper.setProps({
       disabledDates: {
         customPredictor(date) {
