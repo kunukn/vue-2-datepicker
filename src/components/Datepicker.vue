@@ -50,6 +50,7 @@
         :dayCellContent="dayCellContent"
         :useUtc="useUtc"
         :useDay2char="useDay2char"
+        :weekdayDisplay="weekdayDisplay"
         @changedMonth="handleChangedMonthFromDayPicker"
         @selectDate="selectDate"
         @showMonthCalendar="showMonthCalendar"
@@ -177,7 +178,7 @@ export default {
       default: 'year',
     },
     weekdayDisplay: {
-      type: Object,
+      type: Array,
       default: null,
     },
   },

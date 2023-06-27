@@ -31,12 +31,7 @@
 
     <div class="example">
       <h3>Bootstrap styled datepicker</h3>
-      <datepicker
-        :bootstrapStyling="true"
-        :calendarButton="true"
-        :clearButton="true"
-      >
-      </datepicker>
+      <datepicker bootstrapStyling calendarButton clearButton> </datepicker>
       <code>
         &lt;datepicker placeholder="Select Date"&gt;&lt;/datepicker&gt;
       </code>
@@ -59,19 +54,11 @@
     <div class="example">
       <h3>Force weekday display</h3>
       <datepicker
-        :weekdayDisplay="{
-          mo: '1',
-          tu: '2',
-          we: '3',
-          th: '4',
-          fr: '5',
-          sa: '6',
-          su: '7',
-        }"
+        :weekdayDisplay="['😖', '😏', '😌', '😊', '😜', '😝', '🥴']"
       ></datepicker>
       <code>
-        &lt;datepicker :weekdayDisplay="{ mo: '1', tu: '2', we: '3', th: '4',
-        fr: '5', sa: '6', su: '7' }"&gt;&lt;/datepicker&gt;
+        &lt;datepicker :weekdayDisplay="['😖', '😏', '😌', '😊', '😜', '😝',
+        '🥴']"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 

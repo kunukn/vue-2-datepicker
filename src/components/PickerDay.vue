@@ -45,12 +45,20 @@
       class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--day"
       :class="isRtl ? 'flex-rtl' : ''"
     >
-      <span
-        v-for="d in daysOfWeek"
-        :key="d.timestamp"
-        class="cell day-header"
-        >{{ formatDay(d) }}</span
-      >
+      <template v-if="weekdayDisplay && weekdayDisplay.length >= 7">
+        <span
+          v-for="d in weekdayDisplay"
+          :key="d.timestamp"
+          class="cell day-header"
+          >{{ d }}
+        </span>
+      </template>
+      <template v-else>
+        <span v-for="d in daysOfWeek" :key="d.timestamp" class="cell day-header"
+          >{{ formatDay(d) }}
+        </span>
+      </template>
+
       <template v-if="blankDays > 0">
         <span
           v-for="d in blankDays"
@@ -95,6 +103,7 @@ export default {
     mondayFirst: Boolean,
     useUtc: Boolean,
     useDay2char: Boolean,
+    weekdayDisplay: Array,
   },
   data() {
     const constructedDateUtils = makeDateUtils(this.useUtc)
