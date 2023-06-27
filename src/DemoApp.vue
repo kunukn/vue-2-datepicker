@@ -54,10 +54,10 @@
     <div class="example">
       <h3>Force weekday display</h3>
       <datepicker
-        :weekdayDisplay="['😖', '😏', '😌', '😊', '😜', '😝', '🥴']"
+        :daysCustomDisplay="['😖', '😏', '😌', '😊', '😜', '😝', '🥴']"
       ></datepicker>
       <code>
-        &lt;datepicker :weekdayDisplay="['😖', '😏', '😌', '😊', '😜', '😝',
+        &lt;datepicker :daysCustomDisplay="['😖', '😏', '😌', '😊', '😜', '😝',
         '🥴']"&gt;&lt;/datepicker&gt;
       </code>
     </div>
@@ -285,6 +285,33 @@
       <code>
         &lt;datepicker minimumView="month"
         maximumView="month"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
+      <h3>Month view only custom display</h3>
+      <datepicker
+        minimumView="month"
+        maximumView="month"
+        :monthsCustomDisplay="[
+          'Jany',
+          'Febry',
+          'Marty',
+          'Apryl',
+          'May',
+          'Juny',
+          'Jylu',
+          'Augy',
+          'Septy',
+          'Octy',
+          'Novy',
+          'Decy',
+        ]"
+      ></datepicker>
+      <code>
+        &lt;datepicker minimumView="month" maximumView="month"
+        :monthsCustomDisplay="[ 'Jany', 'Febry', 'Marty', 'Apryl', 'May',
+        'Juny', 'Jylu', 'Augy', 'Septy', 'Octy', 'Novy', 'Decy' ]"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
