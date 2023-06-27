@@ -52,7 +52,7 @@
     </div>
 
     <div class="example">
-      <h3>Force weekday display</h3>
+      <h3>Force day label display</h3>
       <datepicker
         :daysCustomDisplay="['😖', '😏', '😌', '😊', '😜', '😝', '🥴']"
       ></datepicker>
@@ -289,7 +289,7 @@
     </div>
 
     <div class="example">
-      <h3>Month view only custom display</h3>
+      <h3>Force month label display</h3>
       <datepicker
         minimumView="month"
         maximumView="month"
@@ -309,9 +309,10 @@
         ]"
       ></datepicker>
       <code>
-        &lt;datepicker minimumView="month" maximumView="month"
+        &lt;datepicker inline minimumView="month" maximumView="month"
         :monthsCustomDisplay="[ 'Jany', 'Febry', 'Marty', 'Apryl', 'May',
-        'Juny', 'Jylu', 'Augy', 'Septy', 'Octy', 'Novy', 'Decy' ]"&gt;&lt;/datepicker&gt;
+        'Juny', 'Jylu', 'Augy', 'Septy', 'Octy', 'Novy', 'Decy'
+        ]"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
@@ -475,13 +476,13 @@ html {
 }
 
 body {
-  font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
   min-height: 100%;
+  font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
   position: relative;
-  padding: 0.5rem;
+  padding: 0.5rem 0.5rem 6rem;
 
   @media (min-width: 500px) {
-    padding: 1rem;
+    padding: 1rem 1rem 6rem;
   }
 }
 
