@@ -106,7 +106,7 @@ export default {
   <vue-datepicker></vue-datepicker>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
-<script src="https://unpkg.com/@kunukn/vue-2-datepicker@0.0.9/dist/vue-datepicker.umd.cjs"></script>
+<script src="https://unpkg.com/@kunukn/vue-2-datepicker/dist/vue-datepicker.umd.cjs"></script>
 <script>
   const app = new Vue({
     el: '#app',
@@ -125,8 +125,8 @@ export default {
   <vue-datepicker :language="fr"></vue-datepicker>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
-<script src="https://unpkg.com/@kunukn/vue-2-datepicker@0.0.9/dist/vue-datepicker.umd.cjs"></script>
-<script src="https://unpkg.com/@kunukn/vue-2-datepicker@0.0.9/src/locale/translations/fr.js"></script>
+<script src="https://unpkg.com/@kunukn/vue-2-datepicker/dist/vue-datepicker.umd.cjs"></script>
+<script src="https://unpkg.com/@kunukn/vue-2-datepicker/src/locale/translations/fr.js"></script>
 <script>
   const app = new Vue({
     el: '#app',
