@@ -177,7 +177,7 @@ describe('Datepicker mounted', () => {
     expect(wrapper.vm.selectedDate).toEqual(today)
   })
 
-  it.skip('watches value', (done) => {
+  it.skip('watches value', () => {
     const wrapper = shallowMount(Datepicker, {
       propsData: {
         value: '2018-01-01',
@@ -187,11 +187,10 @@ describe('Datepicker mounted', () => {
     wrapper.vm.value = '2018-04-26'
     wrapper.vm.$nextTick(() => {
       expect(spy).toBeCalled()
-      done()
     })
   })
 
-  it.skip('watches openDate', (done) => {
+  it.skip('watches openDate', () => {
     const wrapper = shallowMount(Datepicker, {
       propsData: {
         openDate: new Date(2018, 0, 1),
@@ -201,11 +200,10 @@ describe('Datepicker mounted', () => {
     wrapper.vm.openDate = new Date(2018, 3, 26)
     wrapper.vm.$nextTick(() => {
       expect(spy).toBeCalled()
-      done()
     })
   })
 
-  it.skip('watches initialView', (done) => {
+  it.skip('watches initialView', () => {
     const wrapper = shallowMount(Datepicker, {
       propsData: {
         initialView: 'day',
@@ -215,7 +213,6 @@ describe('Datepicker mounted', () => {
     wrapper.vm.initialView = 'month'
     wrapper.vm.$nextTick(() => {
       expect(spy).toBeCalled()
-      done()
     })
   })
 
@@ -268,7 +265,7 @@ describe('Datepicker.vue set by timestamp', () => {
 
 describe('Datepicker.vue using UTC', () => {
   let wrapper
-  it('correctly sets the value using UTC', (done) => {
+  it('correctly sets the value using UTC', () => {
     const timezoneOffset = new Date().getTimezoneOffset() / 60
 
     // this is ambiguous because localzone differs by one day than UTC
@@ -290,7 +287,6 @@ describe('Datepicker.vue using UTC', () => {
     // It's important to assert the input rendered output
     wrapper.vm.$nextTick(() => {
       expect(wrapper.find(DateInput).vm.formattedValue).toEqual(UTCString)
-      done()
     })
   })
 })

@@ -49,14 +49,12 @@
         v-for="d in daysOfWeekDataSource"
         :key="d.timestamp"
         class="cell day-header"
-        >{{ format(d) }}
+        ><span>{{ format(d) }}</span>
       </span>
 
       <template v-if="blankDays > 0">
-        <span
-          v-for="d in blankDays"
-          :key="d.timestamp"
-          class="cell day blank"
+        <span v-for="d in blankDays" :key="d.timestamp" class="cell day blank"
+          ><span></span
         ></span>
       </template>
       <!-- eslint-disable vue/no-v-html - It has been sanitized -->
@@ -67,8 +65,9 @@
         class="cell day"
         :class="dayClasses(day)"
         @click="selectDate(day)"
-        v-html="dayCellContent(day)"
-      ></button>
+      >
+        <span v-html="dayCellContent(day)"></span>
+      </button>
     </div>
   </div>
 </template>
