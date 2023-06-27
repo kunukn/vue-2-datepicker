@@ -504,9 +504,6 @@ export default {
   }
 }
 
-.vdp-datepicker__body {
-}
-
 .vdp-datepicker__calendar {
   position: absolute;
   z-index: 1;
