@@ -38,7 +38,7 @@
         :class="{ selected: year.isSelected, disabled: year.isDisabled }"
         @click.stop="selectYear(year)"
       >
-        {{ year.year }}
+        {{ format(year.year) }}
       </button>
     </div>
   </div>

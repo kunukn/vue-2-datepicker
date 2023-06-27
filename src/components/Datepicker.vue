@@ -50,7 +50,7 @@
         :mondayFirst="mondayFirst"
         :dayCellContent="dayCellContent"
         :useUtc="useUtc"
-        :weekdayDisplay="weekdayDisplay"
+        :daysCustomDisplay="daysCustomDisplay"
         @changedMonth="handleChangedMonthFromDayPicker"
         @selectDate="selectDate"
         @showMonthCalendar="showMonthCalendar"
@@ -75,6 +75,7 @@
         :translation="translation"
         :isRtl="isRtl"
         :useUtc="useUtc"
+        :monthsCustomDisplay="monthsCustomDisplay"
         @selectMonth="selectMonth"
         @showYearCalendar="showYearCalendar"
         @changedYear="setPageDate"
@@ -181,7 +182,11 @@ export default {
       type: String,
       default: 'year',
     },
-    weekdayDisplay: {
+    daysCustomDisplay: {
+      type: Array,
+      default: null,
+    },
+    monthsCustomDisplay: {
       type: Array,
       default: null,
     },

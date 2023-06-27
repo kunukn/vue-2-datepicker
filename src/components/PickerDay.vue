@@ -45,19 +45,12 @@
       class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--day"
       :class="isRtl ? 'flex-rtl' : ''"
     >
-      <template v-if="weekdayDisplay && weekdayDisplay.length >= 7">
-        <span
-          v-for="d in weekdayDisplay"
-          :key="d.timestamp"
-          class="cell day-header"
-          >{{ d }}
-        </span>
-      </template>
-      <template v-else>
-        <span v-for="d in daysOfWeek" :key="d.timestamp" class="cell day-header"
-          >{{ format(d) }}
-        </span>
-      </template>
+      <span
+        v-for="d in daysOfWeekDataSource"
+        :key="d.timestamp"
+        class="cell day-header"
+        >{{ format(d) }}
+      </span>
 
       <template v-if="blankDays > 0">
         <span
@@ -103,7 +96,7 @@ export default {
     isRtl: Boolean,
     mondayFirst: Boolean,
     useUtc: Boolean,
-    weekdayDisplay: Array,
+    daysCustomDisplay: Array,
   },
   data() {
     const constructedDateUtils = makeDateUtils(this.useUtc)
@@ -123,6 +116,11 @@ export default {
         return tempDays
       }
       return this.translation.days
+    },
+    daysOfWeekDataSource() {
+      return this.daysCustomDisplay?.length === 7
+        ? this.daysCustomDisplay
+        : this.daysOfWeek
     },
     /**
      * Returns the day number of the week less one for the first of the current month

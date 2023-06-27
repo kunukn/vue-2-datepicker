@@ -39,16 +39,16 @@
     <div
       class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--month"
     >
-      <span
+      <button
         v-for="month in months"
         :key="month.timestamp"
-        class="cell month"
         type="button"
+        class="cell month"
         :class="{ selected: month.isSelected, disabled: month.isDisabled }"
         @click.stop="selectMonth(month)"
       >
-        {{ month.month }}
-      </span>
+        {{ format(month.month) }}
+      </button>
     </div>
   </div>
 </template>
@@ -68,6 +68,7 @@ export default {
     isRtl: Boolean,
     allowedToShowView: Function,
     useUtc: Boolean,
+    monthsCustomDisplay: Array,
   },
   data() {
     const constructedDateUtils = makeDateUtils(this.useUtc)
@@ -89,9 +90,15 @@ export default {
             d.getHours(),
             d.getMinutes()
           )
-      for (let i = 0; i < 12; i++) {
+
+      let monthsDataSource =
+        this.monthsCustomDisplay?.length === 12
+          ? this.monthsCustomDisplay
+          : this.translation.months
+
+      for (let i = 0; i <= 11; i++) {
         months.push({
-          month: this.utils.getMonthName(i, this.translation.months),
+          month: this.utils.getMonthName(i, monthsDataSource),
           timestamp: dObj.getTime(),
           isSelected: this.isSelectedMonth(dObj),
           isDisabled: this.isDisabledMonth(dObj),
