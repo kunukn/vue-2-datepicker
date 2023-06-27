@@ -29,7 +29,7 @@
         {{ isYmd ? currYearName : currMonthName }}
         {{ isYmd ? currMonthName : currYearName }}
       </button>
-      <span v-else>
+      <span v-else class="day__month_text">
         {{ isYmd ? currYearName : currMonthName }}
         {{ isYmd ? currMonthName : currYearName }}
       </span>

@@ -25,7 +25,7 @@
       >
         {{ pageYearName }}
       </button>
-      <span v-else class="month__year_btn">{{ pageYearName }}</span>
+      <span v-else class="month__year_text">{{ pageYearName }}</span>
       <button
         type="button"
         aria-label=">"
