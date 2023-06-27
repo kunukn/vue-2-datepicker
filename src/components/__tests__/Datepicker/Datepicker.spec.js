@@ -286,7 +286,9 @@ describe('Datepicker.vue using UTC', () => {
     })
     // It's important to assert the input rendered output
     wrapper.vm.$nextTick(() => {
-      expect(wrapper.findComponent(DateInput).vm.formattedValue).toEqual(UTCString)
+      expect(wrapper.findComponent(DateInput).vm.formattedValue).toEqual(
+        UTCString
+      )
     })
   })
 })
