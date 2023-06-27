@@ -19,7 +19,7 @@ describe('PickerDay: DOM', () => {
   it('knows the selected date', () => {
     const newDate = new Date(2016, 9, 15)
 
-    let wrapper2 = shallowMount(PickerDay, {
+    let wrapper = shallowMount(PickerDay, {
       propsData: {
         allowedToShowView: () => true,
         translation: en,
@@ -28,8 +28,8 @@ describe('PickerDay: DOM', () => {
       },
     })
 
-    expect(wrapper2.vm.isSelectedDate(newDate)).toEqual(true)
-    expect(wrapper2.vm.isSelectedDate(new Date(2017, 1, 1))).toEqual(false)
+    expect(wrapper.vm.isSelectedDate(newDate)).toEqual(true)
+    expect(wrapper.vm.isSelectedDate(new Date(2017, 1, 1))).toEqual(false)
   })
 
   it('emits an event when selected', () => {
