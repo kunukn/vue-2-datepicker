@@ -1,4 +1,4 @@
-export class Language {
+export default class Language {
   constructor(language, months, monthsAbbr, days) {
     this.language = language
     this.months = months

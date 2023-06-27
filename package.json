@@ -1,7 +1,7 @@
 {
   "name": "@kunukn/vue-2-datepicker",
   "private": false,
-  "version": "0.0.9",
+  "version": "0.0.10",
   "type": "module",
   "main": "./dist/vue-datepicker.umd.cjs",
   "module": "./dist/vue-datepicker.js",
@@ -76,16 +76,16 @@
     "vite": "^4.3.9",
     "vite-plugin-vue2": "^2.0.3",
     "vitest": "^0.32.2",
-    "vue": "2.6.12",
+    "vue": "2.6.14",
     "vue-jest": "^3.0.7",
-    "vue-server-renderer": "^2.6.12",
-    "vue-template-compiler": "^2.6.12",
+    "vue-server-renderer": "^2.6.14",
+    "vue-template-compiler": "^2.6.14",
     "vue-tsc": "^1.8.1"
   },
   "peerDependencies": {
-    "vue": "^2.x.x"
+    "vue": "^2"
   },
   "resolutions": {
-    "vue-template-compiler": "2.6.12"
+    "vue-template-compiler": "2.6.14"
   }
 }

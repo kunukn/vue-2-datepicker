@@ -1,4 +1,4 @@
-import { Language } from '../Language'
+import Language from './_Language'
 
 export default new Language(
   'Luxembourgish',

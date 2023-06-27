@@ -1,4 +1,4 @@
-import { Language } from '../Language'
+import Language from './_Language'
 
 const language = new Language(
   'Urdu',

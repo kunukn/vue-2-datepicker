@@ -21,7 +21,7 @@
       :disabled="disabled"
       :required="required"
       :bootstrapStyling="bootstrapStyling"
-      :use-utc="useUtc"
+      :useUtc="useUtc"
       @showCalendar="showCalendar"
       @closeCalendar="close"
       @typedDate="setTypedDate"
