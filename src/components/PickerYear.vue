@@ -14,7 +14,7 @@
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextDecade() : previousDecade()"
       >
-        <slot name="prevButton"><IconLeft /></slot>
+        <slot name="prevButton" />
       </button>
       <p>{{ getPageDecade }}</p>
       <button
@@ -24,7 +24,7 @@
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousDecade() : nextDecade()"
       >
-        <slot name="nextButton"><IconRight /></slot>
+        <slot name="nextButton" />
       </button>
     </header>
     <div
@@ -45,13 +45,7 @@
 </template>
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
-import IconLeft from './IconChevronLeft.vue'
-import IconRight from './IconChevronRight.vue'
 export default {
-  components: {
-    IconLeft,
-    IconRight,
-  },
   props: {
     showYearView: Boolean,
     selectedDate: Date,

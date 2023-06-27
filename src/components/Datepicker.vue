@@ -56,6 +56,8 @@
         @selectedDisabled="selectDisabledDate"
       >
         <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
+        <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
+        <slot slot="nextButton" name="nextButton"><IconRight /></slot>
       </PickerDay>
 
       <!-- Month View -->
@@ -76,6 +78,8 @@
         @changedYear="setPageDate"
       >
         <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
+        <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
+        <slot slot="nextButton" name="nextButton"><IconRight /></slot>
       </PickerMonth>
 
       <!-- Year View -->
@@ -95,6 +99,8 @@
         @changedDecade="setPageDate"
       >
         <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
+        <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
+        <slot slot="nextButton" name="nextButton"><IconRight /></slot>
       </PickerYear>
     </div>
   </div>
@@ -105,6 +111,8 @@ import DateInput from './DateInput.vue'
 import PickerDay from './PickerDay.vue'
 import PickerMonth from './PickerMonth.vue'
 import PickerYear from './PickerYear.vue'
+import IconLeft from './IconChevronLeft.vue'
+import IconRight from './IconChevronRight.vue'
 import utils, { makeDateUtils } from '../utils/DateUtils'
 
 export default {
@@ -113,6 +121,8 @@ export default {
     PickerDay,
     PickerMonth,
     PickerYear,
+    IconLeft,
+    IconRight,
   },
   props: {
     value: {
@@ -165,6 +175,10 @@ export default {
     maximumView: {
       type: String,
       default: 'year',
+    },
+    weekdayDisplay: {
+      type: Object,
+      default: null,
     },
   },
   data() {

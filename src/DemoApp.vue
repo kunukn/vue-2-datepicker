@@ -57,6 +57,25 @@
     </div>
 
     <div class="example">
+      <h3>Force weekday display</h3>
+      <datepicker
+        :weekdayDisplay="{
+          mo: '1',
+          tu: '2',
+          we: '3',
+          th: '4',
+          fr: '5',
+          sa: '6',
+          su: '7',
+        }"
+      ></datepicker>
+      <code>
+        &lt;datepicker :weekdayDisplay="{ mo: '1', tu: '2', we: '3', th: '4',
+        fr: '5', sa: '6', su: '7', }"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
       <h3>Format datepicker</h3>
       <datepicker :format="format"></datepicker>
       <code> &lt;datepicker :format="format"&gt;&lt;/datepicker&gt; </code>

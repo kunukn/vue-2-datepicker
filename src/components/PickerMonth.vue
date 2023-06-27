@@ -14,7 +14,7 @@
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextYear() : previousYear()"
       >
-        <slot name="prevButton"><IconLeft /></slot>
+        <slot name="prevButton" />
       </button>
       <button
         v-if="allowedToShowView('year')"
@@ -33,7 +33,7 @@
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousYear() : nextYear()"
       >
-        <slot name="nextButton"><IconRight /></slot>
+        <slot name="nextButton" />
       </button>
     </header>
     <div
@@ -54,13 +54,7 @@
 </template>
 <script>
 import { makeDateUtils } from '../utils/DateUtils'
-import IconLeft from './IconChevronLeft.vue'
-import IconRight from './IconChevronRight.vue'
 export default {
-  components: {
-    IconLeft,
-    IconRight,
-  },
   props: {
     showMonthView: Boolean,
     selectedDate: Date,
