@@ -46,10 +46,10 @@
       :class="isRtl ? 'flex-rtl' : ''"
     >
       <span
-        v-for="d in daysOfWeekDataSource"
+        v-for="(d, index) in daysOfWeekDataSource"
         :key="d.timestamp"
         class="cell day-header"
-        ><span>{{ format(d) }}</span>
+        ><span>{{ format(d, index) }}</span>
       </span>
 
       <template v-if="blankDays > 0">
@@ -76,7 +76,7 @@ import { makeDateUtils } from '../utils/DateUtils'
 export default {
   components: {},
   props: {
-    formatter: Function,
+    labelFormatter: Function,
     showDayView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -230,9 +230,9 @@ export default {
     },
   },
   methods: {
-    format(value) {
-      if (this.formatter) {
-        return this.formatter(value)
+    format(value, index) {
+      if (this.labelFormatter) {
+        return this.labelFormatter(value, index)
       }
 
       return value

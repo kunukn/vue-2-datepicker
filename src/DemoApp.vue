@@ -21,6 +21,18 @@
     </div>
 
     <div class="example">
+      <h3>Custom day formatter</h3>
+      <datepicker
+        placeholder="Select Date"
+        :dayFormatter="(value, index) => `${(value || '').slice(0, 2)}${index}`"
+      />
+      <code>
+        &lt;datepicker placeholder="Select Date" :dayFormatter="(value, index)
+        =&gt; `${(value || '').slice(0, 2)}${index}`"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
       <h3>Typeable datepicker</h3>
       <datepicker placeholder="Type or select date" :typeable="true" />
       <code>
@@ -313,6 +325,22 @@
         :monthsCustomDisplay="[ 'Jany', 'Febry', 'Marty', 'Apryl', 'May',
         'Juny', 'Jylu', 'Augy', 'Septy', 'Octy', 'Novy', 'Decy'
         ]"&gt;&lt;/datepicker&gt;
+      </code>
+    </div>
+
+    <div class="example">
+      <h3>Custom month label formatter</h3>
+      <datepicker
+        minimumView="month"
+        maximumView="month"
+        :monthFormatter="
+          (value, index) => `${(value || '').slice(0, 2)}${index}`
+        "
+      ></datepicker>
+      <code>
+        &lt;datepicker inline minimumView="month" maximumView="month"
+        :monthFormatter=" (value, index) =&gt; `${(value || '').slice(0,
+        2)}${index}` "&gt;&lt;/datepicker&gt;
       </code>
     </div>
 

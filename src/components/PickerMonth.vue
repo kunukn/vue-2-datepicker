@@ -45,14 +45,14 @@
       class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--month"
     >
       <button
-        v-for="month in months"
+        v-for="(month, index) in months"
         :key="month.timestamp"
         type="button"
         class="cell month"
         :class="{ selected: month.isSelected, disabled: month.isDisabled }"
         @click.stop="selectMonth(month)"
       >
-        {{ format(month.month) }}
+        {{ format(month.month, index) }}
       </button>
     </div>
   </div>
@@ -61,7 +61,7 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   props: {
-    formatter: Function,
+    labelFormatter: Function,
     showMonthView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -140,9 +140,9 @@ export default {
     },
   },
   methods: {
-    format(value) {
-      if (this.formatter) {
-        return this.formatter(value)
+    format(value, index) {
+      if (this.labelFormatter) {
+        return this.labelFormatter(value, index)
       }
 
       return value

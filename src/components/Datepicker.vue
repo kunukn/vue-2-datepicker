@@ -35,7 +35,7 @@
       <!-- Day View -->
       <PickerDay
         v-if="allowedToShowView('day')"
-        :formatter="dayFormatter"
+        :labelFormatter="dayFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showDayView="showDayView"
@@ -66,7 +66,7 @@
       <!-- Month View -->
       <PickerMonth
         v-if="allowedToShowView('month')"
-        :formatter="monthFormatter"
+        :labelFormatter="monthFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showMonthView="showMonthView"
@@ -502,6 +502,7 @@ export default {
   --vdp-cell-size: 48px;
   --vdp-color-theme-bg: #fff;
   --vdp-color-theme: #0092bc;
+  --vdp-color-selected: #fff;
   --vdp-color-border: #ccc;
   --vdp-color-disabled: #ddd;
   --vdp-color-button-disabled: #999;
@@ -559,17 +560,9 @@ export default {
       width: var(--vdp-cell-size);
     }
 
-    &.month {
-      border-radius: 0;
-    }
-
-    &.year {
-      border-radius: 0;
-    }
-
     &.selected {
       background: var(--vdp-color-theme);
-      color: white;
+      color: var(--vdp-color-selected);
 
       &:hover {
         background: var(--vdp-color-theme);
