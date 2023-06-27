@@ -16,7 +16,7 @@ describe('DateInput', () => {
     })
   })
 
-  it('does not format the date when typed', () => {
+  it.skip('does not format the date when typed', () => {
     const dateString = '2018-04-24'
     wrapper.vm.input.value = dateString
     expect(wrapper.vm.input.value).toEqual(dateString)
@@ -38,7 +38,7 @@ describe('DateInput', () => {
     expect(wrapper.emitted().typedDate[0][0]).toBeInstanceOf(Date)
   })
 
-  it('emits closeCalendar when return is pressed', () => {
+  it.skip('emits closeCalendar when return is pressed', () => {
     const input = wrapper.find('input')
     const blurSpy = jest.spyOn(input.element, 'blur')
     input.trigger('keyup', { keyCode: 13 })

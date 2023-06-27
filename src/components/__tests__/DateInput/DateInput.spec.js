@@ -6,13 +6,15 @@ import en from '@/locale/translations/en.js'
 describe('DateInput', () => {
   let wrapper
 
+  let propsData = {
+    selectedDate: new Date(2018, 2, 24),
+    format: 'dd MMM yyyy',
+    translation: en,
+  }
+
   beforeEach(() => {
     wrapper = shallowMount(DateInput, {
-      propsData: {
-        selectedDate: new Date(2018, 2, 24),
-        format: 'dd MMM yyyy',
-        translation: en,
-      },
+      propsData,
     })
   })
 
@@ -21,11 +23,15 @@ describe('DateInput', () => {
   })
 
   it('nulls date', () => {
-    wrapper.setProps({
-      selectedDate: null,
+    let wrapper2 = shallowMount(DateInput, {
+      propsData: {
+        ...propsData,
+        selectedDate: null,
+      },
     })
-    expect(wrapper.vm.formattedValue).toBeNull()
-    expect(wrapper.findComponent('input').element.value).toEqual('')
+
+    expect(wrapper2.vm.formattedValue).toBeNull()
+    expect(wrapper2.findComponent('input').element.value).toEqual('')
   })
 
   it('formats date', () => {
@@ -34,12 +40,16 @@ describe('DateInput', () => {
   })
 
   it('delegates date formatting', () => {
-    wrapper.setProps({
-      selectedDate: new Date(2016, 1, 15),
-      format: () => '2016/1/15',
+    let wrapper2 = shallowMount(DateInput, {
+      propsData: {
+        translation: en,
+        selectedDate: new Date(2016, 1, 15),
+        format: () => '2016/1/15',
+      },
     })
-    expect(wrapper.vm.formattedValue).toEqual('2016/1/15')
-    expect(wrapper.findComponent('input').element.value).toEqual('2016/1/15')
+
+    expect(wrapper2.vm.formattedValue).toEqual('2016/1/15')
+    expect(wrapper2.findComponent('input').element.value).toEqual('2016/1/15')
   })
 
   it('emits showCalendar', () => {
@@ -48,32 +58,47 @@ describe('DateInput', () => {
   })
 
   it('adds bootstrap classes', () => {
-    wrapper.setProps({
-      bootstrapStyling: true,
+    let wrapper2 = shallowMount(DateInput, {
+      propsData: {
+        selectedDate: new Date(2018, 2, 24),
+        format: 'dd MMM yyyy',
+        translation: en,
+        bootstrapStyling: true,
+      },
     })
-    expect(wrapper.findComponent('input').element.classList).toContain(
+
+    expect(wrapper2.findComponent('input').element.classList).toContain(
       'form-control'
     )
   })
 
   it('appends bootstrap classes', () => {
-    wrapper.setProps({
-      inputClass: 'someClass',
-      bootstrapStyling: true,
+    let wrapper2 = shallowMount(DateInput, {
+      propsData: {
+        selectedDate: new Date(2018, 2, 24),
+        format: 'dd MMM yyyy',
+        translation: en,
+        inputClass: 'someClass',
+        bootstrapStyling: true,
+      },
     })
-    expect(wrapper.findComponent('input').element.classList).toContain(
+    expect(wrapper2.findComponent('input').element.classList).toContain(
       'form-control'
     )
-    expect(wrapper.findComponent('input').element.classList).toContain(
+    expect(wrapper2.findComponent('input').element.classList).toContain(
       'someClass'
     )
   })
 
   it('can be disabled', () => {
-    wrapper.setProps({
-      disabled: true,
+    let wrapper2 = shallowMount(DateInput, {
+      propsData: {
+        ...propsData,
+        disabled: true,
+      },
     })
-    expect(wrapper.findComponent('input').attributes().disabled).toBeDefined()
+
+    expect(wrapper2.findComponent('input').attributes().disabled).toBeDefined()
   })
 
   it('accepts a function as a formatter', () => {

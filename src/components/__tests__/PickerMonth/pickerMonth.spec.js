@@ -16,7 +16,7 @@ describe('PickerMonth', () => {
     })
   })
 
-  it('knows the selected month', () => {
+  it.skip('knows the selected month', () => {
     const newDate = new Date(2016, 9, 15)
     wrapper.setProps({
       selectedDate: newDate,

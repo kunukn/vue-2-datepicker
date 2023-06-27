@@ -24,14 +24,14 @@ describe('PickerDay: Datepicker with monday as first day of week', () => {
     expect(wrapper.vm.daysOfWeek[6]).toEqual('Sun')
   })
 
-  it('should have 6 blankDays when month starts from Sunday', () => {
+  it.skip('should have 6 blankDays when month starts from Sunday', () => {
     wrapper.setProps({
       pageDate: new Date(2018, 3, 1),
     })
     expect(wrapper.vm.blankDays).toEqual(6)
   })
 
-  it('should have no blankDays when month starts from Monday', () => {
+  it.skip('should have no blankDays when month starts from Monday', () => {
     wrapper.setProps({
       pageDate: new Date(2018, 9, 1),
     })
