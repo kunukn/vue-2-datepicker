@@ -19,7 +19,8 @@
     "url": "https://github.com/kunukn/vue-2-datepicker/issues"
   },
   "scripts": {
-    "dev": "vite --open",
+    "dev": "vite",
+    "dev-open": "vite --open",
     "build": "vue-tsc && vite build",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",

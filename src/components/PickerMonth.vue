@@ -1,7 +1,8 @@
 <template>
   <div
     v-show="showMonthView"
-    :class="[calendarClass, 'vdp-datepicker__calendar']"
+    class="vdp-datepicker__calendar vdp-datepicker__calendar--month"
+    :class="[calendarClass]"
     :style="calendarStyle"
     @mousedown.prevent
   >
@@ -10,11 +11,11 @@
       <button
         type="button"
         class="prev"
-        aria-label="<"
+        :aria-label="isRtl ? '<' : '>'"
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextYear() : previousYear()"
       >
-        <slot name="prevButton" />
+        <slot :name="isRtl ? 'nextButton' : 'prevButton'" />
       </button>
       <button
         v-if="allowedToShowView('year')"
@@ -28,12 +29,12 @@
       <span v-else class="month__year_text">{{ pageYearName }}</span>
       <button
         type="button"
-        aria-label=">"
+        :aria-label="isRtl ? '>' : '<'"
         class="next"
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousYear() : nextYear()"
       >
-        <slot name="nextButton" />
+        <slot :name="isRtl ? 'prevButton' : 'nextButton'" />
       </button>
     </header>
     <div

@@ -1,8 +1,8 @@
 <template>
   <div
     v-show="showDayView"
-    class="vdp-datepicker__calendar"
-    :class="[calendarClass]"
+    class="vdp-datepicker__calendar vdp-datepicker__calendar--day"
+    :class="[calendarClass, { 'min-height': ensureMinHeight }]"
     :style="calendarStyle"
     @mousedown.prevent
   >
@@ -10,12 +10,12 @@
     <header class="vdp-datepicker__header">
       <button
         type="button"
-        aria-label="<"
+        :aria-label="isRtl ? '<' : '>'"
         class="prev"
         :class="{ disabled: isLeftNavDisabled }"
         @click="isRtl ? nextMonth() : previousMonth()"
       >
-        <slot name="prevButton" />
+        <slot :name="isRtl ? 'nextButton' : 'prevButton'" />
       </button>
       <button
         v-if="allowedToShowView('month')"
@@ -33,12 +33,12 @@
       </span>
       <button
         type="button"
-        aria-label=">"
+        :aria-label="isRtl ? '>' : '<'"
         class="next"
         :class="{ disabled: isRightNavDisabled }"
         @click="isRtl ? previousMonth() : nextMonth()"
       >
-        <slot name="nextButton" />
+        <slot :name="isRtl ? 'prevButton' : 'nextButton'" />
       </button>
     </header>
     <div
@@ -92,6 +92,7 @@ export default {
     highlighted: Object,
     calendarClass: [String, Object, Array],
     calendarStyle: Object,
+    ensureMinHeight: Boolean,
     translation: Object,
     isRtl: Boolean,
     mondayFirst: Boolean,

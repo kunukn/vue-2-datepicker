@@ -1,7 +1,8 @@
 <template>
   <div
     v-show="showYearView"
-    :class="[calendarClass, 'vdp-datepicker__calendar']"
+    class="vdp-datepicker__calendar vdp-datepicker__calendar--year"
+    :class="[calendarClass]"
     :style="calendarStyle"
     @mousedown.prevent
   >

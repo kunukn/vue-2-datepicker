@@ -5,9 +5,10 @@
 
     <div class="example">
       <h3>Inline datepicker, UTC and Monday first</h3>
-      <datepicker inline useUtc mondayFirst></datepicker>
+      <datepicker inline useUtc mondayFirst ensureMinHeight></datepicker>
       <code>
-        &lt;datepicker inline useUtc mondayFirst &gt;&lt;/datepicker&gt;
+        &lt;datepicker inline useUtc mondayFirst
+        ensureMinHeight&gt;&lt;/datepicker&gt;
       </code>
     </div>
 

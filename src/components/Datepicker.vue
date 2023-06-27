@@ -44,6 +44,7 @@
         :highlighted="highlighted"
         :calendarClass="calendarClass"
         :calendarStyle="calendarStyle"
+        :ensureMinHeight="ensureMinHeight"
         :translation="translation"
         :pageTimestamp="pageTimestamp"
         :isRtl="isRtl"
@@ -155,6 +156,7 @@ export default {
     highlighted: Object,
     placeholder: String,
     inline: Boolean,
+    ensureMinHeight: Boolean,
     calendarClass: [String, Object, Array],
     inputClass: [String, Object, Array],
     wrapperClass: [String, Object, Array],
@@ -609,6 +611,12 @@ export default {
         background: inherit;
       }
     }
+  }
+}
+
+.vdp-datepicker__calendar--day {
+  &.min-height {
+    min-height: calc(var(--vdp-cell-size) * 8 + 2px);
   }
 }
 
