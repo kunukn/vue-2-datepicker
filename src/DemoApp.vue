@@ -269,48 +269,48 @@
     <div class="example">
       <h3>Day view only RTL</h3>
       <datepicker
-        :minimumView="'day'"
-        :maximumView="'day'"
+        minimumView="day"
+        maximumView="day"
         :language="languages.he"
       ></datepicker>
       <code>
-        &lt;datepicker :minimumView="'day'" :maximumView="'day'"
+        &lt;datepicker minimumView="day" maximumView="day"
         language="languages.he"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Month view only</h3>
-      <datepicker :minimumView="'month'" :maximumView="'month'"></datepicker>
+      <datepicker minimumView="month" maximumView="month"></datepicker>
       <code>
-        &lt;datepicker :minimumView="'month'"
-        :maximumView="'month'"&gt;&lt;/datepicker&gt;
+        &lt;datepicker minimumView="month"
+        maximumView="month"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Day and month view only</h3>
       <datepicker
-        :minimumView="'day'"
-        :maximumView="'month'"
-        :initialView="'month'"
+        minimumView="day"
+        maximumView="month"
+        initialView="month"
       ></datepicker>
       <code>
-        &lt;datepicker :minimumView="'day'" :maximumView="'month'"
-        :initialView="'month'"&gt;&lt;/datepicker&gt;
+        &lt;datepicker minimumView="day" maximumView="month"
+        initialView="month"&gt;&lt;/datepicker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Year and month view only</h3>
       <datepicker
-        :minimumView="'month'"
-        :maximumView="'year'"
-        :initialView="'year'"
+        minimumView="month"
+        maximumView="year"
+        initialView="year"
       ></datepicker>
       <code>
-        &lt;datepicker :minimumView="'month'" :maximumView="'year'"
-        :initialView="'year'"&gt;&lt;/datepicker&gt;
+        &lt;datepicker minimumView="month" maximumView="year"
+        initialView="year"&gt;&lt;/datepicker&gt;
       </code>
     </div>
   </div>
