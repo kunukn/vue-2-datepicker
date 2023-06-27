@@ -616,7 +616,7 @@ export default {
 
 .vdp-datepicker__calendar--day {
   &.min-height {
-    min-height: calc(var(--vdp-cell-size) * 8 + 2px);
+    min-height: calc(var(--vdp-cell-size) * 8 + 2px); // plus the border
   }
 }
 

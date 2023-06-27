@@ -30,14 +30,14 @@ Vue 3 is out of scope in this repo.
   - [Available props](#available-props)
   - [Events](#events)
   - [Date formatting](#date-formatting)
-      - [String formatter](#string-formatter)
-      - [Function formatter](#function-formatter)
+    - [String formatter](#string-formatter)
+    - [Function formatter](#function-formatter)
   - [Disabled Dates](#disabled-dates)
   - [Highlighted Dates](#highlighted-dates)
   - [Slots](#slots)
-      - [beforeCalendarHeader](#beforecalendarheader)
-      - [afterDateInput](#afterdateinput)
-      - [prevButton and nextButton](#prevbutton-and-nextbutton)
+    - [beforeCalendarHeader](#beforecalendarheader)
+    - [afterDateInput](#afterdateinput)
+    - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
 
@@ -204,6 +204,9 @@ Inline always open version
 | name                         | String           |             | Input name property                      |
 | id                           | String           |             | Input id                                 |
 | format                       | String\|Function | dd MMM yyyy | Date formatting string or function       |
+| dayFormatter                 | Function         |             | Custom day formatter                     |
+| monthFormatter               | Function         |             | Custom month formatter                   |
+| yearFormatter                | Function         |             | Custom year formatter                    |
 | full-month-name              | Boolean          | false       | To show the full month name              |
 | language                     | Object           | en          | Translation for days and months          |
 | disabled-dates               | Object           |             | See below for configuration              |
@@ -213,6 +216,7 @@ Inline always open version
 | input-class                  | String\|Object   |             | CSS class applied to the input el        |
 | wrapper-class                | String\|Object   |             | CSS class applied to the outer div       |
 | monday-first                 | Boolean          | false       | To start the week on Monday              |
+| ensure-min-height            | Boolean          | false       | Ensure day picker view has same height   |
 | clear-button                 | Boolean          | false       | Show an icon for clearing the date       |
 | clear-button-icon            | String           |             | Use icon for button (ex: fa fa-times)    |
 | calendar-button              | Boolean          | false       | Show an icon that that can be clicked    |
@@ -225,7 +229,6 @@ Inline always open version
 | required                     | Boolean          | false       | Sets html required attribute on input    |
 | typeable                     | Boolean          | false       | If true, allow the user to type the date |
 | use-utc                      | Boolean          | false       | use UTC for time calculations            |
-| use-day2-char                | Boolean          | false       | Weekdays in headline with max 2 chars    |
 | use-rtl                      | Boolean          | null        | Force set the right to left language     |
 | weekday-display              | Array            | null        | Force set weekday headlines              |
 | open-date                    | Date\|String     |             | If set, open on that date                |
