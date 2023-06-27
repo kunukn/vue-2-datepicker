@@ -226,6 +226,7 @@ Inline always open version
 | use-utc                      | Boolean          | false       | use UTC for time calculations            |
 | use-day2-char                | Boolean          | false       | Weekdays in headline with max 2 chars    |
 | use-rtl                      | Boolean          | null        | Force set the right to left language     |
+| weekday-display              | Array            | null        | Force set weekday headlines              |
 | open-date                    | Date\|String     |             | If set, open on that date                |
 | minimum-view                 | String           | 'day'       | If set, lower-level views won't show     |
 | maximum-view                 | String           | 'year'      | If set, higher-level views won't show    |
