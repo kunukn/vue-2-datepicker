@@ -27,6 +27,7 @@ Vue 3 is out of scope in this repo.
     - [Directly from a CDN](#directly-from-a-cdn)
   - [Size](#size)
   - [Usage](#usage)
+  - [Custom styling](#custom-styling)
   - [Available props](#available-props)
   - [Events](#events)
   - [Date formatting](#date-formatting)
@@ -169,6 +170,38 @@ Inline always open version
 
 ```html
 <datepicker inline></datepicker>
+```
+
+## Custom styling
+
+Override the CSS variables to set the size.
+
+```css
+.vdp-datepicker {
+  --vdp-cell-size: 40px;
+  --vdp-color-border: transparent;
+
+  @media (min-width: 600px) {
+    --vdp-cell-size: 48px;
+  }
+}
+```
+
+Override the CSS classnames
+
+```css
+.vdp-datepicker {
+  .vdp-datepicker__body {
+    display: inline-block;
+    margin-inline: auto;
+  }
+}
+
+.vdp-datepicker__header {
+  :nth-child(2) {
+    font-weight: bold;
+  }
+}
 ```
 
 ## Available props
