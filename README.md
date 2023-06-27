@@ -17,16 +17,14 @@ Vue 3 is out of scope in this repo.
 
 # Table of contents
 
+- [Vue 2 Datepicker](#vue-2-datepicker)
+- [About](#about)
+- [Table of contents](#table-of-contents)
 - [Demo](#demo)
-- [Install](#install)
+  - [Install](#install)
+    - [CSS required](#css-required)
+  - [Add package](#add-package)
 - [Size](#size)
-- [Usage](#usage)
-- [Date Formatting](#date-formatting)
-- [Props](#available-props)
-- [Events](#events)
-- [Disabled dates](#disabled-dates)
-- [Highlighted dates](#highlighted-dates)
-- [Translations](#translations)
 
 # Demo
 
@@ -87,6 +85,6 @@ export default {
 
 | name                     | size    | gzip    |
 | ------------------------ | ------- | ------- |
-| vue-2-datepicker.css     | ~3.6 kB | ~0.9 kB |
-| vue-2-datepicker.js      | ~49 kB  | ~9.6 kB |
-| vue-2-datepicker.umd.cjs | ~31 kB  | ~7.2 kB |
+| vue-2-datepicker.css     | ~3.7 kB | ~0.9 kB |
+| vue-2-datepicker.js      | ~50 kB  | ~9.7 kB |
+| vue-2-datepicker.umd.cjs | ~32 kB  | ~7.3 kB |
