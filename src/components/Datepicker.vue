@@ -34,6 +34,7 @@
       <!-- Day View -->
       <PickerDay
         v-if="allowedToShowView('day')"
+        :dayFormatter="dayFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showDayView="showDayView"
@@ -49,7 +50,6 @@
         :mondayFirst="mondayFirst"
         :dayCellContent="dayCellContent"
         :useUtc="useUtc"
-        :useDay2char="useDay2char"
         :weekdayDisplay="weekdayDisplay"
         @changedMonth="handleChangedMonthFromDayPicker"
         @selectDate="selectDate"
@@ -64,6 +64,7 @@
       <!-- Month View -->
       <PickerMonth
         v-if="allowedToShowView('month')"
+        :monthFormatter="monthFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showMonthView="showMonthView"
@@ -86,6 +87,7 @@
       <!-- Year View -->
       <PickerYear
         v-if="allowedToShowView('year')"
+        :yearFormatter="yearFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showYearView="showYearView"
@@ -144,6 +146,9 @@ export default {
       validator: (val) => utils.validateDateInput(val),
     },
     dayCellContent: Function,
+    dayFormatter: Function,
+    monthFormatter: Function,
+    yearFormatter: Function,
     fullMonthName: Boolean,
     disabledDates: Object,
     highlighted: Object,
@@ -164,7 +169,6 @@ export default {
     required: Boolean,
     typeable: Boolean,
     useUtc: Boolean,
-    useDay2char: Boolean,
     useRtl: {
       type: Boolean,
       default: null,

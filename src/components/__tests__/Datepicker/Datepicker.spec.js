@@ -1,7 +1,7 @@
 import { describe, it, expect, beforeEach } from 'vitest'
 import Datepicker from '@/components/Datepicker.vue'
 import DateInput from '@/components/DateInput.vue'
-import { mount } from '@vue/test-utils'
+import { mount, shallowMount } from '@vue/test-utils'
 
 describe('Datepicker unmounted', () => {
   it('has a mounted hook', () => {

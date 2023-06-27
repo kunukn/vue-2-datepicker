@@ -47,6 +47,7 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   props: {
+    yearFormatter: Function,
     showYearView: Boolean,
     selectedDate: Date,
     pageDate: Date,

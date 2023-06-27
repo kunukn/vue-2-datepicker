@@ -4,15 +4,6 @@
     <h2 class="mb-4">Keyboard navigation supported by using tabs and enter.</h2>
 
     <div class="example">
-      <h3>Inline datepicker, UTC and Monday first, 2 char day</h3>
-      <datepicker inline useUtc mondayFirst useDay2char></datepicker>
-      <code>
-        &lt;datepicker inline useUtc mondayFirst
-        useDay2char&gt;&lt;/datepicker&gt;
-      </code>
-    </div>
-
-    <div class="example">
       <h3>Default datepicker...</h3>
       <datepicker placeholder="Select Date" />
       <code>

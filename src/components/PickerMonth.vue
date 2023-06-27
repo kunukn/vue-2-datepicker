@@ -56,6 +56,7 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   props: {
+    monthFormatter: Function,
     showMonthView: Boolean,
     selectedDate: Date,
     pageDate: Date,

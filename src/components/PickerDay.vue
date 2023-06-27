@@ -84,6 +84,7 @@ import { makeDateUtils } from '../utils/DateUtils'
 export default {
   components: {},
   props: {
+    dayFormatter: Function,
     showDayView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -102,7 +103,6 @@ export default {
     isRtl: Boolean,
     mondayFirst: Boolean,
     useUtc: Boolean,
-    useDay2char: Boolean,
     weekdayDisplay: Array,
   },
   data() {
@@ -233,8 +233,8 @@ export default {
   },
   methods: {
     formatDay(d) {
-      if (this.useDay2char) {
-        return (d || '').slice(0, 2)
+      if (this.dayFormatter) {
+        return this.dayFormatter(d)
       }
 
       return d
