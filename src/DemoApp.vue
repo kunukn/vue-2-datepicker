@@ -427,7 +427,7 @@ body {
   position: relative;
   padding: 0.5rem;
 
-  @media (min-width: 400px) {
+  @media (min-width: 500px) {
     padding: 1rem;
   }
 }

@@ -23,6 +23,7 @@
         type="button"
         class="day__month_btn"
         :class="allowedToShowView('month') ? 'up' : ''"
+        :disabled="!allowedToShowView('month')"
         @click="showMonthCalendar"
       >
         {{ isYmd ? currYearName : currMonthName }}

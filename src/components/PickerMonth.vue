@@ -20,6 +20,7 @@
         type="button"
         class="month__year_btn"
         :class="allowedToShowView('year') ? 'up' : ''"
+        :disabled="!allowedToShowView('year')"
         @click="showYearCalendar"
       >
         {{ pageYearName }}

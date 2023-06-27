@@ -30,8 +30,8 @@
       <slot slot="afterDateInput" name="afterDateInput"></slot>
     </DateInput>
 
-    <!-- Day View -->
     <div class="vdp-datepicker__body">
+      <!-- Day View -->
       <PickerDay
         v-if="allowedToShowView('day')"
         :pageDate="pageDate"
@@ -478,6 +478,9 @@ export default {
   --vdp-color-button-disabled: #999;
   --vdp-color-header-button-hover: #eee;
   --vdp-color-header-bg: #fff;
+  --vdp-color-highlighted-bg: #cae5ed;
+  --vdp-color-highlighted-disabled-fg: #a3a3a3;
+  --vdp-color-grey: #a3a3a3;
   --vdp-day-header-font-size: 14px;
 
   box-sizing: border-box;
@@ -491,6 +494,9 @@ export default {
   * {
     box-sizing: border-box;
   }
+}
+
+.vdp-datepicker__body {
 }
 
 .vdp-datepicker__calendar {
@@ -549,15 +555,15 @@ export default {
     }
 
     &.highlighted {
-      background: #cae5ed;
+      background: var(--vdp-color-highlighted-bg);
 
       &.disabled {
-        color: #a3a3a3;
+        color: var(--vdp-color-highlighted-disabled-fg);
       }
     }
 
     &.grey {
-      color: #888;
+      color: var(--vdp-color-grey);
 
       &:hover {
         background: inherit;
