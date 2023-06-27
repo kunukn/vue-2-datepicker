@@ -84,7 +84,7 @@ yarn add -D @kunukn/vue-2-datepicker
 ```
 
 ```js
-import Datepicker from '@kunukn/vue-2-datepicker'
+import { Datepicker } from '@kunukn/vue-2-datepicker'
 import '@kunukn/vue-2-datepicker/dist/date-picker.css'
 
 export default {
@@ -111,31 +111,6 @@ export default {
 <script>
   const app = new Vue({
     el: '#app',
-    components: {
-      VueDatepicker,
-    },
-  })
-</script>
-
-<!-- French language example -->
-<link
-  rel="stylesheet"
-  href="https://unpkg.com/@kunukn/vue-2-datepicker/dist/date-picker.css"
-/>
-<div id="app">
-  <vue-datepicker :language="fr"></vue-datepicker>
-</div>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
-<script src="https://unpkg.com/@kunukn/vue-2-datepicker/dist/vue-datepicker.umd.cjs"></script>
-<script src="https://unpkg.com/@kunukn/vue-2-datepicker/src/locale/translations/fr.js"></script>
-<script>
-  const app = new Vue({
-    el: '#app',
-    data() {
-      return {
-        fr: vdp_translation_fr.js,
-      }
-    },
     components: {
       VueDatepicker,
     },
@@ -230,7 +205,8 @@ Inline always open version
 | typeable                     | Boolean          | false       | If true, allow the user to type the date |
 | use-utc                      | Boolean          | false       | use UTC for time calculations            |
 | use-rtl                      | Boolean          | null        | Force set the right to left language     |
-| weekday-display              | Array            | null        | Force set weekday headlines              |
+| days-custom-display          | Array            | null        | Force set day headlines                  |
+| months-custom-display        | Array            | null        | Force set month headlines                |
 | open-date                    | Date\|String     |             | If set, open on that date                |
 | minimum-view                 | String           | 'day'       | If set, lower-level views won't show     |
 | maximum-view                 | String           | 'year'      | If set, higher-level views won't show    |

@@ -184,14 +184,8 @@ export default {
       type: String,
       default: 'year',
     },
-    daysCustomDisplay: {
-      type: Array,
-      default: null,
-    },
-    monthsCustomDisplay: {
-      type: Array,
-      default: null,
-    },
+    daysCustomDisplay: Array,
+    monthsCustomDisplay: Array,
   },
   data() {
     const startDate = this.openDate ? new Date(this.openDate) : new Date()
