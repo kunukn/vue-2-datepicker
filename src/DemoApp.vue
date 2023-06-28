@@ -38,6 +38,7 @@
         minimumView="day"
         maximumView="day"
         :headlineDayFormatter="intlDayFormatter"
+        :daysCustomDisplay="['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa']"
       ></date-picker>
       <pre>
 intlDayFormatter(payload) {
@@ -51,7 +52,8 @@ intlDayFormatter(payload) {
       >
       <code>
         &lt;date-picker minimumView="day" maximumView="day"
-        :headlineDayFormatter="intlDayFormatter"&gt;&lt;/date-picker&gt;
+        :headlineDayFormatter="intlDayFormatter"
+        :daysCustomDisplay="['Do','Lu','Ma','Mi','Ju','Vi','Sa']"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
