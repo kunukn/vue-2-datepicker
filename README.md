@@ -243,7 +243,7 @@ Override the CSS classnames
 | required                     | Boolean          | false       | Sets html required attribute on input    |
 | typeable                     | Boolean          | false       | If true, allow the user to type the date |
 | use-utc                      | Boolean          | false       | use UTC for time calculations            |
-| use-rtl                      | Boolean          | null        | Force set the right to left language     |
+| use-rtl                      | Boolean          | null        | Force set the RTL language               |
 | days-custom-display          | Array            | null        | Force set day headlines                  |
 | months-custom-display        | Array            | null        | Force set month headlines                |
 | open-date                    | Date\|String     |             | If set, open on that date                |

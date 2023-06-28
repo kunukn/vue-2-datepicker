@@ -27,6 +27,7 @@
         <template v-if="headlineDayFormatter">
           <span class="custom-formatted">{{
             headlineDayFormatter({
+              pageDate,
               selectedDate,
               isYmd,
               currYearName,
@@ -43,6 +44,7 @@
         <template v-if="headlineDayFormatter">
           <span class="custom-formatted">{{
             headlineDayFormatter({
+              pageDate,
               selectedDate,
               isYmd,
               currYearName,

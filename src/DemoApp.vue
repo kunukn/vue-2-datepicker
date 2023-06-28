@@ -40,16 +40,15 @@
         :headlineDayFormatter="intlDayFormatter"
       ></date-picker>
       <pre>
-intlDayFormatter({selectedDate}) {
+intlDayFormatter(payload) {
+  let date = payload.pageDate
   let options = {
-    weekday: 'long',
-    month: 'short',
-    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
   }
-
-  return new Intl.DateTimeFormat('de-DE', options).format(selectedDate)
-}
-      </pre>
+  return new Intl.DateTimeFormat('es-ES', options).format(date)
+}</pre
+      >
       <code>
         &lt;date-picker minimumView="day" maximumView="day"
         :headlineDayFormatter="intlDayFormatter"&gt;&lt;/date-picker&gt;
@@ -554,15 +553,14 @@ export default {
       this.disabledDates.from = val
     },
     intlDayFormatter(payload) {
-      let date = payload.selectedDate
+      let date = payload.pageDate
 
       if (typeof Intl) {
         let options = {
-          weekday: 'long',
-          month: 'short',
-          day: 'numeric',
+          month: 'long',
+          year: 'numeric',
         }
-        return new Intl.DateTimeFormat('de-DE', options).format(date)
+        return new Intl.DateTimeFormat('es-ES', options).format(date)
       }
 
       return date.toLocaleDateString()
