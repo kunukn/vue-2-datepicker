@@ -29,9 +29,6 @@
             headlineDayFormatter({
               pageDate,
               selectedDate,
-              isYmd,
-              currYearName,
-              currMonthName,
             })
           }}</span>
         </template>
@@ -46,9 +43,6 @@
             headlineDayFormatter({
               pageDate,
               selectedDate,
-              isYmd,
-              currYearName,
-              currMonthName,
             })
           }}</span>
         </template>

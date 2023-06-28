@@ -533,6 +533,10 @@ export default {
   * {
     box-sizing: border-box;
   }
+
+  p {
+    margin: 0;
+  }
 }
 
 .vdp-datepicker__calendar {
