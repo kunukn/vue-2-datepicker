@@ -59,10 +59,10 @@ intlDayFormatter(payload) {
 
     <div class="example">
       <h3>Typeable datepicker</h3>
-      <date-picker placeholder="Type or select date" :typeable="true" />
+      <date-picker placeholder="Type or select date" typeable />
       <code>
         &lt;date-picker placeholder="Type or select date"
-        :typeable="true"&gt;&lt;/date-picker&gt;
+        typeable&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
