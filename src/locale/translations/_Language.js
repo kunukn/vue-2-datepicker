@@ -1,5 +1,9 @@
 export default class Language {
   constructor(language, months, monthsAbbr, days) {
+    if (!monthsAbbr) {
+      monthsAbbr = (months || []).map((m) => (m || '').slice(0, 3))
+    }
+
     this.language = language
     this.months = months
     this.monthsAbbr = monthsAbbr

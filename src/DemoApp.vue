@@ -219,7 +219,9 @@
     <div class="example">
       <h3>With default open date</h3>
       <date-picker :open-date="openDate"></date-picker>
-      <code> &lt;date-picker :disabled="disabled"&gt;&lt;/date-picker&gt; </code>
+      <code>
+        &lt;date-picker :disabled="disabled"&gt;&lt;/date-picker&gt;
+      </code>
       <div class="settings">
         <h5>Settings</h5>
         <div class="form-group">
@@ -251,6 +253,18 @@
           </option>
         </select>
       </div>
+    </div>
+
+    <div class="example">
+      <h3>Fantasy language datepicker</h3>
+      <date-picker :language="fantasyLanguage"></date-picker>
+      <pre>
+import { Language } from '@kunukn/vue-2-datepicker';
+let fantasyLanguage = new Language(theLangObject);
+      </pre>
+      <code>
+        &lt;date-picker :language="fantasyLanguage"&gt;&lt;/date-picker&gt;
+      </code>
     </div>
 
     <div class="example">
@@ -377,37 +391,24 @@ import { DatePicker, Language } from './lib/main.js'
 import * as lang from './locale/all.js'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
-let en = new Language(
-  'English',
+let fantasyLanguage = new Language(
+  'Fantasy',
   [
-    'January',
-    'February',
-    'March',
-    'April',
-    'May',
-    'June',
-    'July',
-    'August',
-    'September',
-    'October',
-    'November',
-    'December',
+    'Frostfall',
+    'Moonrise',
+    'Suncrest',
+    'Stormwatch',
+    'Starfall',
+    'Nightshade',
+    'Firebloom',
+    'Leafsong',
+    'Thundermoon',
+    'Mistborn',
+    'Shadowweave',
+    'Winterveil',
   ],
-  [
-    'Jan',
-    'Feb',
-    'Mar',
-    'Apr',
-    'May',
-    'Jun',
-    'Jul',
-    'Aug',
-    'Sep',
-    'Oct',
-    'Nov',
-    'Dec',
-  ],
-  ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat']
+  null,
+  ['Sun', 'Moo', 'Sta', 'Sha', 'Fir', 'Win', 'Ear']
 )
 
 const state = {
@@ -421,6 +422,7 @@ export default {
   },
   data() {
     return {
+      fantasyLanguage,
       styleInput: null,
       format: 'd MMMM yyyy',
       disabledDates: {},
