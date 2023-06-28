@@ -127,8 +127,8 @@ export default {
 | name                | size   | gzip   |
 | ------------------- | ------ | ------ |
 | date-picker.css     | ~4 kB  | ~1 kB  |
-| date-picker.js      | ~52 kB | ~11 kB |
-| date-picker.umd.cjs | ~33 kB | ~8 kB  |
+| date-picker.js      | ~53 kB | ~11 kB |
+| date-picker.umd.cjs | ~35 kB | ~8 kB  |
 
 ## Usage
 
