@@ -3,8 +3,8 @@
   "private": false,
   "version": "0.0.13",
   "type": "module",
-  "main": "./dist/vue-datepicker.umd.cjs",
-  "module": "./dist/vue-datepicker.js",
+  "main": "./dist/date-picker.umd.cjs",
+  "module": "./dist/date-picker.js",
   "exports": {
     ".": {
       "import": "./dist/vue-datepicker.js",

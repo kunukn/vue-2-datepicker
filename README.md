@@ -108,7 +108,7 @@ export default {
   <date-picker></date-picker>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
-<script src="https://unpkg.com/@kunukn/vue-2-datepicker/dist/vue-datepicker.umd.cjs"></script>
+<script src="https://unpkg.com/@kunukn/vue-2-datepicker/dist/date-picker.umd.cjs"></script>
 <script>
   const app = new Vue({
     el: '#app',
