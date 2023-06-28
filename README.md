@@ -41,6 +41,7 @@ Vue 3 is out of scope in this repo.
       - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
+      - [Lazy loaded approach](#lazy-loaded-approach)
   - [Unpkg link](#unpkg-link)
     - [With this link you can navigate the existing resources.](#with-this-link-you-can-navigate-the-existing-resources)
 
@@ -436,7 +437,7 @@ Contributing guide - please use appropriate code from this [list](http://www.ian
 Below script tag in component.
 Beware importing the `all.js` file will load all the existing languages.
 
-```javascript
+```js
 import { en, es, de } from '@kunukn/vue-2-datepicker/src/locale/all.js'
 ```
 
@@ -454,9 +455,41 @@ data () {
 
 html.
 
-```js
+```html
 <date-picker :language="es"></date-picker>
 ```
+
+#### Lazy loaded approach
+
+```html
+<date-picker :language="language"></date-picker>
+```
+
+```js
+  props: {
+    isoLanguage: { /* e.g. German ISO code: 'de' */
+      type: String,
+      default: 'en'
+    },
+  },
+  data () {
+    return {
+      language: null,
+    }
+  },
+  async created () {
+    let langObject = await import(
+      `@kunukn/vue-2-datepicker/src/locale/translations/${isoLanguage}.js`
+    )
+
+    let newLang = langObject.default || langObject
+    if (newLang) {
+      this.language = newLang
+    }
+  },
+```
+
+
 
 Available languages
 
