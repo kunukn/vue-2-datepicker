@@ -121,11 +121,11 @@ export default {
 
 ## Size
 
-| name                     | size   | gzip   |
-| ------------------------ | ------ | ------ |
-| vue-2-datepicker.css     | ~4 kB  | ~1 kB  |
-| vue-2-datepicker.js      | ~52 kB | ~11 kB |
-| vue-2-datepicker.umd.cjs | ~33 kB | ~8 kB  |
+| name                | size   | gzip   |
+| ------------------- | ------ | ------ |
+| date-picker.css     | ~4 kB  | ~1 kB  |
+| date-picker.js      | ~52 kB | ~11 kB |
+| date-picker.umd.cjs | ~33 kB | ~8 kB  |
 
 ## Usage
 
@@ -432,9 +432,10 @@ Contributing guide - please use appropriate code from this [list](http://www.ian
 ### How to apply language
 
 Below script tag in component.
+Beware importing the `all.js` file will load all the existing languages.
 
 ```javascript
-import { en, es } from '@kunukn/vue-2-datepicker/src/locale/all.js'
+import { en, es, de } from '@kunukn/vue-2-datepicker/src/locale/all.js'
 ```
 
 In component data.
@@ -443,7 +444,8 @@ In component data.
 data () {
     return {
       en,
-      es
+      es,
+      de,
     }
 }
 ```
