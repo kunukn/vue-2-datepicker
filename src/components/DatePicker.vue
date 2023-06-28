@@ -36,6 +36,7 @@
       <PickerDay
         v-if="allowedToShowView('day')"
         :labelFormatter="dayFormatter"
+        :headlineDayFormatter="headlineDayFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showDayView="showDayView"
@@ -67,6 +68,7 @@
       <PickerMonth
         v-if="allowedToShowView('month')"
         :labelFormatter="monthFormatter"
+        :headlineMonthFormatter="headlineMonthFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showMonthView="showMonthView"
@@ -91,6 +93,7 @@
       <PickerYear
         v-if="allowedToShowView('year')"
         :formatter="yearFormatter"
+        :headlineYearFormatter="headlineYearFormatter"
         :pageDate="pageDate"
         :selectedDate="selectedDate"
         :showYearView="showYearView"
@@ -152,6 +155,9 @@ export default {
     dayFormatter: Function,
     monthFormatter: Function,
     yearFormatter: Function,
+    headlineDayFormatter: Function,
+    headlineMonthFormatter: Function,
+    headlineYearFormatter: Function,
     fullMonthName: Boolean,
     disabledDates: Object,
     highlighted: Object,

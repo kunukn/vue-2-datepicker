@@ -77,6 +77,7 @@ export default {
   components: {},
   props: {
     labelFormatter: Function,
+    headlineDayFormatter: Function,
     showDayView: Boolean,
     selectedDate: Date,
     pageDate: Date,
