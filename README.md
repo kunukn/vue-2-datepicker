@@ -41,6 +41,8 @@ Vue 3 is out of scope in this repo.
       - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
+  - [Unpkg link](#unpkg-link)
+    - [With this link you can navigate the existing resources.](#with-this-link-you-can-navigate-the-existing-resources)
 
 ## Demo
 
@@ -510,3 +512,9 @@ Available languages
 | vi     | Vietnamese        |           |
 | zh     | Chinese           |           |
 | zhHK   | Chinese_HK        |           |
+
+## Unpkg link
+
+### With this link you can navigate the existing resources.
+
+https://unpkg.com/@kunukn/vue-2-datepicker/
