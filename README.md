@@ -124,7 +124,7 @@ export default {
 | name                     | size   | gzip   |
 | ------------------------ | ------ | ------ |
 | vue-2-datepicker.css     | ~4 kB  | ~1 kB  |
-| vue-2-datepicker.js      | ~51 kB | ~10 kB |
+| vue-2-datepicker.js      | ~52 kB | ~11 kB |
 | vue-2-datepicker.umd.cjs | ~33 kB | ~8 kB  |
 
 ## Usage
