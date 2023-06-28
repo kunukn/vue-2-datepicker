@@ -35,6 +35,7 @@
       <!-- Day View -->
       <PickerDay
         v-if="allowedToShowView('day')"
+        :value="value"
         :labelFormatter="dayFormatter"
         :headlineDayFormatter="headlineDayFormatter"
         :pageDate="pageDate"
@@ -67,6 +68,7 @@
       <!-- Month View -->
       <PickerMonth
         v-if="allowedToShowView('month')"
+        :value="value"
         :labelFormatter="monthFormatter"
         :headlineMonthFormatter="headlineMonthFormatter"
         :pageDate="pageDate"
@@ -92,6 +94,7 @@
       <!-- Year View -->
       <PickerYear
         v-if="allowedToShowView('year')"
+        :value="value"
         :formatter="yearFormatter"
         :headlineYearFormatter="headlineYearFormatter"
         :pageDate="pageDate"
@@ -624,8 +627,10 @@ export default {
 
   > :nth-child(2) {
     flex: 1;
-    display: grid;
-    place-items: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 4px;
   }
 
   > * {

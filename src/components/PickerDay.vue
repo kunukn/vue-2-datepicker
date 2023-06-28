@@ -24,12 +24,26 @@
         :class="allowedToShowView('month') ? 'up' : ''"
         @click="showMonthCalendar"
       >
-        {{ isYmd ? currYearName : currMonthName }}
-        {{ isYmd ? currMonthName : currYearName }}
+        <template v-if="headlineDayFormatter">
+          <span class="custom-formatter">{{
+            headlineDayFormatter(selectedDate)
+          }}</span>
+        </template>
+        <template v-else>
+          <span>{{ isYmd ? currYearName : currMonthName }}</span>
+          <span>{{ isYmd ? currMonthName : currYearName }}</span>
+        </template>
       </button>
       <span v-else class="day__month_text">
-        {{ isYmd ? currYearName : currMonthName }}
-        {{ isYmd ? currMonthName : currYearName }}
+        <template v-if="headlineDayFormatter">
+          <span class="custom-formatter">{{
+            headlineDayFormatter(selectedDate)
+          }}</span>
+        </template>
+        <template v-else>
+          <span>{{ isYmd ? currYearName : currMonthName }}</span>
+          <span>{{ isYmd ? currMonthName : currYearName }}</span>
+        </template>
       </span>
       <button
         type="button"
@@ -106,6 +120,10 @@ export default {
     }
   },
   computed: {
+    headlineFormatted() {
+      return ''
+    },
+
     /**
      * Returns an array of day names
      * @return {String[]}
