@@ -87,7 +87,7 @@ yarn add -D @kunukn/vue-2-datepicker
 ```
 
 ```js
-import { DatePicker } from '@kunukn/vue-2-datepicker/dist/date-picker.js'
+import { DatePicker } from '@kunukn/vue-2-datepicker'
 import '@kunukn/vue-2-datepicker/dist/date-picker.css'
 
 export default {
