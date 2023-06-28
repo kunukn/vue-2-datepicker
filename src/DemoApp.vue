@@ -47,7 +47,7 @@ intlDayFormatter({selectedDate}) {
     day: 'numeric',
   }
 
-  return new Intl.DateTimeFormat('de-DE', options).format(date)
+  return new Intl.DateTimeFormat('de-DE', options).format(selectedDate)
 }
       </pre>
       <code>
