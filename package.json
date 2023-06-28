@@ -7,8 +7,8 @@
   "module": "./dist/date-picker.js",
   "exports": {
     ".": {
-      "import": "./dist/vue-datepicker.js",
-      "require": "./dist/vue-datepicker.umd.cjs"
+      "import": "./dist/date-picker.js",
+      "require": "./dist/date-picker.umd.cjs"
     }
   },
   "repository": {
