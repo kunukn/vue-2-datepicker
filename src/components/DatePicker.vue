@@ -232,7 +232,7 @@ export default {
     },
 
     translation() {
-      return this.language
+      return this.language || englishLanguage
     },
 
     calendarStyle() {

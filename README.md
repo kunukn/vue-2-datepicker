@@ -1,4 +1,4 @@
-# Vue 2 Datepicker
+# Vue 2 DatePicker
 
 [![npm version](https://img.shields.io/npm/v/@kunukn/vue-2-datepicker.svg?style=flat-square)](https://www.npmjs.com/package/@kunukn/vue-2-datepicker)
 [![npm downloads](https://img.shields.io/npm/dm/@kunukn/vue-2-datepicker.svg?style=flat-square)](https://www.npmjs.com/package/@kunukn/vue-2-datepicker)
@@ -17,7 +17,7 @@ Vue 3 is out of scope in this repo.
 
 ## Table of contents
 
-- [Vue 2 Datepicker](#vue-2-datepicker)
+- [Vue 2 DatePicker](#vue-2-datepicker)
   - [About](#about)
   - [Table of contents](#table-of-contents)
   - [Demo](#demo)
