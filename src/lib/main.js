@@ -1,4 +1,4 @@
-import Datepicker from '../components/Datepicker.vue'
+import DatePicker from '../components/Datepicker.vue'
 import Language from '../locale/translations/_Language'
 
-export { Datepicker, Language }
+export { DatePicker, Language }

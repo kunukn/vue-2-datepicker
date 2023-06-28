@@ -18,9 +18,9 @@ export default defineConfig({
     lib: {
       // Could also be a dictionary or array of multiple entry points
       entry: resolve(__dirname, 'src/lib/main.js'),
-      name: 'VueDatepicker',
+      name: 'DatePicker',
       // the proper extensions will be added
-      fileName: 'vue-datepicker',
+      fileName: 'date-picker',
     },
     rollupOptions: {
       // make sure to externalize deps that shouldn't be bundled

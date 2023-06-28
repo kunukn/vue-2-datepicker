@@ -5,59 +5,59 @@
 
     <div class="example">
       <h3>Inline datepicker, UTC, Monday first, min-height</h3>
-      <datepicker inline useUtc mondayFirst ensureMinHeight></datepicker>
+      <date-picker inline useUtc mondayFirst ensureMinHeight></date-picker>
       <code>
-        &lt;datepicker inline useUtc mondayFirst
-        ensureMinHeight&gt;&lt;/datepicker&gt;
+        &lt;date-picker inline useUtc mondayFirst
+        ensureMinHeight&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Default datepicker...</h3>
-      <datepicker placeholder="Select Date" />
+      <date-picker placeholder="Select Date" />
       <code>
-        &lt;datepicker placeholder="Select Date"&gt;&lt;/datepicker&gt;
+        &lt;date-picker placeholder="Select Date"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Custom day label formatter</h3>
-      <datepicker
+      <date-picker
         placeholder="Select Date"
         :dayFormatter="(value, index) => `${(value || '').slice(0, 2)}${index}`"
       />
       <code>
-        &lt;datepicker placeholder="Select Date" :dayFormatter="(value, index)
-        =&gt; `${(value || '').slice(0, 2)}${index}`"&gt;&lt;/datepicker&gt;
+        &lt;date-picker placeholder="Select Date" :dayFormatter="(value, index)
+        =&gt; `${(value || '').slice(0, 2)}${index}`"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Typeable datepicker</h3>
-      <datepicker placeholder="Type or select date" :typeable="true" />
+      <date-picker placeholder="Type or select date" :typeable="true" />
       <code>
-        &lt;datepicker placeholder="Type or select date"
-        :typeable="true"&gt;&lt;/datepicker&gt;
+        &lt;date-picker placeholder="Type or select date"
+        :typeable="true"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Bootstrap styled datepicker</h3>
-      <datepicker bootstrapStyling calendarButton clearButton> </datepicker>
+      <date-picker bootstrapStyling calendarButton clearButton> </date-picker>
       <code>
-        &lt;datepicker placeholder="Select Date"&gt;&lt;/datepicker&gt;
+        &lt;date-picker placeholder="Select Date"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>v-model datepicker</h3>
-      <datepicker
+      <date-picker
         v-model="vModelExample"
         placeholder="Select Date"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker placeholder="Select Date"
-        v-model="vmodelexample"&gt;&lt;/datepicker&gt;
+        &lt;date-picker placeholder="Select Date"
+        v-model="vmodelexample"&gt;&lt;/date-picker&gt;
       </code>
       <hr />
       <p>{{ vModelExample }}</p>
@@ -65,31 +65,31 @@
 
     <div class="example">
       <h3>Force day label display</h3>
-      <datepicker
+      <date-picker
         :daysCustomDisplay="['😖', '😏', '😌', '😊', '😜', '😝', '🥴']"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker :daysCustomDisplay="['😖', '😏', '😌', '😊', '😜', '😝',
-        '🥴']"&gt;&lt;/datepicker&gt;
+        &lt;date-picker :daysCustomDisplay="['😖', '😏', '😌', '😊', '😜', '😝',
+        '🥴']"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Slots</h3>
-      <datepicker>
+      <date-picker>
         <template #prevButton> 👈 </template>
         <template #nextButton> 👉 </template>
-      </datepicker>
+      </date-picker>
       <code>
-        &lt;datepicker&gt; &lt;template #prevButton&gt; 👈 &lt;/template&gt;
-        &lt;template #nextButton&gt; 👉 &lt;/template&gt; &lt;/datepicker&gt;
+        &lt;date-picker&gt; &lt;template #prevButton&gt; 👈 &lt;/template&gt;
+        &lt;template #nextButton&gt; 👉 &lt;/template&gt; &lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Format datepicker</h3>
-      <datepicker :format="format"></datepicker>
-      <code> &lt;datepicker :format="format"&gt;&lt;/datepicker&gt; </code>
+      <date-picker :format="format"></date-picker>
+      <code> &lt;date-picker :format="format"&gt;&lt;/date-picker&gt; </code>
       <div class="settings">
         <h5>Settings</h5>
         <div class="form-group">
@@ -115,19 +115,19 @@
 
     <div class="example">
       <h3>With minimum and maximum date range</h3>
-      <datepicker :disabledDates="disabledDates"></datepicker>
+      <date-picker :disabledDates="disabledDates"></date-picker>
       <code>
-        &lt;datepicker :disabledDates="disabledDates"&gt;&lt;/datepicker&gt;
+        &lt;date-picker :disabledDates="disabledDates"&gt;&lt;/date-picker&gt;
       </code>
       <div class="settings">
         <h5>Settings</h5>
         <div class="form-group">
           <label>Disabled to:</label>
-          <datepicker @selected="disableTo"></datepicker>
+          <date-picker @selected="disableTo"></date-picker>
         </div>
         <div class="form-group">
           <label>Disabled from:</label>
-          <datepicker @selected="disableFrom"></datepicker>
+          <date-picker @selected="disableFrom"></date-picker>
         </div>
         <div class="form-group">
           <label>Disabled Days of Month:</label>
@@ -141,7 +141,7 @@
         <pre>disabled: {{ disabledDates }}</pre>
 
         <h5>Resulting Date picker</h5>
-        <datepicker :disabledDates="disabledDates"></datepicker>
+        <date-picker :disabledDates="disabledDates"></date-picker>
       </div>
     </div>
 
@@ -162,15 +162,15 @@
           }
         </pre>
         <h5>Resulting Date picker</h5>
-        <datepicker :disabledDates="disabledFn"></datepicker>
+        <date-picker :disabledDates="disabledFn"></date-picker>
       </div>
     </div>
 
     <div class="example">
       <h3>Highlighting Dates Matching Given Function</h3>
-      <datepicker :highlighted="highlighted"></datepicker>
+      <date-picker :highlighted="highlighted"></date-picker>
       <code>
-        &lt;datepicker :highlighted="highlighted"&gt;&lt;/datepicker&gt;
+        &lt;date-picker :highlighted="highlighted"&gt;&lt;/date-picker&gt;
       </code>
       <div class="settings">
         <h5>Settings</h5>
@@ -186,24 +186,24 @@
         </pre>
 
         <h5>Resulting Date picker</h5>
-        <datepicker :highlighted="highlightedFn"></datepicker>
+        <date-picker :highlighted="highlightedFn"></date-picker>
       </div>
     </div>
 
     <div class="example">
       <h3>Highlighting Dates</h3>
       <code>
-        &lt;datepicker :highlighted="highlighted"&gt;&lt;/datepicker&gt;
+        &lt;date-picker :highlighted="highlighted"&gt;&lt;/date-picker&gt;
       </code>
       <div class="settings">
         <h5>Settings</h5>
         <div class="form-group">
           <label>Highlight from:</label>
-          <datepicker @selected="highlightFrom"></datepicker>
+          <date-picker @selected="highlightFrom"></date-picker>
         </div>
         <div class="form-group">
           <label>Highlight to:</label>
-          <datepicker @selected="highlightTo"></datepicker>
+          <date-picker @selected="highlightTo"></date-picker>
         </div>
         <div class="form-group">
           <label>Highlight Days of Month:</label>
@@ -212,19 +212,19 @@
         <pre>highlighted: {{ highlighted }}</pre>
 
         <h5>Resulting Date picker</h5>
-        <datepicker :highlighted="highlighted"></datepicker>
+        <date-picker :highlighted="highlighted"></date-picker>
       </div>
     </div>
 
     <div class="example">
       <h3>With default open date</h3>
-      <datepicker :open-date="openDate"></datepicker>
-      <code> &lt;datepicker :disabled="disabled"&gt;&lt;/datepicker&gt; </code>
+      <date-picker :open-date="openDate"></date-picker>
+      <code> &lt;date-picker :disabled="disabled"&gt;&lt;/date-picker&gt; </code>
       <div class="settings">
         <h5>Settings</h5>
         <div class="form-group">
           <label>Open date:</label>
-          <datepicker v-model="openDate"></datepicker>
+          <date-picker v-model="openDate"></date-picker>
         </div>
         <pre>openDate: {{ openDate }}</pre>
       </div>
@@ -234,14 +234,14 @@
       <h3>Translations</h3>
       <h5>{{ languages[language].language }} datepicker</h5>
 
-      <datepicker
+      <date-picker
         :language="languages[language]"
         format="d MMMM yyyy"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker :language="languages.{{
+        &lt;date-picker :language="languages.{{
           language
-        }}"&gt;&lt;/datepicker&gt;
+        }}"&gt;&lt;/date-picker&gt;
       </code>
       <div class="settings">
         <h5>Settings</h5>
@@ -255,54 +255,54 @@
 
     <div class="example">
       <h3>RTL datepicker</h3>
-      <datepicker :language="languages.he"></datepicker>
+      <date-picker :language="languages.he"></date-picker>
       <code>
-        &lt;datepicker :language="languages.he"&gt;&lt;/datepicker&gt;
+        &lt;date-picker :language="languages.he"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>RTL datepicker English</h3>
-      <datepicker useRtl :language="languages.en"></datepicker>
+      <date-picker useRtl :language="languages.en"></date-picker>
       <code>
-        &lt;datepicker useRtl :language="languages.en"&gt;&lt;/datepicker&gt;
+        &lt;date-picker useRtl :language="languages.en"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Day view only</h3>
-      <datepicker minimumView="day" maximumView="day"></datepicker>
+      <date-picker minimumView="day" maximumView="day"></date-picker>
       <code>
-        &lt;datepicker minimumView="day"
-        maximumView="day"&gt;&lt;/datepicker&gt;
+        &lt;date-picker minimumView="day"
+        maximumView="day"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Day view only RTL</h3>
-      <datepicker
+      <date-picker
         minimumView="day"
         maximumView="day"
         :language="languages.he"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker minimumView="day" maximumView="day"
-        language="languages.he"&gt;&lt;/datepicker&gt;
+        &lt;date-picker minimumView="day" maximumView="day"
+        language="languages.he"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Month view only</h3>
-      <datepicker minimumView="month" maximumView="month"></datepicker>
+      <date-picker minimumView="month" maximumView="month"></date-picker>
       <code>
-        &lt;datepicker minimumView="month"
-        maximumView="month"&gt;&lt;/datepicker&gt;
+        &lt;date-picker minimumView="month"
+        maximumView="month"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Force month label display</h3>
-      <datepicker
+      <date-picker
         minimumView="month"
         maximumView="month"
         :monthsCustomDisplay="[
@@ -319,61 +319,61 @@
           'Novy',
           'Decy',
         ]"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker inline minimumView="month" maximumView="month"
+        &lt;date-picker inline minimumView="month" maximumView="month"
         :monthsCustomDisplay="[ 'Jany', 'Febry', 'Marty', 'Apryl', 'May',
         'Juny', 'Jylu', 'Augy', 'Septy', 'Octy', 'Novy', 'Decy'
-        ]"&gt;&lt;/datepicker&gt;
+        ]"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Custom month label formatter</h3>
-      <datepicker
+      <date-picker
         minimumView="month"
         maximumView="month"
         :monthFormatter="
           (value, index) => `${(value || '').slice(0, 2)}${index}`
         "
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker inline minimumView="month" maximumView="month"
+        &lt;date-picker inline minimumView="month" maximumView="month"
         :monthFormatter=" (value, index) =&gt; `${(value || '').slice(0,
-        2)}${index}` "&gt;&lt;/datepicker&gt;
+        2)}${index}` "&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Day and month view only</h3>
-      <datepicker
+      <date-picker
         minimumView="day"
         maximumView="month"
         initialView="month"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker minimumView="day" maximumView="month"
-        initialView="month"&gt;&lt;/datepicker&gt;
+        &lt;date-picker minimumView="day" maximumView="month"
+        initialView="month"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
     <div class="example">
       <h3>Year and month view only</h3>
-      <datepicker
+      <date-picker
         minimumView="month"
         maximumView="year"
         initialView="year"
-      ></datepicker>
+      ></date-picker>
       <code>
-        &lt;datepicker minimumView="month" maximumView="year"
-        initialView="year"&gt;&lt;/datepicker&gt;
+        &lt;date-picker minimumView="month" maximumView="year"
+        initialView="year"&gt;&lt;/date-picker&gt;
       </code>
     </div>
   </div>
 </template>
 
 <script>
-import { Datepicker, Language } from './lib/main.js'
+import { DatePicker, Language } from './lib/main.js'
 import * as lang from './locale/all.js'
 
 // eslint-disable-next-line @typescript-eslint/no-unused-vars
@@ -417,7 +417,7 @@ const state = {
 export default {
   name: 'Demo',
   components: {
-    Datepicker,
+    DatePicker,
   },
   data() {
     return {

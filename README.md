@@ -31,14 +31,14 @@ Vue 3 is out of scope in this repo.
   - [Available props](#available-props)
   - [Events](#events)
   - [Date formatting](#date-formatting)
-    - [String formatter](#string-formatter)
-    - [Function formatter](#function-formatter)
+      - [String formatter](#string-formatter)
+      - [Function formatter](#function-formatter)
   - [Disabled Dates](#disabled-dates)
   - [Highlighted Dates](#highlighted-dates)
   - [Slots](#slots)
-    - [beforeCalendarHeader](#beforecalendarheader)
-    - [afterDateInput](#afterdateinput)
-    - [prevButton and nextButton](#prevbutton-and-nextbutton)
+      - [beforeCalendarHeader](#beforecalendarheader)
+      - [afterDateInput](#afterdateinput)
+      - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
 
@@ -85,13 +85,13 @@ yarn add -D @kunukn/vue-2-datepicker
 ```
 
 ```js
-import { Datepicker } from '@kunukn/vue-2-datepicker'
+import { DatePicker } from '@kunukn/vue-2-datepicker'
 import '@kunukn/vue-2-datepicker/dist/date-picker.css'
 
 export default {
   // ...
   components: {
-    Datepicker,
+    DatePicker,
   },
   // ...
 }
@@ -105,7 +105,7 @@ export default {
   href="https://unpkg.com/@kunukn/vue-2-datepicker/dist/date-picker.css"
 />
 <div id="app">
-  <vue-datepicker></vue-datepicker>
+  <date-picker></date-picker>
 </div>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/vue/2.6.14/vue.min.js"></script>
 <script src="https://unpkg.com/@kunukn/vue-2-datepicker/dist/vue-datepicker.umd.cjs"></script>
@@ -113,7 +113,7 @@ export default {
   const app = new Vue({
     el: '#app',
     components: {
-      VueDatepicker,
+      DatePicker,
     },
   })
 </script>
@@ -130,7 +130,7 @@ export default {
 ## Usage
 
 ```html
-<datepicker></datepicker>
+<date-picker></date-picker>
 ```
 
 _value_ prop if passed should be a Date object
@@ -141,35 +141,35 @@ _value_ prop if passed should be a Date object
     date: new Date(2023, 6, 27),
   }
 </script>
-<datepicker :value="state.date"></datepicker>
+<date-picker :value="state.date"></date-picker>
 ```
 
 support name attribute for normal html form submission
 
 ```html
-<datepicker :value="state.date" name="uniquename"></datepicker>
+<date-picker :value="state.date" name="uniquename"></date-picker>
 ```
 
 Using `v-model`
 
 ```html
-<datepicker v-model="state.date" name="uniquename"></datepicker>
+<date-picker v-model="state.date" name="uniquename"></date-picker>
 ```
 
 Emits events
 
 ```html
-<datepicker
+<date-picker
   @selected="doSomethingInParentComponentFunction"
   @opened="datepickerOpenedFunction"
   @closed="datepickerClosedFunction"
-></datepicker>
+></date-picker>
 ```
 
 Inline always open version
 
 ```html
-<datepicker inline></datepicker>
+<date-picker inline></date-picker>
 ```
 
 ## Custom styling
@@ -293,7 +293,7 @@ This allow us to use dayjs, date-fns or any other library to format date.
     }
   }
 </script>
-<datepicker :format="customFormatter"></datepicker>
+<date-picker :format="customFormatter"></date-picker>
 ```
 
 ## Disabled Dates
@@ -338,7 +338,7 @@ Dates can be disabled in a number of ways.
     },
   }
 </script>
-<datepicker :disabled-dates="state.disabledDates"></datepicker>
+<date-picker :disabled-dates="state.disabledDates"></date-picker>
 ```
 
 ## Highlighted Dates
@@ -376,7 +376,7 @@ dates to highlight.
     },
   }
 </script>
-<datepicker :highlighted="state.highlighted"></datepicker>
+<date-picker :highlighted="state.highlighted"></date-picker>
 ```
 
 ## Slots
@@ -391,9 +391,9 @@ An example would be to use bootstrap's `input-group-prepend` and `input-group-ap
 to show some custom text:
 
 ```html
-<datepicker :bootstrap-styling="true">
+<date-picker :bootstrap-styling="true">
   <div slot="beforeCalendarHeader" class="calender-header">Choose a Date</div>
-</datepicker>
+</date-picker>
 ```
 
 #### afterDateInput
@@ -402,11 +402,11 @@ To implement some custom styling (for instance to add an animated placeholder) o
 `afterDateInput` allows you to do that:
 
 ```html
-<datepicker>
+<date-picker>
   <span slot="afterDateInput" class="animated-placeholder">
     Choose a Date
   </span>
-</datepicker>
+</date-picker>
 ```
 
 #### prevButton and nextButton
@@ -414,10 +414,10 @@ To implement some custom styling (for instance to add an animated placeholder) o
 Enables to apply custom prev and next button design.
 
 ```html
-<datepicker>
+<date-picker>
   <span slot="prevButton">👈</span>
   <span slot="nextButton">👉</span>
-</datepicker>
+</date-picker>
 ```
 
 ## Translations
@@ -451,7 +451,7 @@ data () {
 html.
 
 ```js
-<datepicker :language="es"></datepicker>
+<date-picker :language="es"></date-picker>
 ```
 
 Available languages
