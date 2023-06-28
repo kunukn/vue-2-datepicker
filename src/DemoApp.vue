@@ -259,7 +259,7 @@
       <h3>Fantasy language datepicker</h3>
       <date-picker :language="fantasyLanguage"></date-picker>
       <pre>
-import { Language } from '@kunukn/vue-2-datepicker';
+import { Language } from '@kunukn/vue-2-datepicker/dist/date-picker.js';
 let fantasyLanguage = new Language(theLangObject);
       </pre>
       <code>

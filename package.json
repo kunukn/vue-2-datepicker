@@ -1,7 +1,7 @@
 {
   "name": "@kunukn/vue-2-datepicker",
   "private": false,
-  "version": "0.0.15",
+  "version": "0.0.16",
   "type": "module",
   "main": "./dist/date-picker.umd.cjs",
   "module": "./dist/date-picker.js",
@@ -21,7 +21,7 @@
   "scripts": {
     "dev": "vite",
     "dev-open": "vite --open",
-    "build": "vue-tsc && vite build",
+    "build": "vue-tsc && vite build && node post-build.js",
     "build-only": "vite build",
     "type-check": "vue-tsc --noEmit -p tsconfig.vitest.json --composite false",
     "preview": "vite preview",
@@ -30,7 +30,6 @@
     "lint": "concurrently \"yarn lint:es\" \"yarn lint:style\"",
     "test": "vitest --environment jsdom --root src/",
     "validate": "concurrently \"yarn lint\" \"yarn test\""
-
   },
   "license": "MIT",
   "files": [
