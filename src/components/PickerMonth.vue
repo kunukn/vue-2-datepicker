@@ -26,13 +26,13 @@
         @click="showYearCalendar"
       >
         <p v-if="headlineMonthFormatter" class="custom-formatted">
-          {{ headlineMonthFormatter(selectDate, pageYearName) }}
+          {{ headlineMonthFormatter({ selectDate, pageYearName }) }}
         </p>
         <p v-else>{{ pageYearName }}</p>
       </button>
       <span v-else class="month__year_text">
         <p v-if="headlineMonthFormatter" class="custom-formatted">
-          {{ headlineMonthFormatter(selectDate, pageYearName) }}
+          {{ headlineMonthFormatter({ selectDate, pageYearName }) }}
         </p>
         <p v-else>{{ pageYearName }}</p>
       </span>

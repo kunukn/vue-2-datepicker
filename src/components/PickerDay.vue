@@ -26,12 +26,12 @@
       >
         <template v-if="headlineDayFormatter">
           <span class="custom-formatted">{{
-            headlineDayFormatter(
+            headlineDayFormatter({
               selectedDate,
               isYmd,
               currYearName,
-              currMonthName
-            )
+              currMonthName,
+            })
           }}</span>
         </template>
         <template v-else>
@@ -42,12 +42,12 @@
       <span v-else class="day__month_text">
         <template v-if="headlineDayFormatter">
           <span class="custom-formatted">{{
-            headlineDayFormatter(
+            headlineDayFormatter({
               selectedDate,
               isYmd,
               currYearName,
-              currMonthName
-            )
+              currMonthName,
+            })
           }}</span>
         </template>
         <template v-else>

@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-    <h1>Datepicker Examples</h1>
+    <h1>Vue 2 DatePicker Examples</h1>
     <h2 class="mb-4">Keyboard navigation supported by using tabs and enter.</h2>
 
     <div class="example">
@@ -29,6 +29,30 @@
       <code>
         &lt;date-picker placeholder="Select Date" :dayFormatter="(value, index)
         =&gt; `${(value || '').slice(0, 2)}${index}`"&gt;&lt;/date-picker&gt;
+      </code>
+    </div>
+
+    <div class="example">
+      <h3>Custom day headline formatter using Intl Browser API</h3>
+      <date-picker
+        minimumView="day"
+        maximumView="day"
+        :headlineDayFormatter="intlDayFormatter"
+      ></date-picker>
+      <pre>
+intlDayFormatter({selectedDate}) {
+  let options = {
+    weekday: 'long',
+    month: 'short',
+    day: 'numeric',
+  }
+
+  return new Intl.DateTimeFormat('de-DE', options).format(date)
+}
+      </pre>
+      <code>
+        &lt;date-picker minimumView="day" maximumView="day"
+        :headlineDayFormatter="intlDayFormatter"&gt;&lt;/date-picker&gt;
       </code>
     </div>
 
@@ -407,7 +431,7 @@ let fantasyLanguage = new Language(
     'Shadowweave',
     'Winterveil',
   ],
-  null,
+  null, // implicit month abbreviations
   ['Sun', 'Moo', 'Sta', 'Sha', 'Fir', 'Win', 'Ear']
 )
 
@@ -528,6 +552,20 @@ export default {
         }
       }
       this.disabledDates.from = val
+    },
+    intlDayFormatter(payload) {
+      let date = payload.selectedDate
+
+      if (typeof Intl) {
+        let options = {
+          weekday: 'long',
+          month: 'short',
+          day: 'numeric',
+        }
+        return new Intl.DateTimeFormat('de-DE', options).format(date)
+      }
+
+      return date.toLocaleDateString()
     },
   },
 }
