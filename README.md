@@ -218,6 +218,9 @@ Override the CSS classnames
 | dayFormatter                 | Function         |             | Custom day formatter                     |
 | monthFormatter               | Function         |             | Custom month formatter                   |
 | yearFormatter                | Function         |             | Custom year formatter                    |
+| headlineDayFormatter         | Function         |             | Custom day headline formatter            |
+| headlineMonthFormatter       | Function         |             | Custom month headline formatter          |
+| headlineYearFormatter        | Function         |             | Custom year headline formatter           |
 | full-month-name              | Boolean          | false       | To show the full month name              |
 | language                     | Object           | en          | Translation for days and months          |
 | disabled-dates               | Object           |             | See below for configuration              |

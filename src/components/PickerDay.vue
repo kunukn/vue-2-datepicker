@@ -25,8 +25,13 @@
         @click="showMonthCalendar"
       >
         <template v-if="headlineDayFormatter">
-          <span class="custom-formatter">{{
-            headlineDayFormatter(selectedDate)
+          <span class="custom-formatted">{{
+            headlineDayFormatter(
+              selectedDate,
+              isYmd,
+              currYearName,
+              currMonthName
+            )
           }}</span>
         </template>
         <template v-else>
@@ -36,8 +41,13 @@
       </button>
       <span v-else class="day__month_text">
         <template v-if="headlineDayFormatter">
-          <span class="custom-formatter">{{
-            headlineDayFormatter(selectedDate)
+          <span class="custom-formatted">{{
+            headlineDayFormatter(
+              selectedDate,
+              isYmd,
+              currYearName,
+              currMonthName
+            )
           }}</span>
         </template>
         <template v-else>

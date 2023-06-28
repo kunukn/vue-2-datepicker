@@ -25,16 +25,16 @@
         :class="allowedToShowView('year') ? 'up' : ''"
         @click="showYearCalendar"
       >
-        <span v-if="headlineMonthFormatter">{{
-          headlineMonthFormatter(selectDate)
-        }}</span>
-        <span v-else>{{ pageYearName }}</span>
+        <p v-if="headlineMonthFormatter" class="custom-formatted">
+          {{ headlineMonthFormatter(selectDate, pageYearName) }}
+        </p>
+        <p v-else>{{ pageYearName }}</p>
       </button>
       <span v-else class="month__year_text">
-        <span v-if="headlineMonthFormatter"
-          >{{ headlineMonthFormatter(selectDate) }}
-        </span>
-        <span v-else>{{ pageYearName }}</span>
+        <p v-if="headlineMonthFormatter" class="custom-formatted">
+          {{ headlineMonthFormatter(selectDate, pageYearName) }}
+        </p>
+        <p v-else>{{ pageYearName }}</p>
       </span>
 
       <button

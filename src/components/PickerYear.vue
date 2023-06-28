@@ -17,7 +17,10 @@
       >
         <slot name="prevButton" />
       </button>
-      <p>{{ getPageDecade }}</p>
+      <p v-if="headlineYearFormatter" class="custom-formatted page-decade">
+        {{ headlineYearFormatter(selectDate, getPageDecade) }}
+      </p>
+      <p v-else class="page-decade">{{ getPageDecade }}</p>
       <button
         type="button"
         aria-label=">"
