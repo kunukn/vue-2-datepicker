@@ -444,7 +444,7 @@ import { en, es, de } from '@kunukn/vue-2-datepicker/src/locale/all.js'
 In component data.
 
 ```js
-data () {
+data() {
     return {
       en,
       es,
@@ -472,12 +472,12 @@ html.
       default: 'en'
     },
   },
-  data () {
+  data() {
     return {
       language: null,
     }
   },
-  async created () {
+  async created() {
     let langObject = await import(
       `@kunukn/vue-2-datepicker/src/locale/translations/${isoLanguage}.js`
     )
@@ -488,8 +488,6 @@ html.
     }
   },
 ```
-
-
 
 Available languages
 

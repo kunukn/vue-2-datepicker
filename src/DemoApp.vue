@@ -454,6 +454,15 @@ export default {
       return this.styleInput
     },
   },
+  async created() {
+    // let isoLanguage = 'es'
+    // let langObject = await import(`./locale/translations/${isoLanguage}.js`)
+
+    // let newLang = langObject.default || langObject
+    // if (newLang) {
+    //   console.log('async loading language works', newLang)
+    // }
+  },
   methods: {
     highlightTo(val) {
       if (typeof this.highlighted.to === 'undefined') {

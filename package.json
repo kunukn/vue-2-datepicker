@@ -1,7 +1,7 @@
 {
   "name": "@kunukn/vue-2-datepicker",
   "private": false,
-  "version": "0.0.16",
+  "version": "0.0.17",
   "type": "module",
   "main": "./dist/date-picker.umd.cjs",
   "module": "./dist/date-picker.js",
