@@ -31,7 +31,7 @@
       <slot slot="clearButton" name="clearButton"></slot>
     </DateInput>
 
-    <div class="vdp-datepicker__body">
+    <div class="vdp-datepicker__container">
       <!-- Day View -->
       <PickerDay
         v-if="allowedToShowView('day')"

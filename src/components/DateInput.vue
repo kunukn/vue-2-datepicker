@@ -1,5 +1,8 @@
 <template>
-  <div :class="{ 'input-group': bootstrapStyling }">
+  <div
+    class="vdp-datepicker__date-input"
+    :class="{ 'input-group': bootstrapStyling }"
+  >
     <!-- Calendar Button -->
     <button
       v-if="calendarButton"

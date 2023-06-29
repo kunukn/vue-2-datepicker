@@ -9,7 +9,7 @@ A date picker Vue component. Compatible with Vue 2.x
 
 ## About
 
-A date picker Vue component. Compatible with Vue 2.x
+A date picker Vue component that can pick from days, from months or years. Compatible with Vue 2.x.
 
 Vue 3 is out of scope in this repo. I needed a 2.6+ version and this repo is based on https://github.com/charliekassel/vuejs-datepicker#readme
 
@@ -52,13 +52,17 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
 
 ## Demo
 
+![date-picker](media/date-picker.png 'date-picker')
+
+The click-able areas are: `the arrows`, `the date headline` and the `date numbers`.
+
 To view a demo online:
 
 <table style="border-spacing: 16px;border-collapse: separate;">
 
 <tr>
 <td>Codesandbox</td>
-<td><img width="24" height="24" src="https://raw.githubusercontent.com/kunukn/vue-2-datepicker/main/ui-library-logo/Vue-logo.svg"/></td>
+<td><img width="24" height="24" src="media/Vue-logo.svg"/></td>
 <td><a href="https://d9xtk7.csb.app/" target="_blank">View</a></td>
 <td><a href="https://codesandbox.io/s/vue-2-datepicker-demo-d9xtk7" target="_blank" >Edit</a></td>
 </tr>
@@ -221,7 +225,7 @@ Override the CSS classnames
 
 ```css
 .vdp-datepicker {
-  .vdp-datepicker__body {
+  .vdp-datepicker__container {
     display: inline-block;
     margin-inline: auto;
   }
@@ -260,7 +264,7 @@ Override the CSS classnames
 | ensure-min-height            | Boolean          | false       | Ensure day picker view has same height     |
 | clear-button                 | Boolean          | false       | Show an icon for clearing the date         |
 | clear-button-icon            | String           |             | Use icon for a button (ex: fa fa-times)    |
-| calendar-button              | Boolean          | false       | Show an icon that can be clicked      |
+| calendar-button              | Boolean          | false       | Show an icon that can be clicked           |
 | calendar-button-icon         | String           |             | Use icon for a button (ex: fa fa-calendar) |
 | calendar-button-icon-content | String           |             | Use for material-icons (ex: event)         |
 | day-cell-content             | Function         |             | Use to render custom content in day cell   |
@@ -268,7 +272,7 @@ Override the CSS classnames
 | initial-view                 | String           | minimumView | If set, open on that view                  |
 | disabled                     | Boolean          | false       | If true, disable Datepicker on-screen      |
 | required                     | Boolean          | false       | Sets html required attribute on input      |
-| typeable                     | Boolean          | false       | If true, allows the user to type the date   |
+| typeable                     | Boolean          | false       | If true, allows the user to type the date  |
 | use-utc                      | Boolean          | false       | use UTC for time calculations              |
 | use-rtl                      | Boolean          | null        | Force set the RTL language                 |
 | days-custom-display          | Array            | null        | Force set day headlines                    |
