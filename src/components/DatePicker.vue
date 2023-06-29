@@ -1,7 +1,10 @@
 <template>
   <div
     class="vdp-datepicker"
-    :class="[wrapperClass, { isRtl: 'rtl' }, { inline: isInline }]"
+    :class="[wrapperClass]"
+    :data-rtl="isRtl || null"
+    :data-inline="isInline || null"
+    :data-min-height="ensureMinHeight || null"
   >
     <DateInput
       :id="id"
@@ -35,88 +38,86 @@
     </DateInput>
 
     <div class="vdp-datepicker__container">
-      <!-- Day View -->
-      <PickerDay
-        v-if="allowedToShowView('day')"
-        :value="value"
-        :labelFormatter="dayFormatter"
-        :headlineDayFormatter="headlineDayFormatter"
-        :pageDate="pageDate"
-        :selectedDate="selectedDate"
-        :showDayView="showDayView"
-        :fullMonthName="fullMonthName"
-        :allowedToShowView="allowedToShowView"
-        :disabledDates="disabledDates"
-        :highlighted="highlighted"
-        :calendarClass="calendarClass"
-        :calendarStyle="calendarStyle"
-        :ensureMinHeight="ensureMinHeight"
-        :translation="translation"
-        :pageTimestamp="pageTimestamp"
-        :isRtl="isRtl"
-        :mondayFirst="mondayFirst"
-        :dayCellContent="dayCellContent"
-        :useUtc="useUtc"
-        :daysCustomDisplay="daysCustomDisplay"
-        @changedMonth="handleChangedMonthFromDayPicker"
-        @selectDate="selectDate"
-        @showMonthCalendar="showMonthCalendar"
-        @selectedDisabled="selectDisabledDate"
-      >
-        <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
-        <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
-        <slot slot="nextButton" name="nextButton"><IconRight /></slot>
-      </PickerDay>
+      <div class="vdp-datepicker__picker">
+        <!-- Day View -->
+        <PickerDay
+          v-if="allowedToShowView('day')"
+          :value="value"
+          :labelFormatter="dayFormatter"
+          :headlineDayFormatter="headlineDayFormatter"
+          :pageDate="pageDate"
+          :selectedDate="selectedDate"
+          :showDayView="showDayView"
+          :fullMonthName="fullMonthName"
+          :allowedToShowView="allowedToShowView"
+          :disabledDates="disabledDates"
+          :highlighted="highlighted"
+          :calendarClass="calendarClass"
+          :translation="translation"
+          :pageTimestamp="pageTimestamp"
+          :isRtl="isRtl"
+          :mondayFirst="mondayFirst"
+          :dayCellContent="dayCellContent"
+          :useUtc="useUtc"
+          :daysCustomDisplay="daysCustomDisplay"
+          @changedMonth="handleChangedMonthFromDayPicker"
+          @selectDate="selectDate"
+          @showMonthCalendar="showMonthCalendar"
+          @selectedDisabled="selectDisabledDate"
+        >
+          <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
+          <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
+          <slot slot="nextButton" name="nextButton"><IconRight /></slot>
+        </PickerDay>
 
-      <!-- Month View -->
-      <PickerMonth
-        v-if="allowedToShowView('month')"
-        :value="value"
-        :labelFormatter="monthFormatter"
-        :headlineMonthFormatter="headlineMonthFormatter"
-        :pageDate="pageDate"
-        :selectedDate="selectedDate"
-        :showMonthView="showMonthView"
-        :allowedToShowView="allowedToShowView"
-        :disabledDates="disabledDates"
-        :calendarClass="calendarClass"
-        :calendarStyle="calendarStyle"
-        :translation="translation"
-        :isRtl="isRtl"
-        :useUtc="useUtc"
-        :monthsCustomDisplay="monthsCustomDisplay"
-        @selectMonth="selectMonth"
-        @showYearCalendar="showYearCalendar"
-        @changedYear="setPageDate"
-      >
-        <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
-        <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
-        <slot slot="nextButton" name="nextButton"><IconRight /></slot>
-      </PickerMonth>
+        <!-- Month View -->
+        <PickerMonth
+          v-if="allowedToShowView('month')"
+          :value="value"
+          :labelFormatter="monthFormatter"
+          :headlineMonthFormatter="headlineMonthFormatter"
+          :pageDate="pageDate"
+          :selectedDate="selectedDate"
+          :showMonthView="showMonthView"
+          :allowedToShowView="allowedToShowView"
+          :disabledDates="disabledDates"
+          :calendarClass="calendarClass"
+          :translation="translation"
+          :isRtl="isRtl"
+          :useUtc="useUtc"
+          :monthsCustomDisplay="monthsCustomDisplay"
+          @selectMonth="selectMonth"
+          @showYearCalendar="showYearCalendar"
+          @changedYear="setPageDate"
+        >
+          <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
+          <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
+          <slot slot="nextButton" name="nextButton"><IconRight /></slot>
+        </PickerMonth>
 
-      <!-- Year View -->
-      <PickerYear
-        v-if="allowedToShowView('year')"
-        :value="value"
-        :formatter="yearFormatter"
-        :headlineYearFormatter="headlineYearFormatter"
-        :pageDate="pageDate"
-        :selectedDate="selectedDate"
-        :showYearView="showYearView"
-        :allowedToShowView="allowedToShowView"
-        :disabledDates="disabledDates"
-        :calendarClass="calendarClass"
-        :calendarStyle="calendarStyle"
-        :translation="translation"
-        :isRtl="isRtl"
-        :useUtc="useUtc"
-        @selectYear="selectYear"
-        @changedDecade="setPageDate"
-      >
-        <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
-        <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
-        <slot slot="nextButton" name="nextButton"><IconRight /></slot>
-      </PickerYear>
+        <!-- Year View -->
+        <PickerYear
+          v-if="allowedToShowView('year')"
+          :value="value"
+          :formatter="yearFormatter"
+          :headlineYearFormatter="headlineYearFormatter"
+          :pageDate="pageDate"
+          :selectedDate="selectedDate"
+          :showYearView="showYearView"
+          :allowedToShowView="allowedToShowView"
+          :disabledDates="disabledDates"
+          :calendarClass="calendarClass"
+          :translation="translation"
+          :isRtl="isRtl"
+          :useUtc="useUtc"
+          @selectYear="selectYear"
+          @changedDecade="setPageDate"
+        >
+          <slot slot="beforeCalendarHeader" name="beforeCalendarHeader"></slot>
+          <slot slot="prevButton" name="prevButton"><IconLeft /></slot>
+          <slot slot="nextButton" name="nextButton"><IconRight /></slot>
+        </PickerYear>
+      </div>
     </div>
   </div>
 </template>
@@ -169,11 +170,11 @@ export default {
     highlighted: Object,
     placeholder: String,
     inline: Boolean,
-    ensureMinHeight: Boolean,
     calendarClass: [String, Object, Array],
     inputClass: [String, Object, Array],
     wrapperClass: [String, Object, Array],
     mondayFirst: Boolean,
+    ensureMinHeight: Boolean,
     clearButton: Boolean,
     clearButtonIcon: String,
     calendarButton: Boolean,
@@ -247,17 +248,14 @@ export default {
       return this.language || englishLanguage
     },
 
-    calendarStyle() {
-      return {
-        position: this.isInline ? 'relative' : undefined,
-      }
-    },
     isOpen() {
       return this.showDayView || this.showMonthView || this.showYearView
     },
+
     isInline() {
       return !!this.inline
     },
+
     isRtl() {
       if (this.useRtl != null) {
         return this.useRtl
@@ -529,16 +527,6 @@ export default {
   position: relative;
   text-align: left;
 
-  &.rtl {
-    direction: rtl;
-  }
-
-  &.inline {
-    .vdp-datepicker__calendar {
-      position: relative; // higher specificity
-    }
-  }
-
   * {
     box-sizing: border-box;
   }
@@ -546,17 +534,43 @@ export default {
   p {
     margin: 0;
   }
+
+  &[data-rtl],
+  &.rtl {
+    direction: rtl;
+  }
+
+  &[data-inline] {
+    .vdp-datepicker__picker {
+      position: relative; // higher specificity
+    }
+  }
+
+  &[data-min-height] {
+    .vdp-datepicker__calendar--day {
+      min-height: calc(var(--vdp-cell-size) * 8); // higher specificity
+    }
+  }
 }
 
 .vdp-datepicker__container {
+  display: flex;
+  position: relative;
+}
+
+.vdp-datepicker__picker {
+  z-index: 1;
+  position: absolute;
+  top: 0;
+  background: var(--vdp-color-theme-bg);
+  border: 1px solid var(--vdp-color-border);
+  display: inline-flex;
+  flex-direction: column;
 }
 
 .vdp-datepicker__calendar {
-  position: absolute;
-  z-index: 1;
-  background: var(--vdp-color-theme-bg);
-  width: calc(7 * var(--vdp-cell-size) + 2px); // plus the border
-  border: 1px solid var(--vdp-color-border);
+  position: relative;
+  width: calc(7 * var(--vdp-cell-size));
 
   .disabled {
     color: var(--vdp-color-disabled);
@@ -627,12 +641,6 @@ export default {
   }
 }
 
-.vdp-datepicker__calendar--day {
-  &.min-height {
-    min-height: calc(var(--vdp-cell-size) * 8 + 2px); // plus the border
-  }
-}
-
 .vdp-datepicker__header {
   height: var(--vdp-cell-size);
   background: var(--vdp-color-header-bg);
@@ -687,15 +695,15 @@ export default {
   }
 }
 
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day,
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month,
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year {
+.vdp-datepicker__container .cell:not(.blank):not(.disabled).day,
+.vdp-datepicker__container .cell:not(.blank):not(.disabled).month,
+.vdp-datepicker__container .cell:not(.blank):not(.disabled).year {
   cursor: pointer;
 }
 
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).day:hover,
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).month:hover,
-.vdp-datepicker__calendar .cell:not(.blank):not(.disabled).year:hover {
+.vdp-datepicker__container .cell:not(.blank):not(.disabled).day:hover,
+.vdp-datepicker__container .cell:not(.blank):not(.disabled).month:hover,
+.vdp-datepicker__container .cell:not(.blank):not(.disabled).year:hover {
   border-color: var(--vdp-color-theme);
 }
 
