@@ -619,14 +619,6 @@ export default {
       }
     }
 
-    &.grey {
-      color: var(--vdp-color-grey);
-
-      &:hover {
-        background: inherit;
-      }
-    }
-
     &.day-header {
       width: var(--vdp-cell-size);
       font-size: var(--vdp-day-header-font-size);
