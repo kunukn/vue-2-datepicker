@@ -3,7 +3,6 @@
     v-show="showYearView"
     class="vdp-datepicker__calendar vdp-datepicker__calendar--year"
     :class="[calendarClass]"
-    
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>

@@ -225,8 +225,8 @@ Override the CSS classnames
 
 ```css
 .vdp-datepicker {
-  .vdp-datepicker__container {
-    display: inline-block;
+  .vdp-datepicker__picker {
+    padding: 1rem;
     margin-inline: auto;
   }
 }
