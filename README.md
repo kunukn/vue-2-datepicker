@@ -200,15 +200,19 @@ Emits events
 
 ## Custom styling
 
+Look in the file `"@kunukn/vue-2-datepicker/dist/date-picker.css"` to see what exists.
+
 Override the CSS variables to set the size.
 
 ```css
 .vdp-datepicker {
   --vdp-cell-size: 40px;
   --vdp-color-border: transparent;
+  --vdp-color-theme: #4bd;
+  --vdp-color-selected: hotpink;
 
-  @media (min-width: 600px) {
-    --vdp-cell-size: 48px;
+  @media (min-width: 768px) {
+    --vdp-cell-size: 56px;
   }
 }
 ```
