@@ -584,12 +584,11 @@ export default {
   }
 
   .cell {
-    display: inline-block;
+    display: flex;
+    align-items: center;
+    justify-content: center;
     width: auto;
     height: var(--vdp-cell-size);
-    line-height: var(--vdp-cell-size);
-    text-align: center;
-    vertical-align: middle;
     border: 1px solid transparent;
     background: inherit;
     padding: 0;
