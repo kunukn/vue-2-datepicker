@@ -5,11 +5,11 @@
 [![gzip](https://img.shields.io/bundlephobia/minzip/@kunukn/vue-2-datepicker.svg)](https://bundlephobia.com/result?p=@kunukn/vue-2-datepicker)
 [![license](https://img.shields.io/github/license/kunukn/vue-2-datepicker.svg)](https://github.com/kunukn/vue-2-datepicker/blob/master/LICENSE)
 
-A datepicker Vue component. Compatible with Vue 2.x
+A date picker Vue component. Compatible with Vue 2.x
 
 ## About
 
-A datepicker Vue component. Compatible with Vue 2.x
+A date picker Vue component. Compatible with Vue 2.x
 
 Vue 3 is out of scope in this repo. I needed a 2.6+ version and this repo is based on https://github.com/charliekassel/vuejs-datepicker#readme
 
@@ -29,7 +29,7 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
     - [Directly from a CDN](#directly-from-a-cdn)
   - [Size](#size)
   - [Usage](#usage)
-    - [Formatting and localisation patterns](#formatting-and-localisation-patterns)
+    - [Formatting and localization patterns](#formatting-and-localization-patterns)
     - [Code snippets](#code-snippets)
   - [Custom styling](#custom-styling)
   - [Available props](#available-props)
@@ -137,9 +137,9 @@ export default {
 
 ## Usage
 
-### Formatting and localisation patterns
+### Formatting and localization patterns
 
-You can either try to handle all the formattings yourself using these props.
+You can either try to handle all the formatting yourself using these props with a day utility like [`dayjs`](https://day.js.org).
 
 ```js
 dayFormatter
@@ -148,10 +148,10 @@ yearFormatter
 headlineDayFormatter
 headlineMonthFormatter
 headlineYearFormatter
-use - rtl
+useRtl
 ```
 
-Or you can let the library do the formatting and localisation using the loaded language.
+Or you can let the library do the formatting and localization using the loaded language.
 
 ### Code snippets
 
@@ -192,7 +192,7 @@ Emits events
 ></date-picker>
 ```
 
-Inline always open version
+`always Inline open` version
 
 ```html
 <date-picker inline></date-picker>
@@ -232,50 +232,50 @@ Override the CSS classnames
 
 ## Available props
 
-| Prop                         | Type             | Default     | Description                              |
-| ---------------------------- | ---------------- | ----------- | ---------------------------------------- |
-| value                        | Date\|String     |             | Date value of the datepicker             |
-| name                         | String           |             | Input name property                      |
-| id                           | String           |             | Input id                                 |
-| format                       | String\|Function | dd MMM yyyy | Date formatting string or function       |
-| dayFormatter                 | Function         |             | Custom day formatter                     |
-| monthFormatter               | Function         |             | Custom month formatter                   |
-| yearFormatter                | Function         |             | Custom year formatter                    |
-| headlineDayFormatter         | Function         |             | Custom day headline formatter            |
-| headlineMonthFormatter       | Function         |             | Custom month headline formatter          |
-| headlineYearFormatter        | Function         |             | Custom year headline formatter           |
-| full-month-name              | Boolean          | false       | To show the full month name              |
-| language                     | Object           | en          | Translation for days and months          |
-| disabled-dates               | Object           |             | See below for configuration              |
-| placeholder                  | String           |             | Input placeholder text                   |
-| inline                       | Boolean          |             | To show the datepicker always open       |
-| calendar-class               | String\|Object   |             | CSS class applied to the calendar el     |
-| input-class                  | String\|Object   |             | CSS class applied to the input el        |
-| wrapper-class                | String\|Object   |             | CSS class applied to the outer div       |
-| monday-first                 | Boolean          | false       | To start the week on Monday              |
-| ensure-min-height            | Boolean          | false       | Ensure day picker view has same height   |
-| clear-button                 | Boolean          | false       | Show an icon for clearing the date       |
-| clear-button-icon            | String           |             | Use icon for button (ex: fa fa-times)    |
-| calendar-button              | Boolean          | false       | Show an icon that that can be clicked    |
-| calendar-button-icon         | String           |             | Use icon for button (ex: fa fa-calendar) |
-| calendar-button-icon-content | String           |             | Use for material-icons (ex: event)       |
-| day-cell-content             | Function         |             | Use to render custom content in day cell |
-| bootstrap-styling            | Boolean          | false       | Output bootstrap v4 styling classes.     |
-| initial-view                 | String           | minimumView | If set, open on that view                |
-| disabled                     | Boolean          | false       | If true, disable Datepicker on screen    |
-| required                     | Boolean          | false       | Sets html required attribute on input    |
-| typeable                     | Boolean          | false       | If true, allow the user to type the date |
-| use-utc                      | Boolean          | false       | use UTC for time calculations            |
-| use-rtl                      | Boolean          | null        | Force set the RTL language               |
-| days-custom-display          | Array            | null        | Force set day headlines                  |
-| months-custom-display        | Array            | null        | Force set month headlines                |
-| open-date                    | Date\|String     |             | If set, open on that date                |
-| minimum-view                 | String           | 'day'       | If set, lower-level views won't show     |
-| maximum-view                 | String           | 'year'      | If set, higher-level views won't show    |
+| Prop                         | Type             | Default     | Description                                |
+| ---------------------------- | ---------------- | ----------- | ------------------------------------------ |
+| value                        | Date\|String     |             | Date value of the datepicker               |
+| name                         | String           |             | Input name property                        |
+| id                           | String           |             | Input id                                   |
+| format                       | String\|Function | dd MMM yyyy | Date formatting string or function         |
+| dayFormatter                 | Function         |             | Custom day formatter                       |
+| monthFormatter               | Function         |             | Custom month formatter                     |
+| yearFormatter                | Function         |             | Custom year formatter                      |
+| headlineDayFormatter         | Function         |             | Custom day headline formatter              |
+| headlineMonthFormatter       | Function         |             | Custom month headline formatter            |
+| headlineYearFormatter        | Function         |             | Custom year headline formatter             |
+| full-month-name              | Boolean          | false       | To show the full month name                |
+| language                     | Object           | en          | Translation for days and months            |
+| disabled-dates               | Object           |             | See below for configuration                |
+| placeholder                  | String           |             | Input placeholder text                     |
+| inline                       | Boolean          |             | To show the datepicker always open         |
+| calendar-class               | String\|Object   |             | CSS class applied to the calendar el       |
+| input-class                  | String\|Object   |             | CSS class applied to the input el          |
+| wrapper-class                | String\|Object   |             | CSS class applied to the outer div         |
+| monday-first                 | Boolean          | false       | To start the week on Monday                |
+| ensure-min-height            | Boolean          | false       | Ensure day picker view has same height     |
+| clear-button                 | Boolean          | false       | Show an icon for clearing the date         |
+| clear-button-icon            | String           |             | Use icon for a button (ex: fa fa-times)    |
+| calendar-button              | Boolean          | false       | Show an icon that can be clicked      |
+| calendar-button-icon         | String           |             | Use icon for a button (ex: fa fa-calendar) |
+| calendar-button-icon-content | String           |             | Use for material-icons (ex: event)         |
+| day-cell-content             | Function         |             | Use to render custom content in day cell   |
+| bootstrap-styling            | Boolean          | false       | Output bootstrap v4 styling classes.       |
+| initial-view                 | String           | minimumView | If set, open on that view                  |
+| disabled                     | Boolean          | false       | If true, disable Datepicker on-screen      |
+| required                     | Boolean          | false       | Sets html required attribute on input      |
+| typeable                     | Boolean          | false       | If true, allows the user to type the date   |
+| use-utc                      | Boolean          | false       | use UTC for time calculations              |
+| use-rtl                      | Boolean          | null        | Force set the RTL language                 |
+| days-custom-display          | Array            | null        | Force set day headlines                    |
+| months-custom-display        | Array            | null        | Force set month headlines                  |
+| open-date                    | Date\|String     |             | If set, open on that date                  |
+| minimum-view                 | String           | 'day'       | If set, lower-level views won't show       |
+| maximum-view                 | String           | 'year'      | If set, higher-level views won't show      |
 
 ## Events
 
-These events are emitted on actions in the datepicker
+These events are emitted on actions in the date picker
 
 | Event            | Output     | Description                       |
 | ---------------- | ---------- | --------------------------------- |
@@ -293,7 +293,8 @@ These events are emitted on actions in the datepicker
 
 #### String formatter
 
-NB. This is not very robust at all - use at your own risk! Needs a better implementation.
+NB. This is not very robust at all - use at your own risk! Needs better implementation.
+EDIT: by new author. This feature will likely be revisited in newer versions.
 
 | Token | Desc                   | Example     |
 | ----- | ---------------------- | ----------- |
@@ -311,8 +312,8 @@ NB. This is not very robust at all - use at your own risk! Needs a better implem
 #### Function formatter
 
 Delegates date formatting to provided function.
-Function will be called with date and it has to return formated date as a string.
-This allow us to use dayjs, date-fns or any other library to format date.
+The function will be called with date and it has to return formatted date as a string.
+This allow us to use `dayjs`, `date-fns` or any other library to format date.
 
 ```html
 <script>
@@ -327,7 +328,7 @@ This allow us to use dayjs, date-fns or any other library to format date.
 
 ## Disabled Dates
 
-Dates can be disabled in a number of ways.
+Dates can be disabled in several ways.
 
 ```html
 <script>
@@ -354,10 +355,10 @@ Dates can be disabled in a number of ways.
           to: new Date(2017, 2, 25),
         },
       ],
-      // a custom function that returns true if the date is disabled
-      // this can be used for wiring you own logic to disable a date if none
-      // of the above conditions serve your purpose
-      // this function should accept a date and return true if is disabled
+      // A custom function that returns true if the date is disabled.
+      // This can be used for wiring your own logic to disable a date if none
+      // of the above conditions serve your purpose.
+      // This function should accept a date and return true if is disabled
       customPredictor: function (date) {
         // disables the date if it is a multiple of 5
         if (date.getDate() % 5 == 0) {
@@ -414,7 +415,7 @@ Slots will help you customize content.
 
 #### beforeCalendarHeader
 
-Sometimes you need to show custom content before the calendar header. For such cases you can use the named slot `beforeCalendarHeader`.
+Sometimes you need to show custom content before the calendar header. For such cases, you can use the named slot `beforeCalendarHeader`.
 
 An example would be to use bootstrap's `input-group-prepend` and `input-group-append`
 to show some custom text:
@@ -462,7 +463,7 @@ Obs! This strategy is likely to be refactored over time where `Intl.DateTimeForm
 
 ### How to apply language
 
-Below script tag in component.
+Below script tag in a component.
 Beware! importing the `all.js` file will load all the existing languages in the memory and JS bundle.
 
 ```js
@@ -574,7 +575,7 @@ Available languages
 
 ## Strategy for this project
 
-This date-picker will over time be modified to focus on the date logic handling. The presentation and localisation of how to display the dates will be refactored to injectable formatter props.
+This date-picker will over time be modified to focus on the date logic handling. The presentation and localization of how to display the dates will be refactored to injectable formatter props.
 
 Modern browser API can do language date formatting. `Intl.DateTimeFormat`
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
