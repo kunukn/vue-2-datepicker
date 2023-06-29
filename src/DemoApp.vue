@@ -591,7 +591,7 @@ body {
   position: relative;
   padding: 0.5rem 0.5rem 6rem;
 
-  @media (width >= 500px) {
+  @media (min-width: 500px) {
     padding: 1rem 1rem 6rem;
   }
 }
@@ -610,7 +610,7 @@ select {
   padding: 0 0 1rem;
   margin-bottom: 2rem;
 
-  @media (width >= 400px) {
+  @media (min-width: 400px) {
     padding: 0 1rem 1rem;
   }
 }

@@ -215,7 +215,7 @@ Override the CSS variables to set the size.
   --vdp-color-theme: #4bd;
   --vdp-color-selected: hotpink;
 
-  @media (width >= 768px) {
+  @media (min-width: 768px) {
     --vdp-cell-size: 56px;
   }
 }
