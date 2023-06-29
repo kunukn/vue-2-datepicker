@@ -719,7 +719,7 @@ export default {
 }
 
 .vdp-datepicker__calendar :is(.month, .year) {
-  width: 100%;
+  width: auto; // higher specificity
 }
 
 .vdp-datepicker__clear-button,
