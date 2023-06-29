@@ -204,7 +204,7 @@ Emits events
 
 ## Custom styling
 
-Look in the file `"@kunukn/vue-2-datepicker/dist/date-picker.css"` to see what exists.
+Look in the file `@kunukn/vue-2-datepicker/dist/date-picker.css` to see what exists.
 
 Override the CSS variables to set the size.
 
