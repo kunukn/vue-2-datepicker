@@ -1,5 +1,8 @@
 <template>
-  <div class="vdp-datepicker" :class="[wrapperClass, isRtl ? 'rtl' : '']">
+  <div
+    class="vdp-datepicker"
+    :class="[wrapperClass, { isRtl: 'rtl' }, { inline: isInline }]"
+  >
     <DateInput
       :id="id"
       :selectedDate="selectedDate"
@@ -537,6 +540,9 @@ export default {
   p {
     margin: 0;
   }
+}
+
+.vdp-datepicker__container {
 }
 
 .vdp-datepicker__calendar {
