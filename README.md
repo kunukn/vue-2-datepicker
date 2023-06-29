@@ -52,7 +52,7 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
 
 ## Demo
 
-![date-picker](media/date-picker.png 'date-picker')
+[![date-picker](media/date-picker.png)](https://d9xtk7.csb.app/)
 
 The click-able areas are: `the arrows`, `the date headline` and the `date numbers`.
 
