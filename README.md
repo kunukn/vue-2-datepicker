@@ -10,10 +10,12 @@ A datepicker Vue component. Compatible with Vue 2.x
 ## About
 
 A datepicker Vue component. Compatible with Vue 2.x
-The source code is based on https://github.com/charliekassel/vuejs-datepicker#readme
 
-It has been modified to use Vite and Vitest and the goal is to support Vue 2.6+ with pretty default styling.
-Vue 3 is out of scope in this repo.
+Vue 3 is out of scope in this repo. I needed a 2.6+ version and this repo is based on https://github.com/charliekassel/vuejs-datepicker#readme
+
+This repo has been modified to use Vite and Vitest and the goal is to support Vue 2.6+ with pretty default styling.
+
+See the [strategy](#strategy-for-this-project) for more info about what will likely happen with this repo.
 
 ## Table of contents
 
@@ -42,6 +44,7 @@ Vue 3 is out of scope in this repo.
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
       - [Lazy loaded approach](#lazy-loaded-approach)
+  - [Strategy for this project](#strategy-for-this-project)
   - [Unpkg link](#unpkg-link)
     - [With this link you can navigate the existing resources.](#with-this-link-you-can-navigate-the-existing-resources)
 
@@ -428,17 +431,19 @@ Enables to apply custom prev and next button design.
 
 ## Translations
 
-Contributing guide - please use appropriate code from this [list](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) as the translation property.
+Obs! This strategy is likely to be refactored over time where `Intl.DateTimeFormat` will be used.
+
+[list](http://www.iana.org/assignments/language-subtag-registry/language-subtag-registry) is used as the translation property.
 
 - Add your language as a module in the `src/locale/translations` dir.
 - Import and export it in the `src/locale/all.js` file
-- Add the Language to the available languages in the readme file.
-- Run `yarn lint` to make sure your code formatting is in line with the required code style.
+- ~~Add the Language to the available languages in the readme file.~~
+- ~~Run `yarn lint` to make sure your code formatting is in line with the required code style.~~
 
 ### How to apply language
 
 Below script tag in component.
-Beware importing the `all.js` file will load all the existing languages.
+Beware! importing the `all.js` file will load all the existing languages in the memory and JS bundle.
 
 ```js
 import { en, es, de } from '@kunukn/vue-2-datepicker/src/locale/all.js'
@@ -470,7 +475,7 @@ html.
 
 ```js
   props: {
-    isoLanguage: { /* e.g. German ISO code: 'de' */
+    isoLanguage: { /* e.g. Spanish ISO code: 'es' */
       type: String,
       default: 'en'
     },
@@ -546,6 +551,15 @@ Available languages
 | vi     | Vietnamese        |           |
 | zh     | Chinese           |           |
 | zhHK   | Chinese_HK        |           |
+
+## Strategy for this project
+
+This date-picker will over time be modified to focus on the date logic handling. The presentation and localisation of how to display the dates will be refactored to injectable formatter props.
+
+Modern browser API can do language date formatting. `Intl.DateTimeFormat`
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+
+The text input field parsing will likely also be refactored.
 
 ## Unpkg link
 
