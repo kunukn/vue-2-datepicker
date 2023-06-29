@@ -580,7 +580,7 @@ This date-picker will over time be modified to focus on the date logic handling.
 Modern browser API can do language date formatting. `Intl.DateTimeFormat`
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
 
-It has high Browser support `96%+`.
+It has high Browser support `96+ %`.
 https://caniuse.com/?search=Intl.DateTimeFormat
 
 The text input field parsing will likely also be refactored.
