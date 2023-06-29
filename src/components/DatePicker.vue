@@ -695,6 +695,17 @@ export default {
   }
 }
 
+.vdp-datepicker__pick-buttons--day {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+}
+
+.vdp-datepicker__pick-buttons--month,
+.vdp-datepicker__pick-buttons--year {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+}
+
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).day,
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).month,
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).year {
@@ -708,7 +719,7 @@ export default {
 }
 
 .vdp-datepicker__calendar :is(.month, .year) {
-  width: 33.333%;
+  width: 100%;
 }
 
 .vdp-datepicker__clear-button,
