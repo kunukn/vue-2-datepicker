@@ -3,7 +3,6 @@
     v-show="showDayView"
     class="vdp-datepicker__calendar vdp-datepicker__calendar--day"
     :class="[calendarClass, { 'min-height': ensureMinHeight }]"
-    :style="calendarStyle"
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
@@ -111,7 +110,6 @@ export default {
     disabledDates: Object,
     highlighted: Object,
     calendarClass: [String, Object, Array],
-    calendarStyle: Object,
     ensureMinHeight: Boolean,
     translation: Object,
     isRtl: Boolean,

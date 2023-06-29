@@ -533,6 +533,12 @@ export default {
     direction: rtl;
   }
 
+  &.inline {
+    .vdp-datepicker__calendar {
+      position: relative; // higher specificity
+    }
+  }
+
   * {
     box-sizing: border-box;
   }

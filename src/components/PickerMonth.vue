@@ -3,7 +3,6 @@
     v-show="showMonthView"
     class="vdp-datepicker__calendar vdp-datepicker__calendar--month"
     :class="[calendarClass]"
-    :style="calendarStyle"
     @mousedown.prevent
   >
     <slot name="beforeCalendarHeader"></slot>
@@ -75,7 +74,6 @@ export default {
     pageTimestamp: Number,
     disabledDates: Object,
     calendarClass: [String, Object, Array],
-    calendarStyle: Object,
     translation: Object,
     isRtl: Boolean,
     allowedToShowView: Function,
