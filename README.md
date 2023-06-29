@@ -29,6 +29,8 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
     - [Directly from a CDN](#directly-from-a-cdn)
   - [Size](#size)
   - [Usage](#usage)
+    - [Formatting and localisation patterns](#formatting-and-localisation-patterns)
+    - [Code snippets](#code-snippets)
   - [Custom styling](#custom-styling)
   - [Available props](#available-props)
   - [Events](#events)
@@ -134,6 +136,24 @@ export default {
 | date-picker.umd.cjs | ~35 kB | ~8 kB  |
 
 ## Usage
+
+### Formatting and localisation patterns
+
+You can either try to handle all the formattings yourself using these props.
+
+```js
+dayFormatter
+monthFormatter
+yearFormatter
+headlineDayFormatter
+headlineMonthFormatter
+headlineYearFormatter
+use - rtl
+```
+
+Or you can let the library do the formatting and localisation using the loaded language.
+
+### Code snippets
 
 ```html
 <date-picker></date-picker>
@@ -558,6 +578,9 @@ This date-picker will over time be modified to focus on the date logic handling.
 
 Modern browser API can do language date formatting. `Intl.DateTimeFormat`
 https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Intl/DateTimeFormat
+
+It has high Browser support `96%+`.
+https://caniuse.com/?search=Intl.DateTimeFormat
 
 The text input field parsing will likely also be refactored.
 
