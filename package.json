@@ -1,7 +1,16 @@
 {
   "name": "@kunukn/vue-2-datepicker",
   "private": false,
-  "version": "0.0.20",
+  "version": "0.0.21",
+  "description": "A simple Vue 2 date picker component. Supports disabling of dates, inline mode, translations and custom formatters.",
+  "keywords": [
+    "vue",
+    "vue 2",
+    "datepicker",
+    "date picker",
+    "date-picker",
+    "calendar"
+  ],
   "type": "module",
   "main": "./dist/date-picker.umd.cjs",
   "module": "./dist/date-picker.js",
@@ -38,7 +47,7 @@
   ],
   "dependencies": {},
   "//devDependencies": {
-    "@vue/test-utils": "version 1 is for Vue 2"
+    "@vue/test-utils": "version 1.x is for Vue 2"
   },
   "devDependencies": {
     "@types/jsdom": "^20.0.1",
