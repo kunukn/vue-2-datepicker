@@ -585,7 +585,7 @@ export default {
 
   .cell {
     display: inline-block;
-    width: var(--vdp-cell-size);
+    width: auto;
     height: var(--vdp-cell-size);
     line-height: var(--vdp-cell-size);
     text-align: center;
@@ -716,10 +716,6 @@ export default {
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).month:hover,
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).year:hover {
   border-color: var(--vdp-color-theme);
-}
-
-.vdp-datepicker__calendar :is(.month, .year) {
-  width: auto; // higher specificity
 }
 
 .vdp-datepicker__clear-button,
