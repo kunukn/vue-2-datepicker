@@ -510,8 +510,8 @@ export default {
 <style lang="scss">
 .vdp-datepicker {
   --vdp-cell-size: 44px;
-  --vdp-cell-gap: 2px;
-  --vdp-header-gap: 2px;
+  --vdp-cell-gap: 4px;
+  --vdp-header-gap: 4px;
   --vdp-cell-border-radius-square: 50%;
   --vdp-cell-border-radius-rectangle: 8px;
   --vdp-color-theme-bg: #fff;
@@ -520,7 +520,7 @@ export default {
   --vdp-color-border: #ccc;
   --vdp-color-disabled: #ddd;
   --vdp-color-button-disabled: #999;
-  --vdp-color-header-button-hover: #eee;
+  --vdp-color-header-button-hover: #f2f2f2;
   --vdp-color-header-bg: #fff;
   --vdp-color-highlighted-bg: #cae5ed;
   --vdp-color-highlighted-disabled-fg: #a3a3a3;
@@ -585,9 +585,10 @@ export default {
   position: relative;
   min-width: calc(7 * var(--vdp-cell-size) + var(--vdp-cell-gap) * 8);
 
-  .disabled {
+  .disabled,
+  button.disabled {
     color: var(--vdp-color-disabled);
-    cursor: default;
+    cursor: not-allowed;
   }
 
   .flex-rtl {
@@ -666,7 +667,7 @@ export default {
   grid-template-columns: auto 1fr auto;
 
   > :nth-child(2) {
-    flex: 1;
+    border-radius: var(--vdp-cell-border-radius-rectangle);
     display: flex;
     justify-content: center;
     align-items: center;
