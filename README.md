@@ -35,14 +35,14 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
   - [Available props](#available-props)
   - [Events](#events)
   - [Date formatting](#date-formatting)
-      - [String formatter](#string-formatter)
-      - [Function formatter](#function-formatter)
+    - [String formatter](#string-formatter)
+    - [Function formatter](#function-formatter)
   - [Disabled Dates](#disabled-dates)
   - [Highlighted Dates](#highlighted-dates)
   - [Slots](#slots)
-      - [beforeCalendarHeader](#beforecalendarheader)
-      - [afterDateInput](#afterdateinput)
-      - [prevButton and nextButton](#prevbutton-and-nextbutton)
+    - [beforeCalendarHeader](#beforecalendarheader)
+    - [afterDateInput](#afterdateinput)
+    - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
       - [Lazy loaded approach](#lazy-loaded-approach)
@@ -133,11 +133,11 @@ export default {
 
 ## Size
 
-| name                | size   | gzip   |
-| ------------------- | ------ | ------ |
-| date-picker.css     | ~4 kB  | ~1 kB  |
-| date-picker.js      | ~53 kB | ~11 kB |
-| date-picker.umd.cjs | ~35 kB | ~8 kB  |
+| name                | size   | gzip    |
+| ------------------- | ------ | ------- |
+| date-picker.css     | ~5 kB  | ~1.1 kB |
+| date-picker.js      | ~53 kB | ~11 kB  |
+| date-picker.umd.cjs | ~35 kB | ~8 kB   |
 
 ## Usage
 
