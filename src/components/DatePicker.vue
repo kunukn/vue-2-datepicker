@@ -509,7 +509,11 @@ export default {
 </script>
 <style lang="scss">
 .vdp-datepicker {
-  --vdp-cell-size: 48px;
+  --vdp-cell-size: 44px;
+  --vdp-cell-gap: 2px;
+  --vdp-header-gap: 2px;
+  --vdp-cell-border-radius-square: 50%;
+  --vdp-cell-border-radius-rectangle: 8px;
   --vdp-color-theme-bg: #fff;
   --vdp-color-theme: #0092bc;
   --vdp-color-selected: #fff;
@@ -526,6 +530,7 @@ export default {
   box-sizing: border-box;
   position: relative;
   text-align: left;
+  font-family: inherit;
 
   * {
     box-sizing: border-box;
@@ -533,6 +538,10 @@ export default {
 
   p {
     margin: 0;
+  }
+
+  button {
+    padding: 0;
   }
 
   &[data-rtl],
@@ -548,7 +557,11 @@ export default {
 
   &[data-min-height] {
     .vdp-datepicker__calendar--day {
-      min-height: calc(var(--vdp-cell-size) * 8); // higher specificity
+      // higher specificity
+      min-height: calc(
+        var(--vdp-cell-size) * 8 + var(--vdp-cell-gap) * 8 +
+          var(--vdp-header-gap) * 2
+      );
     }
   }
 }
@@ -570,7 +583,7 @@ export default {
 
 .vdp-datepicker__calendar {
   position: relative;
-  width: calc(7 * var(--vdp-cell-size));
+  min-width: calc(7 * var(--vdp-cell-size) + var(--vdp-cell-gap) * 8);
 
   .disabled {
     color: var(--vdp-color-disabled);
@@ -594,8 +607,16 @@ export default {
     padding: 0;
 
     &.day {
-      border-radius: 50%;
+      border-radius: var(--vdp-cell-border-radius-square);
       width: var(--vdp-cell-size);
+    }
+
+    &.month {
+      border-radius: var(--vdp-cell-border-radius-rectangle);
+    }
+
+    &.year {
+      border-radius: var(--vdp-cell-border-radius-rectangle);
     }
 
     &.selected {
@@ -629,16 +650,20 @@ export default {
         background: inherit;
       }
     }
+
+    > span {
+      line-height: 1;
+    }
   }
 }
 
 .vdp-datepicker__header {
-  height: var(--vdp-cell-size);
   background: var(--vdp-color-header-bg);
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: stretch;
+  gap: var(--vdp-header-gap);
+  padding: var(--vdp-header-gap);
+
+  display: grid;
+  grid-template-columns: auto 1fr auto;
 
   > :nth-child(2) {
     flex: 1;
@@ -659,6 +684,8 @@ export default {
   > .prev,
   > .next {
     min-width: var(--vdp-cell-size);
+    min-height: var(--vdp-cell-size);
+    border-radius: var(--vdp-cell-border-radius-square);
 
     &.disabled {
       color: var(--vdp-color-disabled);
@@ -689,12 +716,16 @@ export default {
 .vdp-datepicker__pick-buttons--day {
   display: grid;
   grid-template-columns: repeat(7, 1fr);
+  gap: var(--vdp-cell-gap);
+  padding: var(--vdp-cell-gap);
 }
 
 .vdp-datepicker__pick-buttons--month,
 .vdp-datepicker__pick-buttons--year {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
+  gap: var(--vdp-cell-gap);
+  padding: var(--vdp-cell-gap);
 }
 
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).day,

@@ -573,6 +573,7 @@ export default {
 
 <style lang="scss">
 @import 'https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css';
+@import 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;700&display=swap';
 
 *,
 ::before,
@@ -587,7 +588,7 @@ html {
 
 body {
   min-height: 100%;
-  font-family: 'Helvetica Neue Light', Helvetica, sans-serif;
+  font-family: 'Noto Sans', 'Helvetica Neue Light', Helvetica, sans-serif;
   position: relative;
   padding: 0.5rem 0.5rem 6rem;
 
