@@ -147,17 +147,28 @@ export default {
 You can either try to handle all the formatting yourself using these props with a day utility like [`dayjs`](https://day.js.org).
 
 ```js
-dayFormatter = (value, index) => 'something'
-monthFormatter = (value, index) => 'something'
-yearFormatter = (value) => 'something'
-headlineDayFormatter = ({ pageDate, selectedDate }) =>
-  dayjs(pageDate).format('MMM YYYY')
-headlineMonthFormatter = ({ pageDate, selectedDate, pageYearName }) =>
-  'something'
-headlineYearFormatter = ({ pageDate, selectedDate, getPageDecade }) =>
-  'something'
 useRtl = true | false
 mondayFirst = true | false
+
+// index will be from 0 to 6 representing the weekdays index
+dayFormatter = (value, index) => 'something'
+
+// index will be from 0 to 11 representing the month index
+monthFormatter = (value, index) => 'something'
+
+// value will be the year number option
+yearFormatter = (value) => 'something'
+
+headlineDayFormatter = ({ pageDate, selectedDate }) =>
+  dayjs(pageDate).format('MMM YYYY')
+
+// pageYearName is the year number
+headlineMonthFormatter = ({ pageDate, selectedDate, pageYearName }) =>
+  myCustomYearConverter(pageYearName)
+
+// getPageDecade is the year range
+headlineYearFormatter = ({ pageDate, selectedDate, getPageDecade }) =>
+  myCustomYearDecadeConverter(getPageDecade)
 ```
 
 Or you can let the library do the formatting and localization using the loaded language.
@@ -276,9 +287,9 @@ These can be overriden.
 | name                         | String           |             | Input name property                        |
 | id                           | String           |             | Input id                                   |
 | format                       | String\|Function | dd MMM yyyy | Date formatting string or function         |
-| dayFormatter                 | Function         |             | Custom day formatter                       |
-| monthFormatter               | Function         |             | Custom month formatter                     |
-| yearFormatter                | Function         |             | Custom year formatter                      |
+| dayFormatter                 | Function         |             | Custom day cell formatter                  |
+| monthFormatter               | Function         |             | Custom month cell formatter                |
+| yearFormatter                | Function         |             | Custom year cell formatter                 |
 | headlineDayFormatter         | Function         |             | Custom day headline formatter              |
 | headlineMonthFormatter       | Function         |             | Custom month headline formatter            |
 | headlineYearFormatter        | Function         |             | Custom year headline formatter             |
