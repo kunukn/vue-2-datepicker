@@ -591,6 +591,7 @@ export default {
 
 .vdp-datepicker__calendar {
   position: relative;
+
   // using min-width breaks the RTL layout
   width: calc(7 * var(--vdp-cell-size) + var(--vdp-cell-gap) * 8);
 
