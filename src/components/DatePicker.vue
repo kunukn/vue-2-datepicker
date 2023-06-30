@@ -660,18 +660,17 @@ export default {
 
 .vdp-datepicker__header {
   background: var(--vdp-color-header-bg);
+  display: grid;
+  grid-template-columns: auto 1fr auto;
   gap: var(--vdp-header-gap);
   padding: var(--vdp-header-gap);
 
-  display: grid;
-  grid-template-columns: auto 1fr auto;
-
   > :nth-child(2) {
-    border-radius: var(--vdp-cell-border-radius-rectangle);
     display: flex;
     justify-content: center;
     align-items: center;
     gap: 4px;
+    border-radius: var(--vdp-cell-border-radius-rectangle);
   }
 
   > * {

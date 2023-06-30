@@ -25,5 +25,6 @@ module.exports = {
     'custom-property-empty-line-before': null, // Allow usage in template
     'selector-not-notation': 'simple',
     'media-feature-range-notation': 'prefix',
+    'scss/operator-no-newline-after': null,
   },
 }
