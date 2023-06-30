@@ -604,8 +604,8 @@ export default {
     width: auto;
     height: var(--vdp-cell-size);
     border: 1px solid transparent;
-    background: inherit;
     padding: 0;
+    z-index: 1;
 
     &.day {
       border-radius: var(--vdp-cell-border-radius-square);
@@ -646,10 +646,6 @@ export default {
       font-size: var(--vdp-day-header-font-size);
       white-space: nowrap;
       cursor: inherit;
-
-      &:hover {
-        background: inherit;
-      }
     }
 
     > span {
@@ -664,6 +660,7 @@ export default {
   grid-template-columns: auto 1fr auto;
   gap: var(--vdp-header-gap);
   padding: var(--vdp-header-gap);
+  min-width: 0;
 
   > :nth-child(2) {
     display: flex;
@@ -718,6 +715,8 @@ export default {
   grid-template-columns: repeat(7, 1fr);
   gap: var(--vdp-cell-gap);
   padding: var(--vdp-cell-gap);
+  position: relative;
+  min-width: 0;
 }
 
 .vdp-datepicker__pick-buttons--month,
@@ -726,6 +725,18 @@ export default {
   grid-template-columns: repeat(3, 1fr);
   gap: var(--vdp-cell-gap);
   padding: var(--vdp-cell-gap);
+  min-width: 0;
+}
+
+.vdp-datepicker__day-header-background {
+  position: absolute;
+  pointer-events: none;
+  display: flex;
+  top: var(--vdp-cell-gap);
+  left: var(--vdp-cell-gap);
+  width: calc(100% - var(--vdp-cell-gap) * 2);
+  height: calc(var(--vdp-cell-size));
+  display: none;
 }
 
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).day,
