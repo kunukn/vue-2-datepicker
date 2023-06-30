@@ -1,5 +1,5 @@
 <template>
-  <div id="app">
+  <main id="app">
     <h1>Vue 2 DatePicker Examples</h1>
     <h2 class="mb-4">Keyboard navigation supported by using tabs and enter.</h2>
 
@@ -408,7 +408,23 @@ let fantasyLanguage = new Language(theLangObject);
         initialView="year"&gt;&lt;/date-picker&gt;
       </code>
     </div>
-  </div>
+
+    <div class="example">
+      <h3>Roman numbers custom formatters</h3>
+      <date-picker
+        inline
+        :dayFormatter="(value, index) => convertToRoman(index + 1)"
+        :monthFormatter="(value, index) => convertToRoman(index + 1)"
+        :yearFormatter="(value) => convertToRoman(value)"
+      />
+      <code>
+        &lt;date-picker inline :dayFormatter="(value, index) =&gt;
+        convertToRoman(index + 1)" :monthFormatter="(value, index) =&gt;
+        convertToRoman(index + 1)" :yearFormatter="(value) =&gt;
+        convertToRoman(value)" &gt;&lt;/date-picker&gt;
+      </code>
+    </div>
+  </main>
 </template>
 
 <script>
@@ -472,6 +488,7 @@ export default {
       vModelExample: null,
       languages: lang,
       language: 'en',
+      convertToRoman,
     }
   },
   computed: {
@@ -568,6 +585,42 @@ export default {
       return date.toLocaleDateString()
     },
   },
+}
+
+function convertToRoman(input) {
+  if (typeof input === 'string' && input.includes('-')) {
+    let a = +input.split('-')[0].trim()
+    let b = +input.split('-')[1].trim()
+
+    return `${convertToRoman(a)} - ${convertToRoman(b)}`
+  }
+
+  let num = +input
+
+  let roman = {
+    M: 1000,
+    CM: 900,
+    D: 500,
+    CD: 400,
+    C: 100,
+    XC: 90,
+    L: 50,
+    XL: 40,
+    X: 10,
+    IX: 9,
+    V: 5,
+    IV: 4,
+    I: 1,
+  }
+  var str = ''
+
+  for (var i of Object.keys(roman)) {
+    var q = Math.floor(num / roman[i])
+    num -= q * roman[i]
+    str += i.repeat(q)
+  }
+
+  return str
 }
 </script>
 
