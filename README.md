@@ -32,17 +32,18 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
     - [Formatting and localization patterns](#formatting-and-localization-patterns)
     - [Code snippets](#code-snippets)
   - [Custom styling](#custom-styling)
+    - [Default CSS custom property values.](#default-css-custom-property-values)
   - [Available props](#available-props)
   - [Events](#events)
   - [Date formatting](#date-formatting)
-    - [String formatter](#string-formatter)
-    - [Function formatter](#function-formatter)
+      - [String formatter](#string-formatter)
+      - [Function formatter](#function-formatter)
   - [Disabled Dates](#disabled-dates)
   - [Highlighted Dates](#highlighted-dates)
   - [Slots](#slots)
-    - [beforeCalendarHeader](#beforecalendarheader)
-    - [afterDateInput](#afterdateinput)
-    - [prevButton and nextButton](#prevbutton-and-nextbutton)
+      - [beforeCalendarHeader](#beforecalendarheader)
+      - [afterDateInput](#afterdateinput)
+      - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
       - [Lazy loaded approach](#lazy-loaded-approach)
@@ -206,12 +207,11 @@ Emits events
 
 Look in the file `@kunukn/vue-2-datepicker/dist/date-picker.css` to see what exists.
 
-Override the CSS variables to set the size.
+Override the CSS custom properties to set the desired size.
 
 ```css
 .vdp-datepicker {
   --vdp-cell-size: 40px;
-  --vdp-color-border: transparent;
   --vdp-color-theme: #4bd;
   --vdp-color-selected: hotpink;
 
@@ -235,6 +235,32 @@ Override the CSS classnames
   :nth-child(2) {
     font-weight: bold;
   }
+}
+```
+
+### Default CSS custom property values.
+
+These can be overriden.
+
+```css
+.vdp-datepicker {
+  --vdp-cell-size: 44px;
+  --vdp-cell-gap: 4px;
+  --vdp-header-gap: 4px;
+  --vdp-cell-border-radius-square: 50%;
+  --vdp-cell-border-radius-rectangle: 8px;
+  --vdp-color-theme-bg: #fff;
+  --vdp-color-theme: #0092bc;
+  --vdp-color-selected: #fff;
+  --vdp-color-border: #ccc;
+  --vdp-color-disabled: #ddd;
+  --vdp-color-button-disabled: #999;
+  --vdp-color-header-button-hover: #f2f2f2;
+  --vdp-color-header-bg: #fff;
+  --vdp-color-highlighted-bg: #cae5ed;
+  --vdp-color-highlighted-disabled-fg: #a3a3a3;
+  --vdp-color-grey: #a3a3a3;
+  --vdp-day-header-font-size: 14px;
 }
 ```
 
