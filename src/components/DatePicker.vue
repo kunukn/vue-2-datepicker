@@ -45,6 +45,8 @@
           :value="value"
           :dayFormatter="dayFormatter"
           :headlineDayFormatter="headlineDayFormatter"
+          :prevDisabled="prevDisabled"
+          :nextDisabled="nextDisabled"
           :pageDate="pageDate"
           :selectedDate="selectedDate"
           :showDayView="showDayView"
@@ -76,6 +78,8 @@
           :value="value"
           :monthFormatter="monthFormatter"
           :headlineMonthFormatter="headlineMonthFormatter"
+          :prevDisabled="prevDisabled"
+          :nextDisabled="nextDisabled"
           :pageDate="pageDate"
           :selectedDate="selectedDate"
           :showMonthView="showMonthView"
@@ -101,6 +105,8 @@
           :value="value"
           :yearFormatter="yearFormatter"
           :headlineYearFormatter="headlineYearFormatter"
+          :prevDisabled="prevDisabled"
+          :nextDisabled="nextDisabled"
           :pageDate="pageDate"
           :selectedDate="selectedDate"
           :showYearView="showYearView"
@@ -165,6 +171,8 @@ export default {
     headlineDayFormatter: Function,
     headlineMonthFormatter: Function,
     headlineYearFormatter: Function,
+    nextDisabled: Function,
+    prevDisabled: Function,
     fullMonthName: Boolean,
     disabledDates: Object,
     highlighted: Object,

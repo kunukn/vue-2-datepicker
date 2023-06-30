@@ -52,6 +52,8 @@ export default {
   props: {
     yearFormatter: Function,
     headlineYearFormatter: Function,
+    nextDisabled: Function,
+    prevDisabled: Function,
     showYearView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -156,6 +158,10 @@ export default {
       this.changeYear(-10)
     },
     isPreviousDecadeDisabled() {
+      if (this.prevDisabled) {
+        return this.prevDisabled({ view: 'year' })
+      }
+
       if (!this.disabledDates || !this.disabledDates.to) {
         return false
       }
@@ -171,6 +177,10 @@ export default {
       this.changeYear(10)
     },
     isNextDecadeDisabled() {
+      if (this.nextDisabled) {
+        return this.nextDisabled({ view: 'year' })
+      }
+
       if (!this.disabledDates || !this.disabledDates.from) {
         return false
       }

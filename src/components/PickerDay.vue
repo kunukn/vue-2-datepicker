@@ -99,6 +99,8 @@ export default {
   props: {
     dayFormatter: Function,
     headlineDayFormatter: Function,
+    nextDisabled: Function,
+    prevDisabled: Function,
     showDayView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -302,6 +304,10 @@ export default {
      * @return {Boolean}
      */
     isPreviousMonthDisabled() {
+      if (this.prevDisabled) {
+        return this.prevDisabled({ view: 'day' })
+      }
+
       if (!this.disabledDates || !this.disabledDates.to) {
         return false
       }
@@ -325,6 +331,10 @@ export default {
      * @return {Boolean}
      */
     isNextMonthDisabled() {
+      if (this.nextDisabled) {
+        return this.nextDisabled({ view: 'day' })
+      }
+
       if (!this.disabledDates || !this.disabledDates.from) {
         return false
       }

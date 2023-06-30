@@ -68,6 +68,8 @@ export default {
   props: {
     monthFormatter: Function,
     headlineMonthFormatter: Function,
+    nextDisabled: Function,
+    prevDisabled: Function,
     showMonthView: Boolean,
     selectedDate: Date,
     pageDate: Date,
@@ -184,6 +186,10 @@ export default {
      * @return {Boolean}
      */
     isPreviousYearDisabled() {
+      if (this.prevDisabled) {
+        return this.prevDisabled({ view: 'month' })
+      }
+
       if (!this.disabledDates || !this.disabledDates.to) {
         return false
       }
@@ -205,6 +211,10 @@ export default {
      * @return {Boolean}
      */
     isNextYearDisabled() {
+      if (this.nextDisabled) {
+        return this.nextDisabled({ view: 'month' })
+      }
+
       if (!this.disabledDates || !this.disabledDates.from) {
         return false
       }
