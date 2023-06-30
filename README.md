@@ -147,13 +147,17 @@ export default {
 You can either try to handle all the formatting yourself using these props with a day utility like [`dayjs`](https://day.js.org).
 
 ```js
-dayFormatter
-monthFormatter
-yearFormatter
-headlineDayFormatter
-headlineMonthFormatter
-headlineYearFormatter
-useRtl
+dayFormatter = (value, index) => 'something'
+monthFormatter = (value, index) => 'something'
+yearFormatter = (value) => 'something'
+headlineDayFormatter = ({ pageDate, selectedDate }) =>
+  dayjs(pageDate).format('MMM YYYY')
+headlineMonthFormatter = ({ pageDate, selectedDate, pageYearName }) =>
+  'something'
+headlineYearFormatter = ({ pageDate, selectedDate, getPageDecade }) =>
+  'something'
+useRtl = true | false
+mondayFirst = true | false
 ```
 
 Or you can let the library do the formatting and localization using the loaded language.

@@ -95,7 +95,7 @@ import { makeDateUtils } from '../utils/DateUtils'
 export default {
   components: {},
   props: {
-    labelFormatter: Function,
+    dayFormatter: Function,
     headlineDayFormatter: Function,
     showDayView: Boolean,
     selectedDate: Date,
@@ -253,8 +253,8 @@ export default {
   },
   methods: {
     format(value, index) {
-      if (this.labelFormatter) {
-        return this.labelFormatter(value, index)
+      if (this.dayFormatter) {
+        return this.dayFormatter(value, index)
       }
 
       return value

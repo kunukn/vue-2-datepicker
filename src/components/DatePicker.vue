@@ -43,7 +43,7 @@
         <PickerDay
           v-if="allowedToShowView('day')"
           :value="value"
-          :labelFormatter="dayFormatter"
+          :dayFormatter="dayFormatter"
           :headlineDayFormatter="headlineDayFormatter"
           :pageDate="pageDate"
           :selectedDate="selectedDate"
@@ -74,7 +74,7 @@
         <PickerMonth
           v-if="allowedToShowView('month')"
           :value="value"
-          :labelFormatter="monthFormatter"
+          :monthFormatter="monthFormatter"
           :headlineMonthFormatter="headlineMonthFormatter"
           :pageDate="pageDate"
           :selectedDate="selectedDate"
@@ -99,7 +99,7 @@
         <PickerYear
           v-if="allowedToShowView('year')"
           :value="value"
-          :formatter="yearFormatter"
+          :yearFormatter="yearFormatter"
           :headlineYearFormatter="headlineYearFormatter"
           :pageDate="pageDate"
           :selectedDate="selectedDate"

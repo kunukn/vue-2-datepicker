@@ -25,13 +25,13 @@
         @click="showYearCalendar"
       >
         <p v-if="headlineMonthFormatter" class="custom-formatted">
-          {{ headlineMonthFormatter({ pageDate, selectDate, pageYearName }) }}
+          {{ headlineMonthFormatter({ pageDate, selectedDate, pageYearName }) }}
         </p>
         <p v-else>{{ pageYearName }}</p>
       </button>
       <span v-else class="month__year_text">
         <p v-if="headlineMonthFormatter" class="custom-formatted">
-          {{ headlineMonthFormatter({ pageDate, selectDate, pageYearName }) }}
+          {{ headlineMonthFormatter({ pageDate, selectedDate, pageYearName }) }}
         </p>
         <p v-else>{{ pageYearName }}</p>
       </span>
@@ -66,7 +66,7 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   props: {
-    labelFormatter: Function,
+    monthFormatter: Function,
     headlineMonthFormatter: Function,
     showMonthView: Boolean,
     selectedDate: Date,
@@ -146,8 +146,8 @@ export default {
   },
   methods: {
     format(value, index) {
-      if (this.labelFormatter) {
-        return this.labelFormatter(value, index)
+      if (this.monthFormatter) {
+        return this.monthFormatter(value, index)
       }
 
       return value

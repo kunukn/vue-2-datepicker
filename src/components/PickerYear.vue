@@ -17,7 +17,7 @@
         <slot name="prevButton" />
       </button>
       <p v-if="headlineYearFormatter" class="custom-formatted page-decade">
-        {{ headlineYearFormatter({ pageDate, selectDate, getPageDecade }) }}
+        {{ headlineYearFormatter({ pageDate, selectedDate, getPageDecade }) }}
       </p>
       <p v-else class="page-decade">{{ getPageDecade }}</p>
       <button
@@ -50,7 +50,7 @@
 import { makeDateUtils } from '../utils/DateUtils'
 export default {
   props: {
-    formatter: Function,
+    yearFormatter: Function,
     headlineYearFormatter: Function,
     showYearView: Boolean,
     selectedDate: Date,
@@ -132,8 +132,8 @@ export default {
   },
   methods: {
     format(value) {
-      if (this.formatter) {
-        return this.formatter(value)
+      if (this.yearFormatter) {
+        return this.yearFormatter(value)
       }
 
       return value
