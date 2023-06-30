@@ -732,12 +732,11 @@ export default {
 .vdp-datepicker__day-header-background {
   position: absolute;
   pointer-events: none;
-  display: flex;
+  user-select: none;
   top: var(--vdp-cell-gap);
   left: var(--vdp-cell-gap);
   width: calc(100% - var(--vdp-cell-gap) * 2);
   height: calc(var(--vdp-cell-size));
-  display: none;
 }
 
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).day,
