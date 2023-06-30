@@ -68,7 +68,7 @@
         v-for="(d, index) in daysOfWeekDataSource"
         :key="d.timestamp"
         class="cell day-header"
-        ><span>{{ format(d, index) }}</span>
+        ><span>{{ formatDayHeader(d, index) }}</span>
       </span>
 
       <template v-if="blankDays > 0">
@@ -252,7 +252,7 @@ export default {
     },
   },
   methods: {
-    format(value, index) {
+    formatDayHeader(value, index) {
       if (this.dayFormatter) {
         return this.dayFormatter(value, index)
       }

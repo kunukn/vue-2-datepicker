@@ -416,13 +416,18 @@ let fantasyLanguage = new Language(theLangObject);
         :dayFormatter="(value, index) => convertToRoman(index + 1)"
         :monthFormatter="(value, index) => convertToRoman(index + 1)"
         :yearFormatter="(value) => convertToRoman(value)"
+        :headlineYearFormatter="
+          ({ getPageDecade }) => convertToRoman(getPageDecade)
+        "
       />
-      <code>
-        &lt;date-picker inline :dayFormatter="(value, index) =&gt;
-        convertToRoman(index + 1)" :monthFormatter="(value, index) =&gt;
-        convertToRoman(index + 1)" :yearFormatter="(value) =&gt;
-        convertToRoman(value)" &gt;&lt;/date-picker&gt;
-      </code>
+      <pre>
+inline
+:dayFormatter="(value, index) => convertToRoman(index + 1)"
+:monthFormatter="(value, index) => convertToRoman(index + 1)"
+:yearFormatter="(value) => convertToRoman(value)"
+:headlineYearFormatter=" ({ getPageDecade }) => convertToRoman(getPageDecade)"</pre
+      >
+      <code> &lt;date-picker inline ...&gt;&lt;/date-picker&gt; </code>
     </div>
   </main>
 </template>
