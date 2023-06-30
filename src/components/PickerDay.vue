@@ -64,6 +64,8 @@
       class="vdp-datepicker__pick-buttons vdp-datepicker__pick-buttons--day"
       :class="isRtl ? 'flex-rtl' : ''"
     >
+      <div class="vdp-datepicker__day-header-background"></div>
+
       <span
         v-for="(d, index) in daysOfWeekDataSource"
         :key="d.timestamp"
@@ -76,7 +78,7 @@
           ><span></span
         ></span>
       </template>
-      <!-- eslint-disable vue/no-v-html - It has been sanitized -->
+      <!-- eslint-disable vue/no-v-html - The consumer of this lib should validate -->
       <button
         v-for="day in days"
         :key="day.timestamp"
