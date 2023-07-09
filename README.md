@@ -313,11 +313,6 @@ These can be overriden.
 | wrapper-class                | String\|Object   |             | CSS class applied to the outer div         |
 | monday-first                 | Boolean          | false       | To start the week on Monday                |
 | ensure-min-height            | Boolean          | false       | Ensure day picker view has same height     |
-| clear-button                 | Boolean          | false       | Show an icon for clearing the date         |
-| clear-button-icon            | String           |             | Use icon for a button (ex: fa fa-times)    |
-| calendar-button              | Boolean          | false       | Show an icon that can be clicked           |
-| calendar-button-icon         | String           |             | Use icon for a button (ex: fa fa-calendar) |
-| calendar-button-icon-content | String           |             | Use for material-icons (ex: event)         |
 | day-cell-content             | Function         |             | Use to render custom content in day cell   |
 | bootstrap-styling            | Boolean          | false       | Output bootstrap v4 styling classes.       |
 | initial-view                 | String           | minimumView | If set, open on that view                  |

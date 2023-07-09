@@ -19,11 +19,6 @@
       :placeholder="placeholder"
       :inputClass="inputClass"
       :typeable="typeable"
-      :clearButton="clearButton"
-      :clearButtonIcon="clearButtonIcon"
-      :calendarButton="calendarButton"
-      :calendarButtonIcon="calendarButtonIcon"
-      :calendarButtonIconContent="calendarButtonIconContent"
       :disabled="disabled"
       :required="required"
       :bootstrapStyling="bootstrapStyling"
@@ -34,7 +29,6 @@
       @clearDate="clearDate"
     >
       <slot slot="afterDateInput" name="afterDateInput"></slot>
-      <slot slot="clearButton" name="clearButton"></slot>
     </DateInput>
 
     <div class="vdp-datepicker__container">
@@ -183,11 +177,6 @@ export default {
     wrapperClass: [String, Object, Array],
     mondayFirst: Boolean,
     ensureMinHeight: Boolean,
-    clearButton: Boolean,
-    clearButtonIcon: String,
-    calendarButton: Boolean,
-    calendarButtonIcon: String,
-    calendarButtonIconContent: String,
     bootstrapStyling: Boolean,
     initialView: String,
     disabled: Boolean,
@@ -758,17 +747,5 @@ export default {
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).month:hover,
 .vdp-datepicker__container .cell:not(.blank):not(.disabled).year:hover {
   border-color: var(--vdp-color-theme);
-}
-
-.vdp-datepicker__clear-button,
-.vdp-datepicker__calendar-button {
-  cursor: pointer;
-  font-style: normal;
-}
-
-.vdp-datepicker__clear-button.disabled,
-.vdp-datepicker__calendar-button.disabled {
-  color: var(--vdp-color-button-disabled);
-  cursor: not-allowed;
 }
 </style>

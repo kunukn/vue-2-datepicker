@@ -67,14 +67,6 @@ intlDayFormatter(payload) {
     </div>
 
     <div class="example">
-      <h3>Bootstrap styled datepicker</h3>
-      <date-picker bootstrapStyling calendarButton clearButton> </date-picker>
-      <code>
-        &lt;date-picker placeholder="Select Date"&gt;&lt;/date-picker&gt;
-      </code>
-    </div>
-
-    <div class="example">
       <h3>v-model datepicker</h3>
       <date-picker
         v-model="vModelExample"
@@ -617,10 +609,10 @@ function convertToRoman(input) {
     IV: 4,
     I: 1,
   }
-  var str = ''
+  let str = ''
 
-  for (var i of Object.keys(roman)) {
-    var q = Math.floor(num / roman[i])
+  for (let i of Object.keys(roman)) {
+    let q = Math.floor(num / roman[i])
     num -= q * roman[i]
     str += i.repeat(q)
   }

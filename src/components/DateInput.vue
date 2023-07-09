@@ -3,23 +3,6 @@
     class="vdp-datepicker__date-input"
     :class="{ 'input-group': bootstrapStyling }"
   >
-    <!-- Calendar Button -->
-    <button
-      v-if="calendarButton"
-      type="button"
-      class="vdp-datepicker__calendar-button"
-      :class="({ 'input-group-prepend': bootstrapStyling }, { disabled })"
-      @click="showCalendar"
-    >
-      <slot name="calendarButton">
-        <span :class="{ 'input-group-text': bootstrapStyling }">
-          <i :class="calendarButtonIcon">
-            {{ calendarButtonIconContent }}
-            <span v-if="!calendarButtonIcon">&hellip;</span>
-          </i>
-        </span>
-      </slot>
-    </button>
     <!-- Input -->
     <input
       :id="id"
@@ -30,7 +13,6 @@
       :value="formattedValue"
       :open-date="openDate"
       :placeholder="placeholder"
-      :clear-button="clearButton"
       :disabled="disabled"
       :required="required"
       :readonly="!typeable"
@@ -39,22 +21,6 @@
       @keyup="parseTypedDate"
       @blur="inputBlurred"
     />
-    <!-- Clear Button -->
-    <button
-      v-if="clearButton && selectedDate"
-      type="button"
-      class="vdp-datepicker__clear-button"
-      :class="{ 'input-group-append': bootstrapStyling }"
-      @click="clearDate()"
-    >
-      <slot name="clearButton">
-        <span :class="{ 'input-group-text': bootstrapStyling }">
-          <i :class="clearButtonIcon">
-            <span v-if="!clearButtonIcon">&times;</span>
-          </i>
-        </span>
-      </slot>
-    </button>
     <slot name="afterDateInput"></slot>
   </div>
 </template>
@@ -73,11 +39,6 @@ export default {
     openDate: Date,
     placeholder: String,
     inputClass: [String, Object, Array],
-    clearButton: Boolean,
-    clearButtonIcon: String,
-    calendarButton: Boolean,
-    calendarButtonIcon: String,
-    calendarButtonIconContent: String,
     disabled: Boolean,
     required: Boolean,
     typeable: Boolean,
