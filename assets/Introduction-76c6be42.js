@@ -1,4 +1,4 @@
-import{r as h,M as g}from"./index-4e4ee3ef.js";import{u as d}from"./index-25f7391a.js";import"./iframe-a9b29f4b.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-725317a4.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-cba466d5.js";import"./index-356e4a49.js";var p={exports:{}},o={};/**
+import{r as h,M as g}from"./index-e4532229.js";import{u as d}from"./index-cc1be253.js";import"./iframe-6024efc2.js";import"../sb-preview/runtime.js";import"./_commonjsHelpers-725317a4.js";import"./index-d475d2ea.js";import"./index-d37d4223.js";import"./index-cba466d5.js";import"./index-356e4a49.js";var p={exports:{}},o={};/**
  * @license React
  * react-jsx-runtime.production.min.js
  *
@@ -130,4 +130,4 @@ View the source and add issues`]})})]}),e.jsxs("a",{className:"link-item",href:"
 Chat with maintainers and the community`]})})]})]}),`
 `,e.jsx("div",{className:"tip-wrapper",children:e.jsxs(r.p,{children:[e.jsx("span",{className:"tip",children:"Tip"}),"Edit the Markdown in"," ",`
 `,e.jsx("code",{children:"stories/Introduction.stories.mdx"})]})})]})}function M(t={}){const{wrapper:r}=Object.assign({},d(),t.components);return r?e.jsx(r,Object.assign({},t,{children:e.jsx(c,t)})):c(t)}export{M as default};
-//# sourceMappingURL=Introduction-f270e106.js.map
+//# sourceMappingURL=Introduction-76c6be42.js.map
