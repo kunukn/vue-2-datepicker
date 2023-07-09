@@ -1,8 +1,11 @@
-import DatePicker from './DatePicker.vue'
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
-import { action } from '@storybook/addon-actions'
+/* eslint-disable @typescript-eslint/no-unused-vars */
 
-// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import DatePicker from './DatePicker.vue'
+import { withActions } from '@storybook/addon-actions/decorator'
+import pick from 'lodash.pick'
+import { action } from '@storybook/addon-actions'
+import dayjs from 'dayjs'
+
 const noop = () => {
   /* */
 }
@@ -11,13 +14,36 @@ const noop = () => {
 export default {
   title: 'DatePicker/DatePicker',
   component: DatePicker,
+  decorators: [],
   tags: ['autodocs'],
-  render: (args, { argTypes }) => ({
-    props: Object.keys(argTypes),
-    components: { DatePicker },
-    template: '<DatePicker v-bind="$props"  />',
-    // v-on="$props"
-  }),
+  render: (args, { argTypes }) => {
+    let props = Object.keys(argTypes)
+
+    return {
+      props,
+      components: { DatePicker },
+      data() {
+        return {
+          myaction(input) {
+            console.log(input, Date.now())
+            return action(input)
+          },
+        }
+      },
+      template: `
+      <DatePicker v-bind="$props" 
+        @opened="myaction('opened')"
+        @closed="myaction('closed')"
+        @selected="myaction('selected')"
+        @selectedDisabled="myaction('selectedDisabled')"
+        @input="myaction('input')"
+        @cleared="myaction('cleared')"
+        @changedMonth="myaction('changedMonth')"
+        @changedYear="myaction('changedYear')"
+        @changedDecade="myaction('changedDecade')"
+      />`,
+    }
+  },
   argTypes: {
     inline: {
       control: 'boolean',
