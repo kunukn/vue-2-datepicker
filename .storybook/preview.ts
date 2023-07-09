@@ -1,5 +1,5 @@
 import type { Preview } from '@storybook/vue'
-import '../src/assets/ress.min.css'
+// import '../src/assets/ress.min.css'
 import './storybook.scss'
 
 const preview: Preview = {

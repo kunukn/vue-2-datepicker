@@ -15,32 +15,64 @@ export default {
   render: (args, { argTypes }) => ({
     props: Object.keys(argTypes),
     components: { DatePicker },
-    template: '<DatePicker v-bind="$props" v-on="$props" />',
+    template: '<DatePicker v-bind="$props"  />',
+    // v-on="$props"
   }),
   argTypes: {
     inline: {
       control: 'boolean',
-      description: '',
       defaultValue: false,
     },
     useUtc: {
       control: 'boolean',
-      description: '',
+      defaultValue: false,
+    },
+    useRtl: {
+      control: 'boolean',
       defaultValue: false,
     },
     mondayFirst: {
       control: 'boolean',
-      description: '',
       defaultValue: false,
     },
-    nextButton: { action: 'nextButton' },
-    prevButton: { action: 'prevButton' },
-    beforeCalendarHeader: { action: 'beforeCalendarHeader' },
-    afterDateInput: { action: 'afterDateInput' },
+    typeable: {
+      control: 'boolean',
+      defaultValue: false,
+    },
+    minimumView: {
+      control: 'radio',
+      options: ['day', 'month', 'year'],
+      defaultValue: 'day',
+    },
+    maximumView: {
+      control: 'radio',
+      options: ['day', 'month', 'year'],
+      defaultValue: 'year',
+    },
+    monthsCustomDisplay: {
+      control: 'array',
+      defaultValue: [],
+    },
+    daysCustomDisplay: {
+      control: 'array',
+      defaultValue: [],
+    },
+    opened: { action: 'opened' },
     closed: { action: 'closed' },
+    selected: { action: 'selected' },
+    selectedDisabled: { action: 'selectedDisabled' },
+    input: { action: 'input' },
+    cleared: { action: 'cleared' },
     changedMonth: { action: 'changedMonth' },
     changedYear: { action: 'changedYear' },
-    selectedDisabled: { action: 'selectedDisabled' },
+    changedDecade: { action: 'changedDecade' },
+
+    beforeCalendarHeader: { action: 'beforeCalendarHeader' },
+    afterDateInput: { action: 'afterDateInput' },
+    
+
+    nextButton: { action: 'nextButton' },
+    prevButton: { action: 'prevButton' },
   },
 }
 
