@@ -27,6 +27,7 @@
   "bugs": {
     "url": "https://github.com/kunukn/vue-2-datepicker/issues"
   },
+  "homepage": "https://kunukn.github.io/vue-2-datepicker",
   "scripts": {
     "dev": "vite",
     "dev-open": "vite --open",
@@ -41,7 +42,8 @@
     "validate": "concurrently \"yarn lint\" \"yarn test\"",
     "storybook": "storybook dev -p 6006",
     "story": "storybook dev -p 6008",
-    "build-storybook": "storybook build"
+    "build-storybook": "storybook build",
+    "deploy-storybook": "cross-env NODE_DEBUG=gh-pages gh-pages -d storybook-static"
   },
   "license": "MIT",
   "files": [
@@ -75,6 +77,7 @@
     "eslint": "^8.44.0",
     "eslint-plugin-prettier": "^4.2.1",
     "eslint-plugin-vue": "^9.15.1",
+    "gh-pages": "^5.0.0",
     "jest": "^29.6.1",
     "jest-environment-jsdom": "^29.6.1",
     "jest-junit": "^16.0.0",
