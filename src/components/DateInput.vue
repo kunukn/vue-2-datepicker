@@ -105,7 +105,7 @@ export default {
         : this.utils.formatDate(
             new Date(this.selectedDate),
             this.format + '',
-            this.translation
+            this.translation,
           )
     },
 

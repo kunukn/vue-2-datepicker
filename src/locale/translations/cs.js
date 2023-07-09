@@ -30,5 +30,5 @@ export default new Language(
     'lis',
     'pro',
   ],
-  ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so']
+  ['ne', 'po', 'út', 'st', 'čt', 'pá', 'so'],
 )

@@ -101,15 +101,15 @@ describe('Datepicker with restricted views', () => {
     })
     wrapper.vm.showCalendar()
     expect(
-      wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar').length
+      wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar').length,
     ).toEqual(1)
     expect(
       wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar .cell.month')
-        .length
+        .length,
     ).toEqual(0)
     expect(
       wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar .cell.year')
-        .length
+        .length,
     ).toEqual(0)
     expect(wrapper.vm.showMonthCalendar()).toEqual(false)
 
@@ -121,15 +121,15 @@ describe('Datepicker with restricted views', () => {
     })
     wrapper.vm.showCalendar()
     expect(
-      wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar').length
+      wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar').length,
     ).toEqual(2)
     expect(
       wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar .cell.day')
-        .length
+        .length,
     ).toEqual(0)
     expect(
       wrapper.vm.$el.querySelectorAll('.vdp-datepicker__calendar .cell.year')
-        .length
+        .length,
     ).toBeGreaterThan(0)
   })
 })

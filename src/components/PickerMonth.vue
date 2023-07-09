@@ -100,7 +100,7 @@ export default {
             0,
             d.getDate(),
             d.getHours(),
-            d.getMinutes()
+            d.getMinutes(),
           )
 
       let monthsDataSource =

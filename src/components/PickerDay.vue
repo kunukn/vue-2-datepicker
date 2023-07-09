@@ -162,7 +162,7 @@ export default {
             d.getMonth(),
             1,
             d.getHours(),
-            d.getMinutes()
+            d.getMinutes(),
           )
       if (this.mondayFirst) {
         return this.utils.getDay(dObj) > 0 ? this.utils.getDay(dObj) - 1 : 6
@@ -183,11 +183,11 @@ export default {
             d.getMonth(),
             1,
             d.getHours(),
-            d.getMinutes()
+            d.getMinutes(),
           )
       let daysInMonth = this.utils.daysInMonth(
         this.utils.getFullYear(dObj),
-        this.utils.getMonth(dObj)
+        this.utils.getMonth(dObj),
       )
       for (let i = 0; i < daysInMonth; i++) {
         days.push({
@@ -218,7 +218,7 @@ export default {
         : this.translation.monthsAbbr
       return this.utils.getMonthNameAbbr(
         this.utils.getMonth(this.pageDate),
-        monthName
+        monthName,
       )
     },
     /**

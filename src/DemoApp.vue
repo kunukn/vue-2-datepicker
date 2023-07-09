@@ -454,7 +454,7 @@ let fantasyLanguage = new Language(
     'Winterveil',
   ],
   null, // implicit month abbreviations
-  ['Sun', 'Moo', 'Sta', 'Sha', 'Fir', 'Win', 'Ear']
+  ['Sun', 'Moo', 'Sta', 'Sha', 'Fir', 'Win', 'Ear'],
 )
 
 const state = {

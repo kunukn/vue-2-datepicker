@@ -82,15 +82,15 @@ export default {
             Date.UTC(
               Math.floor(d.getUTCFullYear() / 10) * 10,
               d.getUTCMonth(),
-              d.getUTCDate()
-            )
+              d.getUTCDate(),
+            ),
           )
         : new Date(
             Math.floor(d.getFullYear() / 10) * 10,
             d.getMonth(),
             d.getDate(),
             d.getHours(),
-            d.getMinutes()
+            d.getMinutes(),
           )
       for (let i = 0; i < 10; i++) {
         years.push({

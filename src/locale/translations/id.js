@@ -30,5 +30,5 @@ export default new Language(
     'Nov',
     'Des',
   ],
-  ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab']
+  ['Min', 'Sen', 'Sel', 'Rab', 'Kam', 'Jum', 'Sab'],
 )
