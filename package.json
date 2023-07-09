@@ -38,18 +38,27 @@
     "lint:style": "stylelint \"{src/**/*.vue,src/assets/**/*.scss}\"",
     "lint": "concurrently \"yarn lint:es\" \"yarn lint:style\"",
     "test": "vitest --environment jsdom --root src/",
-    "validate": "concurrently \"yarn lint\" \"yarn test\""
+    "validate": "concurrently \"yarn lint\" \"yarn test\"",
+    "storybook": "storybook dev -p 6006",
+    "story": "storybook dev -p 6008",
+    "build-storybook": "storybook build"
   },
   "license": "MIT",
   "files": [
     "dist/*",
     "src/locale/*"
   ],
-  "dependencies": {},
   "//devDependencies": {
     "@vue/test-utils": "version 1.x is for Vue 2"
   },
   "devDependencies": {
+    "@storybook/addon-essentials": "7.0.26",
+    "@storybook/addon-interactions": "7.0.26",
+    "@storybook/addon-links": "7.0.26",
+    "@storybook/blocks": "7.0.26",
+    "@storybook/testing-library": "0.0.14-next.2",
+    "@storybook/vue": "7.0.26",
+    "@storybook/vue-vite": "7.0.26",
     "@types/jsdom": "^20.0.1",
     "@types/node": "^20.4.1",
     "@typescript-eslint/eslint-plugin": "^5.61.0",
@@ -75,8 +84,11 @@
     "postcss-html": "^1.5.0",
     "postcss-nesting": "^12.0.0",
     "prettier": "^3.0.0",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
     "sass": "^1.63.6",
     "sass-loader": "^13.3.2",
+    "storybook": "7.0.26",
     "stylelint": "^15.10.1",
     "stylelint-config-prettier": "^9.0.5",
     "stylelint-config-recommended-vue": "^1.4.0",
