@@ -36,14 +36,14 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
   - [Available props](#available-props)
   - [Events](#events)
   - [Date formatting](#date-formatting)
-      - [String formatter](#string-formatter)
-      - [Function formatter](#function-formatter)
+    - [String formatter](#string-formatter)
+    - [Function formatter](#function-formatter)
   - [Disabled Dates](#disabled-dates)
   - [Highlighted Dates](#highlighted-dates)
   - [Slots](#slots)
-      - [beforeCalendarHeader](#beforecalendarheader)
-      - [afterDateInput](#afterdateinput)
-      - [prevButton and nextButton](#prevbutton-and-nextbutton)
+    - [beforeCalendarHeader](#beforecalendarheader)
+    - [afterDateInput](#afterdateinput)
+    - [prevButton and nextButton](#prevbutton-and-nextbutton)
   - [Translations](#translations)
     - [How to apply language](#how-to-apply-language)
       - [Lazy loaded approach](#lazy-loaded-approach)
@@ -52,6 +52,8 @@ See the [strategy](#strategy-for-this-project) for more info about what will lik
     - [With this link you can navigate the existing resources.](#with-this-link-you-can-navigate-the-existing-resources)
 
 ## Demo
+
+### Codesandbox
 
 [![date-picker](media/date-picker.png)](https://d9xtk7.csb.app/)
 
@@ -69,6 +71,14 @@ To view a demo online:
 </tr>
 
 </table>
+
+### Storybook
+
+The github pages contains Storybook examples.
+
+https://kunukn.github.io/vue-2-datepicker
+
+### Locally
 
 To view demo examples locally clone the repo and run `yarn install && yarn dev`
 
@@ -265,7 +275,7 @@ These can be overriden.
   --vdp-cell-border-radius-square: 50%;
   --vdp-cell-border-radius-rectangle: 8px;
   --vdp-color-theme-bg: #fff;
-  --vdp-color-theme: #0092bc;
+  --vdp-color-theme: #007da0;
   --vdp-color-selected: #fff;
   --vdp-color-border: #ccc;
   --vdp-color-disabled: #ddd;
