@@ -4,7 +4,7 @@ module.exports = {
     'stylelint-config-standard-scss',
     'stylelint-config-recommended-vue',
   ],
-  ignoreFiles: ['public/**/*.css', 'assets/**/*.*'],
+  ignoreFiles: ['public/**/*.css', 'assets/**/*.css'],
   defaultSeverity: 'warning',
   ignoreDisables: true,
   rules: {
