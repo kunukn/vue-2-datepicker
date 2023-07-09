@@ -522,7 +522,7 @@ export default {
   --vdp-color-highlighted-bg: #cae5ed;
   --vdp-color-highlighted-disabled-fg: #a3a3a3;
   --vdp-color-grey: #a3a3a3;
-  --vdp-day-header-font-size: 14px;
+  --vdp-font-size-day-header: 14px;
 
   box-sizing: border-box;
   position: relative;
@@ -642,7 +642,7 @@ export default {
 
     &.day-header {
       width: var(--vdp-cell-size);
-      font-size: var(--vdp-day-header-font-size);
+      font-size: var(--vdp-font-size-day-header);
       white-space: nowrap;
       cursor: inherit;
     }

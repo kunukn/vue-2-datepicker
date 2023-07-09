@@ -285,7 +285,7 @@ These can be overriden.
   --vdp-color-highlighted-bg: #cae5ed;
   --vdp-color-highlighted-disabled-fg: #a3a3a3;
   --vdp-color-grey: #a3a3a3;
-  --vdp-day-header-font-size: 14px;
+  --vdp-font-size-day-header: 14px;
 }
 ```
 
