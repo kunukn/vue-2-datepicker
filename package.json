@@ -52,6 +52,7 @@
     "@vue/test-utils": "version 1.x is for Vue 2"
   },
   "devDependencies": {
+    "@storybook/addon-a11y": "^7.0.26",
     "@storybook/addon-essentials": "7.0.26",
     "@storybook/addon-interactions": "7.0.26",
     "@storybook/addon-links": "7.0.26",

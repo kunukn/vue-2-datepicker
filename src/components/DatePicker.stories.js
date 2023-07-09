@@ -1,6 +1,8 @@
 import DatePicker from './DatePicker.vue'
-import { action } from '@storybook/addon-actions';
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
+import { action } from '@storybook/addon-actions'
 
+// eslint-disable-next-line @typescript-eslint/no-unused-vars
 const noop = () => {
   /* */
 }
@@ -49,4 +51,8 @@ export const InlineUTCMondayFirst = {
     useUtc: true,
     mondayFirst: true,
   },
+}
+
+export const DefaultDatePicker = {
+  args: {},
 }
