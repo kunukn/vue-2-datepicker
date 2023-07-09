@@ -30,5 +30,5 @@ export default new Language(
     'Nóv',
     'Des',
   ],
-  ['Sun', 'Mán', 'Þri', 'Mið', 'Fim', 'Fös', 'Lau'],
+  ['Sun', 'Mán', 'Þri', 'Mið', 'Fim', 'Fös', 'Lau']
 )

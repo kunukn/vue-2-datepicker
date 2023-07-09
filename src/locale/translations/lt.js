@@ -30,7 +30,7 @@ let lang = new Language(
     'Lap',
     'Gru',
   ],
-  ['Sek', 'Pir', 'Ant', 'Tre', 'Ket', 'Pen', 'Šeš'],
+  ['Sek', 'Pir', 'Ant', 'Tre', 'Ket', 'Pen', 'Šeš']
 )
 
 lang.ymd = true

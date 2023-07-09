@@ -30,5 +30,5 @@ export default new Language(
     'Nov',
     'Dec',
   ],
-  ['Dom', 'Lun', 'Mar', 'Mér', 'Xov', 'Ven', 'Sáb'],
+  ['Dom', 'Lun', 'Mar', 'Mér', 'Xov', 'Ven', 'Sáb']
 )

@@ -30,7 +30,7 @@ export default new Language(
     'Kas',
     'Ara',
   ],
-  ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt'],
+  ['Paz', 'Pzt', 'Sal', 'Çar', 'Per', 'Cum', 'Cmt']
 )
 // eslint-disable-next-line
 ;

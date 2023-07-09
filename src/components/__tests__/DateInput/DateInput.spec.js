@@ -68,7 +68,7 @@ describe('DateInput', () => {
     })
 
     expect(wrapper.findComponent('input').element.classList).toContain(
-      'form-control',
+      'form-control'
     )
   })
 
@@ -83,10 +83,10 @@ describe('DateInput', () => {
       },
     })
     expect(wrapper.findComponent('input').element.classList).toContain(
-      'form-control',
+      'form-control'
     )
     expect(wrapper.findComponent('input').element.classList).toContain(
-      'someClass',
+      'someClass'
     )
   })
 

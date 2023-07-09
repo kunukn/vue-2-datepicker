@@ -217,11 +217,11 @@ const utils = {
       .replace(/yy/, String(year).slice(2))
       .replace(
         /MMMM/,
-        this.getMonthName(this.getMonth(date), translation.months),
+        this.getMonthName(this.getMonth(date), translation.months)
       )
       .replace(
         /MMM/,
-        this.getMonthNameAbbr(this.getMonth(date), translation.monthsAbbr),
+        this.getMonthNameAbbr(this.getMonth(date), translation.monthsAbbr)
       )
       .replace(/MM/, ('0' + month).slice(-2))
       .replace(/M(?!a|ä|e)/, month)

@@ -30,5 +30,5 @@ export default new Language(
     'Noi',
     'Dec',
   ],
-  ['D', 'L', 'Ma', 'Mi', 'J', 'V', 'S'],
+  ['D', 'L', 'Ma', 'Mi', 'J', 'V', 'S']
 )

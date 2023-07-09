@@ -30,5 +30,5 @@ export default new Language(
     'Nov',
     'Dec',
   ],
-  ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub'],
+  ['Ned', 'Pon', 'Uto', 'Sre', 'Čet', 'Pet', 'Sub']
 )

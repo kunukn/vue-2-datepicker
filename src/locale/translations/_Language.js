@@ -31,7 +31,7 @@ export default class Language {
   set months(months) {
     if (months.length !== 12) {
       throw new RangeError(
-        `There must be 12 months for ${this.language} language`,
+        `There must be 12 months for ${this.language} language`
       )
     }
     this._months = months
@@ -44,7 +44,7 @@ export default class Language {
   set monthsAbbr(monthsAbbr) {
     if (monthsAbbr.length !== 12) {
       throw new RangeError(
-        `There must be 12 abbreviated months for ${this.language} language`,
+        `There must be 12 abbreviated months for ${this.language} language`
       )
     }
     this._monthsAbbr = monthsAbbr

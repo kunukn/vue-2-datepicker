@@ -30,7 +30,7 @@ let lang = new Language(
     '11월',
     '12월',
   ],
-  ['일', '월', '화', '수', '목', '금', '토'],
+  ['일', '월', '화', '수', '목', '금', '토']
 )
 lang.yearSuffix = '년'
 lang.ymd = true

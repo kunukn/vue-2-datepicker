@@ -318,7 +318,7 @@ export default {
       const initialView = this.computedInitialView
       if (!this.allowedToShowView(initialView)) {
         throw new Error(
-          `initialView '${this.initialView}' cannot be rendered based on minimum '${this.minimumView}' and maximum '${this.maximumView}'`,
+          `initialView '${this.initialView}' cannot be rendered based on minimum '${this.minimumView}' and maximum '${this.maximumView}'`
         )
       }
       switch (initialView) {

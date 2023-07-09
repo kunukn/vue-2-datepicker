@@ -30,5 +30,5 @@ export default new Language(
     'marras',
     'joulu',
   ],
-  ['su', 'ma', 'ti', 'ke', 'to', 'pe', 'la'],
+  ['su', 'ma', 'ti', 'ke', 'to', 'pe', 'la']
 )

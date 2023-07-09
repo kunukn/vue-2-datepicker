@@ -69,7 +69,6 @@ export default {
 
     beforeCalendarHeader: { action: 'beforeCalendarHeader' },
     afterDateInput: { action: 'afterDateInput' },
-    
 
     nextButton: { action: 'nextButton' },
     prevButton: { action: 'prevButton' },

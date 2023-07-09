@@ -30,5 +30,5 @@ export default new Language(
     'Nov',
     'Des',
   ],
-  ['Diu', 'Dil', 'Dmr', 'Dmc', 'Dij', 'Div', 'Dis'],
+  ['Diu', 'Dil', 'Dmr', 'Dmc', 'Dij', 'Div', 'Dis']
 )

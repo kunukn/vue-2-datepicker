@@ -123,10 +123,10 @@ describe('Datepicker mounted', () => {
     wrapper.vm.selectMonth({ timestamp: date.getTime() })
     expect(wrapper.emitted().changedMonth).toBeTruthy()
     expect(wrapper.emitted().changedMonth[0][0].timestamp).toEqual(
-      date.getTime(),
+      date.getTime()
     )
     expect(new Date(wrapper.vm.pageTimestamp).getMonth()).toEqual(
-      date.getMonth(),
+      date.getMonth()
     )
     expect(wrapper.vm.showDayView).toEqual(true)
   })
@@ -136,10 +136,10 @@ describe('Datepicker mounted', () => {
     wrapper.vm.selectYear({ timestamp: date.getTime() })
     expect(wrapper.emitted().changedYear).toBeTruthy()
     expect(wrapper.emitted().changedYear[0][0].timestamp).toEqual(
-      date.getTime(),
+      date.getTime()
     )
     expect(new Date(wrapper.vm.pageTimestamp).getFullYear()).toEqual(
-      date.getFullYear(),
+      date.getFullYear()
     )
     expect(wrapper.vm.showMonthView).toEqual(true)
   })
@@ -287,7 +287,7 @@ describe('Datepicker.vue using UTC', () => {
     // It's important to assert the input rendered output
     wrapper.vm.$nextTick(() => {
       expect(wrapper.findComponent(DateInput).vm.formattedValue).toEqual(
-        UTCString,
+        UTCString
       )
     })
   })

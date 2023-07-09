@@ -30,5 +30,5 @@ export default new Language(
     'Lis',
     'Gru',
   ],
-  ['Nd', 'Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob'],
+  ['Nd', 'Pn', 'Wt', 'Śr', 'Czw', 'Pt', 'Sob']
 )

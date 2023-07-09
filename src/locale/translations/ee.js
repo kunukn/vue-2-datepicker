@@ -30,5 +30,5 @@ export default new Language(
     'Nov',
     'Dets',
   ],
-  ['P', 'E', 'T', 'K', 'N', 'R', 'L'],
+  ['P', 'E', 'T', 'K', 'N', 'R', 'L']
 )
