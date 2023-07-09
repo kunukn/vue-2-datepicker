@@ -305,7 +305,8 @@ export default {
      */
     isPreviousMonthDisabled() {
       if (this.prevDisabled) {
-        return this.prevDisabled({ view: 'day' })
+        let result = this.prevDisabled({ view: 'day' })
+        if (result != null) return result
       }
 
       if (!this.disabledDates || !this.disabledDates.to) {
@@ -332,7 +333,8 @@ export default {
      */
     isNextMonthDisabled() {
       if (this.nextDisabled) {
-        return this.nextDisabled({ view: 'day' })
+        let result = this.nextDisabled({ view: 'day' })
+        if (result != null) return result
       }
 
       if (!this.disabledDates || !this.disabledDates.from) {

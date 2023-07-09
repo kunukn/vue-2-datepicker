@@ -159,7 +159,8 @@ export default {
     },
     isPreviousDecadeDisabled() {
       if (this.prevDisabled) {
-        return this.prevDisabled({ view: 'year' })
+        let result = this.prevDisabled({ view: 'year' })
+        if (result != null) return result
       }
 
       if (!this.disabledDates || !this.disabledDates.to) {
@@ -178,7 +179,8 @@ export default {
     },
     isNextDecadeDisabled() {
       if (this.nextDisabled) {
-        return this.nextDisabled({ view: 'year' })
+        let result = this.nextDisabled({ view: 'year' })
+        if (result != null) return result
       }
 
       if (!this.disabledDates || !this.disabledDates.from) {
