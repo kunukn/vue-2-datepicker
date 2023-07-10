@@ -41,7 +41,7 @@
         :daysCustomDisplay="['Do', 'Lu', 'Ma', 'Mi', 'Ju', 'Vi', 'Sa']"
       ></date-picker>
       <pre>
-intlDayFormatter(payload) {
+function intlDayFormatter(payload) {
   let date = payload.pageDate
   let options = {
     month: 'long',
