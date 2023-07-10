@@ -453,6 +453,8 @@ const state = {
   date1: new Date(),
 }
 
+import './assets/demo.scss'
+
 export default {
   name: 'Demo',
   components: {
@@ -620,7 +622,3 @@ function convertToRoman(input) {
   return str
 }
 </script>
-
-<style lang="scss">
-@import './assets/demo.scss';
-</style>
