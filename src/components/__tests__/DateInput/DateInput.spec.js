@@ -110,6 +110,6 @@ describe('DateInput', () => {
 
   it('triggers closeCalendar on blur', () => {
     wrapper.findComponent('input').trigger('blur')
-    expect(wrapper.emitted('closeCalendar')).toBeFalsy()
+    expect(wrapper.emitted('closeCalendar')).toBeTruthy()
   })
 })

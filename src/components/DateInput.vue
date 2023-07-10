@@ -19,6 +19,7 @@
       autocomplete="off"
       @click="showCalendar"
       @keyup="parseTypedDate"
+      @keydown="onKeyDown"
       @blur="inputBlurred"
     />
     <slot name="afterDateInput"></slot>
@@ -44,6 +45,7 @@ export default {
     typeable: Boolean,
     bootstrapStyling: Boolean,
     useUtc: Boolean,
+    isOpen: Boolean,
   },
   data() {
     const constructedDateUtils = makeDateUtils(this.useUtc)
@@ -51,6 +53,7 @@ export default {
       input: null,
       typedDate: false,
       utils: constructedDateUtils,
+      keypressWasTab: false,
     }
   },
   computed: {
@@ -84,6 +87,9 @@ export default {
     resetTypedDate() {
       this.typedDate = false
     },
+    isOpen() {
+      this.keypressWasTab = false
+    },
   },
   mounted() {
     this.input = this.$el.querySelector('input')
@@ -91,6 +97,9 @@ export default {
   methods: {
     showCalendar() {
       this.$emit('showCalendar')
+    },
+    onKeyDown(event) {
+      this.keypressWasTab = event.keyCode === 9
     },
     /**
      * Attempt to parse a typed date
@@ -128,7 +137,9 @@ export default {
         }
       }
 
-      // this.$emit('closeCalendar') // remove this to support keyboard tapping
+      if (!this.keypressWasTab) {
+        this.$emit('closeCalendar')
+      }
     },
     /**
      * emit a clearDate event

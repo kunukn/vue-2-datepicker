@@ -24,6 +24,7 @@
       :required="required"
       :bootstrapStyling="bootstrapStyling"
       :useUtc="useUtc"
+      :isOpen="isOpen"
       @showCalendar="showCalendar"
       @closeCalendar="close"
       @typedDate="setTypedDate"
