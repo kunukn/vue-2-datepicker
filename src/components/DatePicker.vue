@@ -2,9 +2,10 @@
   <div
     class="vdp-datepicker"
     :class="[wrapperClass]"
-    :data-rtl="isRtl || null"
-    :data-inline="isInline || null"
-    :data-min-height="ensureMinHeight || null"
+    :data-rtl="!!isRtl + ''"
+    :data-inline="!!isInline + ''"
+    :data-min-height="!!ensureMinHeight + ''"
+    :data-is-open="!!isOpen + ''"
   >
     <DateInput
       :id="id"
@@ -512,7 +513,7 @@ export default {
   --vdp-cell-border-radius-square: 50%;
   --vdp-cell-border-radius-rectangle: 8px;
   --vdp-color-theme-bg: #fff;
-  --vdp-color-theme: #0092bc;
+  --vdp-color-theme: #007da0;
   --vdp-color-selected: #fff;
   --vdp-color-border: #ccc;
   --vdp-color-disabled: #ddd;
@@ -541,24 +542,30 @@ export default {
     padding: 0;
   }
 
-  &[data-rtl],
+  &[data-rtl='true'],
   &.rtl {
     direction: rtl;
   }
 
-  &[data-inline] {
+  &[data-inline='true'] {
     .vdp-datepicker__picker {
       position: relative; // higher specificity
     }
   }
 
-  &[data-min-height] {
+  &[data-min-height='true'] {
     .vdp-datepicker__calendar--day {
       // higher specificity
       min-height: calc(
         var(--vdp-cell-size) * 8 + var(--vdp-cell-gap) * 8 +
           var(--vdp-header-gap) * 2
       );
+    }
+  }
+
+  &[data-is-open='false'] {
+    .vdp-datepicker__picker {
+      display: none;
     }
   }
 }

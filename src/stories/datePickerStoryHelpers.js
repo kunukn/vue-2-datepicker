@@ -32,6 +32,10 @@ export function createDatePickerArgTypes() {
       control: 'boolean',
       defaultValue: false,
     },
+    ensureMinHeight: {
+      control: 'boolean',
+      defaultValue: false,
+    },
     typeable: {
       control: 'boolean',
       defaultValue: false,

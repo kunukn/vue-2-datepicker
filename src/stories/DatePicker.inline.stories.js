@@ -1,6 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 
-import DatePicker from './DatePicker.vue'
+import DatePicker from '@/components/DatePicker.vue'
 import { withActions } from '@storybook/addon-actions/decorator'
 import pick from 'lodash.pick'
 import { action } from '@storybook/addon-actions'
@@ -18,7 +18,9 @@ const noop = () => {
 export default {
   title: 'DatePicker/inline',
   component: DatePicker,
-  decorators: [],
+  decorators: [
+    () => ({ template: '<div class="my-story-wrap"><story/></div>' }),
+  ],
   tags: ['autodocs'],
   render: createRender(DatePicker),
   argTypes: createDatePickerArgTypes(),
@@ -34,7 +36,7 @@ export const InlineUTCMondayMinHeight = {
   },
 }
 
-export const CustomDayHeadlineFormatIntl = {
+export const CustomDayHeadlineFormatIntlSpanish = {
   args: {
     inline: true,
     minimumView: 'day',
